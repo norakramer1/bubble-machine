@@ -23,14 +23,14 @@ const httpPost = (method,post) => {
 
 
 const nextStep = () => {
-  httpPost("POST","https://bubble-machine-api-dummy.herokuapp.com/rest/session/1/step");
+  httpPost("POST","https://cors-anywhere.herokuapp.com/https://bubble-machine-api-dummy.herokuapp.com/rest/session/1/step");
   location.reload();
 }
 
 document.querySelector("#nextStep").addEventListener('click', nextStep)
 
 document.querySelector("#resetSimulation").addEventListener('click', (e) => {
-  httpPost("PUT","https://bubble-machine-api-dummy.herokuapp.com/rest/session/1/reset");
+  httpPost("PUT","https://cors-anywhere.herokuapp.com/https://bubble-machine-api-dummy.herokuapp.com/rest/session/1/reset");
   location.reload();
 }, false);
 
@@ -40,14 +40,15 @@ NS = svg.getAttribute('xmlns');
 
 const httpGet =() => {
   const xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", "https://bubble-machine-api-dummy.herokuapp.com/rest/session/1", false ); // false for synchronous request
+  xmlHttp.open( "GET", "https://cors-anywhere.herokuapp.com/https://bubble-machine-api-dummy.herokuapp.com/rest/session/1", false ); // false for synchronous request
   xmlHttp.send( null );
   return xmlHttp.responseText;
 }
 
+// const session = parsed_data;
+
 const session = JSON.parse(httpGet());
 
-// console.log(session);
 
 
 const reversNumber = (number) => {

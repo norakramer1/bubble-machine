@@ -1,6 +1,13 @@
 import express from 'express'
 const app = express();
 
+
+import fetch from 'node-fetch';
+
+const response = await fetch('https://bubble-machine-api-dummy.herokuapp.com/rest/session/1');
+const data = await response.json();
+
+
 const port = 4100;
 import 'dotenv/config'
 
@@ -11,7 +18,10 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('home')
+  console.log(data);
+  res.render('home.ejs', { 'data' : data });
+    // res.render('home')
+    // res.json(data); 
   })
 
 app.listen(port, () => {
