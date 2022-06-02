@@ -1,4 +1,8 @@
+import { getAllSessions } from "./getAllSessions.js"
 
-export const renderLogin = (req, res) => {
-    res.render('home')
+export const renderLogin = async (req, res) => {
+    const sessions = await getAllSessions()
+    res.render('home', {
+      sessions
+    })
   }

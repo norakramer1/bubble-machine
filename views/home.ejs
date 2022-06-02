@@ -4,81 +4,90 @@
   <h1>Bubble Machine</h1>
   <nav>
     <ul>
-
-    </ul>
-  </nav>
-  <section>
-    <ul>
+      <% sessions.forEach(function(session){ %>
       <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Parameter 1</h3>
-        <p>data over parameter 1</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 2</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 3</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 4</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 5</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 6</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 7</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 8</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 9</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 10</h3>
-          <p>data over parameter 2</p>
-        </li>
-  
-        <li>
-          <img src="img/arrow-down.png" alt="open button" />
-          <h3>parameter 11</h3>
-          <p>data over parameter 2</p>
-        </li>
-      </ul>
-      <img src="img/arrow-right.png" alt="open button" id="menuButton" />
+        <%= session.sessionId %>
+        <form action="/" method="POST">
+          <button name="value" value="<%= session.sessionId %>">X</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+    <form action="/" method="POST">
+      <button name="value" value="add">+</button>
+    </form>
+  </nav>
+</header>
+<section>
+  <ul>
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>Parameter 1</h3>
+      <p>data over parameter 1</p>
+    </li>
 
-  </header>
-    </section>
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 2</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 3</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 4</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 5</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 6</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 7</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 8</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 9</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 10</h3>
+      <p>data over parameter 2</p>
+    </li>
+
+    <li>
+      <img src="img/arrow-down.png" alt="open button" />
+      <h3>parameter 11</h3>
+      <p>data over parameter 2</p>
+    </li>
+  </ul>
+  <img src="img/arrow-right.png" alt="open button" id="menuButton" />
+</section>
 
 <figure id="graph"></figure>
 <div id="zoom">

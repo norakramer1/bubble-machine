@@ -1,14 +1,15 @@
 export const fetchDataFromAPI = async (method, url) => {
+  let response 
   if (method === 'PUT' || method === 'POST') {
-    fetch(url, {
+    response = await fetch(url, {
       method: `${method}`
     })
   } else {
-    const response = await fetch(url, {
+    response = await fetch(url, {
       method: `${method}`,
       mode: 'cors'
     })
-    const data = response.json()
-    return data
   }
+  const data = await response.json()
+  return await data
 }

@@ -10,7 +10,10 @@ import { router } from './src/routers/router.js';
 app
    .set('view engine', '.ejs')
    .set('views', './views')
+   
    .use(express.static('public'))
+   .use(express.json())
+   .use(express.urlencoded({ extended: true }))
    .use(router)
 
    .listen(port, () => {

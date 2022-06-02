@@ -36,8 +36,6 @@ header h1 {
 }
 
 header nav {
-  position: absolute;
-  left: -16em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -56,7 +54,8 @@ header nav:hover {
 
 header nav ul {
   width: 25vw;
-  display: grid;
+  display: flex;
+  list-style: none;
 }
 
 header nav ul li:not(:last-of-type) {
