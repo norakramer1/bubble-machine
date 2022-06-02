@@ -1,9 +1,11 @@
+import { nextStep } from "./modules/updateSession.js"
 
 
 
 const url = 'https://bubble-machine-api-dummy.herokuapp.com/rest/session/'
 const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('header nav')
+const nextBtn = document.querySelector('#nextStep')
 
 
 
@@ -26,7 +28,7 @@ menuButton.addEventListener('click', openMenu)
 
 // Buttons
 
-// nextBtn.addEventListener('click', nextStep)
+nextBtn.addEventListener('click', nextStep)
 // resetBtn.addEventListener('click', resetSession)
 // sessionBtn.addEventListener('click', makeSession)
 // autoBtn.addEventListener('click', autoPlay)
