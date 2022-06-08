@@ -3,16 +3,15 @@ const height = window.innerHeight
 const margin = { width: (0.1 * width), height: (0.1 * height) }
 const size = 10
 
-// Create the svg in the body
-const svg = d3.select('figure').append('svg')
-  .attr('width', width)
-  .attr('height', height)
-
 // Scale
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
 const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height])
 
 const updateGraph = async (data) => {
+  // Create the svg in the body
+  const svg = d3.select('figure').append('svg')
+    .attr('width', width)
+    .attr('height', height)
   // console.log(data)
   const nodes = data.nodes
   const links = data.links
@@ -47,17 +46,28 @@ const updateGraph = async (data) => {
     .attr('cy', (nodes) => yScale(nodes.y))
     .attr('r', (nodes) => {
       if (nodes.label === 'person') {
-        return '15px'
+        return 30
       } else {
-        return '5px'
+        return 10
       }
     })
     .attr('class', (nodes) => nodes.label)
 
-  // path
-  //   .transition()
-  //   .attr('fill', 'none')
-  //   .attr('class', (links) => links.label )
+  const link = svg.append('g')
+    .attr('stroke', '#fff')
+    .attr('stroke-opacity', 0.6)
+    .selectAll('line')
+    .data(links)
+    .join('line')
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y)
+
+// path
+//     .transition()
+//     .attr('fill', 'none')
+//     .attr('class', (links) => links.label )
 }
 
 export default updateGraph
