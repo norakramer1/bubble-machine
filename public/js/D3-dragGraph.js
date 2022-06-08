@@ -9,6 +9,13 @@ const svg = d3.select('figure').append('svg')
 const createDragGraph = async (data) => {
   const links = data.links
   const nodes = data.nodes
+  console.log(links)
+
+  const items = nodes.filter(item => item.label === 'item')
+  const persons = nodes.filter(person => person.label === 'person')
+  console.log(items)
+  const test = links.filter(link => link.source === 0 && link.label === 'friend')
+  // console.log(test)
 
   const div = d3.select('body').append('div')
     .attr('class', 'tooltip')
@@ -31,21 +38,22 @@ const createDragGraph = async (data) => {
         enter = enter
           .append('line')
           .attr('stroke', (nodes) => {
-            if (nodes.label === 'friend') {
-              return '#2780e7'
+            if (nodes.label === 'itemlink') {
+              return '#ab46a48c'
+            } else if (nodes.label === 'infolink') {
+              return '#2780e78c'
             } else {
-              return '#aa46a3'
+              return '#ff33381f'
             }
           })
         return enter
       },
 
       update => update,
-      exit => exit.attr('stroke', '#999')
+      exit => exit.remove()
     )
 
   link
-    // .attr('stroke', '#999')
     .attr('stroke-opacity', 0.6)
     .attr('stroke-width', 1)
     .attr('class', (nodes) => nodes.label)
@@ -70,14 +78,14 @@ const createDragGraph = async (data) => {
         return enter
       },
       update => update,
-      exit => exit.append('circle')
+      exit => exit.remove()
     )
 
   circle
-    .attr('stroke', '#fff')
-    .attr('stroke-width', 1.5)
     .attr('class', (nodes) => nodes.label)
     .attr('fill', '#2781e7b2')
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 0.5)
 
     .on('mouseover', function (event, d, i) {
       d3.select(this).transition()
@@ -127,7 +135,7 @@ const createDragGraph = async (data) => {
 
 const drag = (simulation) => {
   function dragstarted (event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart()
+    if (!event.active) simulation.alphaTarget(0.05).restart()
     d.fx = d.x
     d.fy = d.y
   }
@@ -137,16 +145,16 @@ const drag = (simulation) => {
     d.fy = event.y
   }
 
-  // function dragended (event, d) {
-  //   if (!event.active) simulation.alphaTarget(0)
-  //   d.fx = null
-  //   d.fy = null
-  // }
+  function dragended (event, d) {
+    if (!event.active) simulation.alphaTarget(0)
+    d.fx = null
+    d.fy = null
+  }
 
   return d3.drag()
     .on('start', dragstarted)
     .on('drag', dragged)
-    // .on('end', dragended)
+    .on('end', dragended)
 }
 
 export default createDragGraph

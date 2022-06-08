@@ -1,7 +1,9 @@
+// import createDragGraph from './D3-dragGraph.js'
 import createDragGraph from './D3-dragGraph.js'
-import updateGraph from './D3-graph.js'
-import createHeatMap from './D3-heat.js'
+import createGraph from './D3-gooGraph.js'
+
 // import updateGraph from './D3-graph.js'
+
 import { fetchDataFromAPI } from './modules/apiData.js'
 import { createSession } from './modules/createSession.js'
 import { resetSession } from './modules/resetSession.js'
@@ -41,6 +43,8 @@ menuButton.addEventListener('click', openMenu)
 // Initial display of graph
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
 createDragGraph(await data)
+// createGraph(await data)
+// updateGraph(await data)
 
 nextBtn.addEventListener('click', nextStep)
 resetBtn.addEventListener('click', resetSession)

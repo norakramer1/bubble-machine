@@ -184,15 +184,15 @@ svg {
 }
 
 .person {
-  fill: #2781e7b2;
+  fill: #ff3336a8;
 }
 
 .person:hover {
-  fill: #2780e7;
+  fill: #ab46a4ad;
 }
 
 .item {
-  fill: #aa46a3cb;
+  fill: #2780e7;
   box-shadow: 0px 2px 4px 0px rgba(170, 70, 164, 1);
 }
 
