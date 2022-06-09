@@ -184,11 +184,11 @@ svg {
 }
 
 .person {
-  fill: #ff3336a8;
+  fill: #c9c9c9a8;
 }
 
 .person:hover {
-  fill: #ab46a4ad;
+  fill: #ff3338ad;
 }
 
 .item {

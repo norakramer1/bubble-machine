@@ -1,14 +1,10 @@
-// import createDragGraph from './D3-dragGraph.js'
-import createDragGraph from './D3-dragGraph.js'
-import createGraph from './D3-gooGraph.js'
 
-// import updateGraph from './D3-graph.js'
+import createGraph from './D3-gooGraph.js'
 
 import { fetchDataFromAPI } from './modules/apiData.js'
 import { createSession } from './modules/createSession.js'
 import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
-// console.log(document.querySelector('header'))
 
 const sessionID = 3
 const menuButton = document.getElementById('menuButton')
@@ -20,9 +16,6 @@ const accordionButton =  document.querySelectorAll('section ul li img')
 const resetBtn = document.querySelector('#resetSimulation')
 const nextBtn = document.querySelector('#nextStep')
 const sessionBtn = document.querySelector('#makeSession')
-// const autoBtn = document.querySelector('#autoPlay')
-
-
 
   parameterButtons.forEach(accordion => {
     accordion.addEventListener('click', () => 
@@ -32,7 +25,6 @@ const sessionBtn = document.querySelector('#makeSession')
 
 const openMenu = () => {
     menu.classList.toggle('open')
-    //arrowImg.src = "img/arrowleft.png"
 
 }
 
@@ -42,9 +34,7 @@ menuButton.addEventListener('click', openMenu)
 
 // Initial display of graph
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
-createDragGraph(await data)
-// createGraph(await data)
-// updateGraph(await data)
+createGraph(await data)
 
 nextBtn.addEventListener('click', nextStep)
 resetBtn.addEventListener('click', resetSession)
@@ -62,7 +52,25 @@ document.querySelector("#zoomIn").addEventListener('click', (e) => {
   }, false);
 
 
-  // localstorage y1 en x1 ophalen van de client
-  // label: "person"
-  // x: 0.797451970717726
-  // y: 0.6517441909029593
+  const exampleSocket = new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
+
+    exampleSocket.onopen = function (event) {
+      exampleSocket.send('{"id": 3}')
+    }
+  
+    const object = {
+      nodes: []
+    }
+
+  exampleSocket.onmessage = async function (event) {
+    const socketData = await JSON.parse(event.data)
+      // console.log(await socketData.id)
+      const updateId = await socketData.id
+      const test = await data.nodes.find(id => id.id === updateId)
+      // console.log(await test)
+      test.x = await socketData.x
+      test.y = await socketData.y
+
+    await createGraph(data)
+
+  }

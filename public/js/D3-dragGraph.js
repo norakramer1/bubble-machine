@@ -9,11 +9,11 @@ const svg = d3.select('figure').append('svg')
 const createDragGraph = async (data) => {
   const links = data.links
   const nodes = data.nodes
-  console.log(links)
+  // console.log(links)
 
   const items = nodes.filter(item => item.label === 'item')
   const persons = nodes.filter(person => person.label === 'person')
-  console.log(items)
+  // console.log(items)
   const test = links.filter(link => link.source === 0 && link.label === 'friend')
   // console.log(test)
 
