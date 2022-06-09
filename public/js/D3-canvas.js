@@ -17,7 +17,7 @@ const dataContainer = d3.select(detachedContainer)
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
 const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height])
 
-const update =  async (data) => {
+const updateGraph =  async (data) => {
   console.log(data)
   xScale.domain([d3.min(data.nodes, (d) => d.x), d3.max(data.nodes, (d) => d.x)])
   yScale.domain([d3.min(data.nodes, (d) => d.y), d3.max(data.nodes, (d) => d.y)])
@@ -33,9 +33,9 @@ const drawNode = async (d) => {
   const y = yScale(d.y)
   const color = (label) => {
     if (label === 'person'){
-      return '#348b90b0'
+      return '#2780e7'
     } else {
-      return '#dc143cbe'
+      return '#aa46a4'
     }
   }
   const r = (label) => {
@@ -62,4 +62,4 @@ const drawLink = (l) => {
 
 // const simulation = d3.forceSimulation().on('tick', update)
 
-export default update
+export default updateGraph

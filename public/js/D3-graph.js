@@ -17,7 +17,7 @@ const updateGraph = async (data) => {
   const nodes = data.nodes
   const links = data.links
 
-  // const linkGen = d3.linkRadial()
+  console.log(data)
 
   xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])

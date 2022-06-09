@@ -1,4 +1,5 @@
 import updateGraph from "../D3-graph.js"
+// import updateGraph from "../D3-canvas.js"
 import { fetchDataFromAPI } from "./apiData.js"
 
 

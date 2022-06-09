@@ -1,5 +1,6 @@
 
 import updateGraph from './D3-graph.js'
+// import updateGraph from './D3-canvas.js'
 import { fetchDataFromAPI } from './modules/apiData.js'
 import { createSession } from './modules/createSession.js'
 import { resetSession } from './modules/resetSession.js'
