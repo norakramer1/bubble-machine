@@ -5,9 +5,26 @@ const size = 10
 
 // Create the svg in the body
 const svg = d3.select('#graph').append('svg')
-.attr('width', width)
-.attr('height', height)
+  .attr('width', width)
+  .attr('height', height)
+  .append('g')
+  .style('filter', 'url(#gooey)') // Set the filter on the container
 
+const defs = svg.append('defs')
+const filter = defs.append('filter').attr('id', 'gooey')
+filter.append('feGaussianBlur')
+  .attr('in', 'SourceGraphic')
+  .attr('stdDeviation', '10')
+  .attr('result', 'blur')
+filter.append('feColorMatrix')
+  .attr('in', 'blur')
+  .attr('mode', 'matrix')
+  .attr('values', '1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7')
+  .attr('result', 'gooey')
+filter.append('feComposite')
+  .attr('in', 'SourceGraphic')
+  .attr('in2', 'gooey')
+  .attr('operator', 'atop')
 // Scale
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
 const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height])
