@@ -1,14 +1,15 @@
 import createDragGraph from './D3-dragGraph.js'
-import updateGraph from './D3-graph.js'
-import createHeatMap from './D3-heat.js'
+
 // import updateGraph from './D3-graph.js'
 import { fetchDataFromAPI } from './modules/apiData.js'
 import { createSession } from './modules/createSession.js'
 import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
+import { autoPlay } from './modules/playSession.js'
 // console.log(document.querySelector('header'))
 
 const sessionID = 3
+
 const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('section')
 const parameterButtons = document.querySelectorAll('section ul li')
@@ -17,8 +18,8 @@ const accordionButton =  document.querySelectorAll('section ul li img')
 
 const resetBtn = document.querySelector('#resetSimulation')
 const nextBtn = document.querySelector('#nextStep')
-const sessionBtn = document.querySelector('#makeSession')
-// const autoBtn = document.querySelector('#autoPlay')
+// const sessionBtn = document.querySelector('#makeSession')
+const autoBtn = document.querySelector('#autoPlay')
 
 
 
@@ -42,8 +43,14 @@ menuButton.addEventListener('click', openMenu)
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
 createDragGraph(await data)
 
-nextBtn.addEventListener('click', nextStep)
-resetBtn.addEventListener('click', resetSession)
+nextBtn.addEventListener('click', () => nextStep(sessionID))
+resetBtn.addEventListener('click', () => resetSession(sessionID))
+// sessionBtn.addEventListener('click', createSession)
+autoBtn.addEventListener('click', () => autoPlay(sessionID))
+
+
+  // https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
+
 
 
 // When clicking on zoomIn button change viewBox to zoom

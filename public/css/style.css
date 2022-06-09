@@ -183,6 +183,10 @@ svg {
   background-color: #0f0c15;
 }
 
+canvas {
+  background: #333
+}
+
 .person {
   fill: #2781e7b2;
 }
@@ -192,7 +196,7 @@ svg {
 }
 
 .item {
-  fill: #aa46a3cb;
+  fill: #aa46a373;
   box-shadow: 0px 2px 4px 0px rgba(170, 70, 164, 1);
 }
 
