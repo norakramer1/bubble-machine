@@ -23,12 +23,16 @@ const sessionBtn = document.querySelector('#makeSession')
   parameterButtons.forEach(accordion => {
     accordion.addEventListener('click', () => 
      accordion.classList.toggle('open-menu'));
-     accordionButton.currentSrc = 'img/arrow-up.png';
   });
 
 const openMenu = () => {
-    menu.classList.toggle('open')
-    //arrowImg.src = "img/arrowleft.png"
+  menu.classList.toggle('open')
+  if (menu.matches('.open')) {
+    menuButton.src = "img/arrow-left.png";
+  } else {
+    menuButton.src = "img/arrow-right.png";
+  }
+    
 
 }
 
