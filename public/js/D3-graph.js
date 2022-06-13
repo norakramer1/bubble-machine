@@ -30,6 +30,10 @@ const updateGraph = async (data) => {
     (exit) => exit.remove()
   )
 
+    // Make a divrent between item en persons
+    // let itemNumber = -1;
+    // let personNumber = -1;
+
   circle
     .transition()
     .attr('cx', (nodes) => xScale(nodes.x))
@@ -40,8 +44,26 @@ const updateGraph = async (data) => {
       } else {
         return 10
       }
+      
     })
     .attr('class', (nodes) => nodes.label)
+    .attr('id', (nodes) => { 
+
+      // if item has label person give id person and persons number
+      // if(nodes.label === "person"){
+      //   personNumber++;
+      //   return nodes.label+personNumber
+      // }
+      // / if item has label item give id item and item number
+      // if(nodes.label === "item"){
+      //   itemNumber++;
+      //   return nodes.label+itemNumber
+      // }
+      // return id from item to use in highlight code
+      return "node"+nodes.id
+    })
+
+
 
   // const link = svg.append('g')
   //   .attr('stroke', '#fff')
@@ -54,5 +76,6 @@ const updateGraph = async (data) => {
   //   .attr('x2', d => d.target.x)
   //   .attr('y2', d => d.target.y)
 }
+
 
 export default updateGraph

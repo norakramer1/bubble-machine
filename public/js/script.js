@@ -5,9 +5,11 @@ import { fetchDataFromAPI } from './modules/apiData.js'
 import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
 import { autoPlay } from './modules/playSession.js'
-import { getAllActiveSessions } from './modules/getAllSessions.js'
+import { highlight } from './modules/highlight.js'
+// import { getAllActiveSessions } from './modules/getAllSessions.js'
 
-const sessionID = 3
+
+const sessionID = 4
 const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('section')
 const parameterButtons = document.querySelectorAll('section ul li')
@@ -43,7 +45,6 @@ menuButton.addEventListener('click', openMenu)
 // Initial display of graph
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
 updateGraph(await data)
-
 
 // const activeSessions = getAllActiveSessions()
 // console.log(activeSessions)
@@ -90,6 +91,9 @@ const downloadSVG = () => {
   document.querySelector("#downloadSVG").addEventListener('click', (e) => {
     downloadSVG()
   }, false);
+
+  highlight();
+
   
   // bron https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
   
