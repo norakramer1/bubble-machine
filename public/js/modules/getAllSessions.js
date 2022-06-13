@@ -11,8 +11,11 @@ export const getAllActiveSessions = async () => {
   const allSessions = await fetchDataFromAPI('GET', url)
   allSessions.forEach(session => {
     const sessionLi = document.createElement('li')
+    const sessionLink = document.createElement('a')
+    sessionLink.href = `#${session.sessionId}`
     const sessionName = document.createTextNode(`Session: ${session.sessionId}`)
-    sessionLi.appendChild(sessionName)
+    sessionLink.appendChild(sessionName)
+    sessionLi.appendChild(sessionLink)
     sessionLi.setAttribute('class', session.sessionId)
 
     const deleteBtn = document.createElement('button')

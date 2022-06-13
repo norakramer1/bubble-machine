@@ -6,7 +6,10 @@ export const createSession = async () => {
   const sessionId = await fetchDataFromAPI('POST', 'https://bubble-machine-api-dummy.herokuapp.com/rest/session')
   const newSession = document.createElement('li')
   const sessionNumber = document.createTextNode(`Session: ${await sessionId.sessionId}`)
-  newSession.appendChild(sessionNumber)
+  const sessionLink = document.createElement('a')
+  sessionLink.href = `#${await sessionId.sessionId}`
+  sessionLink.appendChild(sessionNumber)
+  newSession.appendChild(sessionLink)
   newSession.setAttribute('class', sessionId.sessionId)
 
   const newButton = document.createElement('button')

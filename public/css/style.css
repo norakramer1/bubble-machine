@@ -64,9 +64,9 @@ header img {
 header > ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   list-style: none;
-  margin-top: 1em;
+  margin: 0.5em 5% 0 5%;
 }
 
 header > ul li {
@@ -79,6 +79,11 @@ header > ul li {
   min-width: 8em;
   min-height: 2.5em;
   background-color: var(--highlight-color);
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 header > ul li button {
