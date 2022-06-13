@@ -1,5 +1,4 @@
 
-import createDragGraph from '../D3-dragGraph.js'
 import updateGraph from '../D3-graph.js'
 import { fetchDataFromAPI } from './apiData.js'
 
@@ -7,5 +6,5 @@ const sessionID = 3
 export const nextStep = async () => {
   fetchDataFromAPI('POST', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/step`)
   const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`)
-  createDragGraph(await data)
+  updateGraph(await data)
 }
