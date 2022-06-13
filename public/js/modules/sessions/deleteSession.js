@@ -1,5 +1,5 @@
 
-import { fetchDataFromAPI } from './apiData.js'
+import { fetchDataFromAPI } from '../apiData.js'
 
 export const deleteSession = async (sessionID) => {
   await fetchDataFromAPI('DELETE', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`)

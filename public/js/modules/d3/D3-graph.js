@@ -1,7 +1,7 @@
+/* eslint-disable no-undef */
 const width = window.innerWidth
 const height = window.innerHeight
 const margin = { width: (0.1 * width), height: (0.1 * height) }
-const size = 10
 
 const svg = d3.select('#graph').append('svg')
   .attr('width', width - 0)
@@ -34,9 +34,9 @@ const updateGraph = async (data) => {
     (exit) => exit.remove()
   )
 
-    // Make a divrent between item en persons
-    // let itemNumber = -1;
-    // let personNumber = -1;
+  // Make a divrent between item en persons
+  // let itemNumber = -1;
+  // let personNumber = -1;
 
   circle
     .transition()
@@ -48,11 +48,9 @@ const updateGraph = async (data) => {
       } else {
         return 10
       }
-      
     })
     .attr('class', (nodes) => nodes.label)
-    .attr('id', (nodes) => { 
-
+    .attr('id', (nodes) => {
       // if item has label person give id person and persons number
       // if(nodes.label === "person"){
       //   personNumber++;
@@ -64,10 +62,8 @@ const updateGraph = async (data) => {
       //   return nodes.label+itemNumber
       // }
       // return id from item to use in highlight code
-      return "node"+nodes.id
+      return 'node' + nodes.id
     })
-
-
 
   // const link = svg.append('g')
   //   .attr('stroke', '#fff')
@@ -80,6 +76,5 @@ const updateGraph = async (data) => {
   //   .attr('x2', d => d.target.x)
   //   .attr('y2', d => d.target.y)
 }
-
 
 export default updateGraph

@@ -1,6 +1,6 @@
 
-import updateGraph from '../D3-graph.js'
-import { fetchDataFromAPI } from './apiData.js'
+import updateGraph from '../d3/D3-graph.js'
+import { fetchDataFromAPI } from '../apiData.js'
 
 export const resetSession = async (sessionID) => {
   await fetchDataFromAPI('PUT', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/reset`)

@@ -1,4 +1,4 @@
-import { fetchDataFromAPI } from './apiData.js'
+import { fetchDataFromAPI } from '../apiData.js'
 
 const url = 'https://bubble-machine-api-dummy.herokuapp.com/rest/session/'
 const sessionsUl = document.querySelector('header > ul')

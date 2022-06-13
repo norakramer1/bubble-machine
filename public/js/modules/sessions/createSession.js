@@ -1,6 +1,6 @@
 
-import updateGraph from '../D3-graph.js'
-import { fetchDataFromAPI } from './apiData.js'
+import updateGraph from '../d3/D3-graph.js'
+import { fetchDataFromAPI } from '../apiData.js'
 import { getOpenedSessionData } from './currentSessionData.js'
 
 export const createSession = async () => {

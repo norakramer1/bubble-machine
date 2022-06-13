@@ -1,6 +1,7 @@
+/* eslint-disable no-unmodified-loop-condition */
 
-import updateGraph from '../D3-graph.js'
-import { fetchDataFromAPI } from './apiData.js'
+import updateGraph from '../d3/D3-graph.js'
+import { fetchDataFromAPI } from '../apiData.js'
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
