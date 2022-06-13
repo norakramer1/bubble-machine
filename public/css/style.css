@@ -73,7 +73,7 @@ header > ul li {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 0 0.1em 0.04em 0.1em;
+  margin: 0 0.1em 0 0.1em;
   padding: 0.2em 0.6em 0.2em 0.2em;
   border-radius: 0.1em 10px 0.1em 0.1em;
   min-width: 8em;
@@ -84,6 +84,10 @@ header > ul li {
 header ul li a {
   text-decoration: none;
   color: #fff;
+}
+
+.opened {
+  background-color: #4daab2;
 }
 
 header > ul li button {

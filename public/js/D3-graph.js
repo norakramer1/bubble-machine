@@ -3,7 +3,6 @@ const height = window.innerHeight
 const margin = { width: (0.1 * width), height: (0.1 * height) }
 const size = 10
 
-// Create the svg in the body
 const svg = d3.select('#graph').append('svg')
   .attr('width', width - 0)
   .attr('height', height - 200)
@@ -13,6 +12,11 @@ const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width - 
 const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height - 200])
 
 const updateGraph = async (data) => {
+  // Create the svg in the body
+
+  // const removeSvg = document.querySelector('svg')
+  // if (removeSvg) { removeSvg.remove() }
+
   const nodes = data.nodes
   const links = data.links
 

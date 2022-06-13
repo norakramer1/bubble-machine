@@ -50,16 +50,27 @@ const sessionTabCloseBtns = document.querySelectorAll('header > ul li button')
 
 sessionTabs.forEach(session => {
   const openSession = async () => {
-    window.location.hash = session.className
-    const data = await getOpenedSessionData(session.className)
-    updateGraph(await data)
+    if(session.className === 'addBtn') {
+      return
+    } else {
+      window.location.hash = session.className
+      sessionTabs.forEach(session => session.classList.remove('opened'))
+      const data = await getOpenedSessionData(session.className)
+      updateGraph(await data)
+      session.classList.toggle('opened')
+    }
+
+    
   }
   session.addEventListener('click', () => openSession())
 })
 
 sessionTabCloseBtns.forEach(session => {
   const clicked = () => {
-    if (session.className) { deleteSession(session.className) }
+    if (session.className) { 
+      deleteSession(session.className) 
+
+    }
   }
   session.addEventListener('click', clicked)
 })

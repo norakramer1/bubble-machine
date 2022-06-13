@@ -1,5 +1,7 @@
 
+import updateGraph from '../D3-graph.js'
 import { fetchDataFromAPI } from './apiData.js'
+import { getOpenedSessionData } from './currentSessionData.js'
 
 export const createSession = async () => {
   const sessionUl = document.querySelector('header > ul')
@@ -18,4 +20,7 @@ export const createSession = async () => {
   newButton.setAttribute('class', sessionId.sessionId)
   newSession.appendChild(newButton)
   sessionUl.insertAdjacentElement('beforeend', newSession)
+  window.location.hash = sessionId.sessionId
+  const data = await getOpenedSessionData(window.location.hash.slice(1))
+  updateGraph(await data)
 }
