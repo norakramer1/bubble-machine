@@ -9,6 +9,9 @@ import { deleteSession } from './modules/deleteSession.js'
 import { createSession } from './modules/createSession.js'
 import { getOpenedSessionData } from './modules/currentSessionData.js'
 
+import { highlight } from './modules/highlight.js'
+// import { getAllActiveSessions } from './modules/getAllSessions.js'
+
 const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('section')
 const parameterButtons = document.querySelectorAll('section ul li')
@@ -107,13 +110,21 @@ const downloadSVG = () => {
   const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(source)
 
   // make from button a download svg button
-  document.getElementById('downloadSVG').setAttribute('href', url)
-  document.getElementById('downloadSVG').setAttribute('download', 'test.svg')
-}
+  document.getElementById("downloadSVG").setAttribute("href", url);
+  document.getElementById("downloadSVG").setAttribute("download", "test.svg");
+  
+  }
+  
+  // When clicking on downloadSVG button download svg
+  document.querySelector("#downloadSVG").addEventListener('click', (e) => {
+    downloadSVG()
+  }, false);
 
-// When clicking on downloadSVG button download svg
-document.querySelector('#downloadSVG').addEventListener('click', (e) => {
-  downloadSVG()
-}, false)
+  highlight();
 
-// bron https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
+  
+  // bron https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
+  
+  
+    
+  
