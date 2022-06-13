@@ -1,22 +1,24 @@
 
 import updateGraph from './D3-graph.js'
-// import updateGraph from './D3-graph.js'
 import { fetchDataFromAPI } from './modules/apiData.js'
 import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
 import { autoPlay } from './modules/playSession.js'
 import { getAllActiveSessions } from './modules/getAllSessions.js'
+import { deleteSession } from './modules/deleteSession.js'
+import { createSession } from './modules/createSession.js'
 
-const sessionID = 3
+const sessionID = 4
 const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('section')
 const parameterButtons = document.querySelectorAll('section ul li')
-const accordionButton =  document.querySelectorAll('section ul li img')
-
 
 const resetBtn = document.querySelector('#resetSimulation')
 const nextBtn = document.querySelector('#nextStep')
 const autoBtn = document.querySelector('#autoPlay')
+const addBtn = document.querySelector('.addBtn')
+
+getAllActiveSessions()
 
 
 
@@ -45,13 +47,24 @@ const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.her
 updateGraph(await data)
 
 
-// const activeSessions = getAllActiveSessions()
-// console.log(activeSessions)
+
+const sessionTabs = document.querySelectorAll('header > ul li button')
+
+sessionTabs.forEach(session => {
+  const clicked = () => {
+  if(session.className)
+  deleteSession(session.className)
+  }
+  session.addEventListener('click', clicked)
+})
+
+
 
 // Buttons
 nextBtn.addEventListener('click', () => nextStep(sessionID))
 resetBtn.addEventListener('click', () => resetSession(sessionID))
 autoBtn.addEventListener('click', () => autoPlay(sessionID))
+addBtn.addEventListener('click', () => createSession() )
 
 // https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
 
@@ -94,5 +107,6 @@ const downloadSVG = () => {
   // bron https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
   
   
-    
+
+  
   

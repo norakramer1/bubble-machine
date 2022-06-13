@@ -10,9 +10,9 @@
   --main-bg-color: #222730;
   --highlight-color: #235a5f;
   --shadow-color: #11454a;
-  --person-color: #eb6072;
+  --person-color: #eb6073e3;
   --person-shadow-color: rgb(178, 51, 68);
-  --item-color: #f8e368;
+  --item-color: #f8e268d3;
 }
 
 html {
@@ -59,6 +59,51 @@ header h1 {
 header img {
   height: 3vw;
   margin: 2% 0 0 2%;
+}
+
+header > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin-top: 1em;
+}
+
+header > ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 0.1em 0.04em 0.1em;
+  padding: 0.2em 0.6em 0.2em 0.2em;
+  border-radius: 0.1em 10px 0.1em 0.1em;
+  min-width: 8em;
+  min-height: 2.5em;
+  background-color: var(--highlight-color);
+}
+
+header > ul li button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.addBtn {
+  background-color: var(--main-bg-color);
+  box-shadow: 0px 0px 3px var(--shadow-color);
+  min-width: 0;
+  width: 2.5em;
+  justify-content: center;
+  padding: 0;
+  order: 1;
+}
+
+.addBtn button {
+  font-size: 1.2em;
+  align-self: center;
 }
 
 nav {
