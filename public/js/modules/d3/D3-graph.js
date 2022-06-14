@@ -14,16 +14,16 @@ const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height
 const updateGraph = async (data) => {
   // Create the svg in the body
 
-  // const removeSvg = document.querySelector('svg')
-  // if (removeSvg) { removeSvg.remove() }
-
   const nodes = data.nodes
   const links = data.links
 
-  // const linkGen = d3.linkRadial()
-
   xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
+
+  const simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id))
+    .force('charge', d3.forceManyBody())
+    .force('center', d3.forceCenter(xScale(width), yScale(height)))
 
   const circle = svg.selectAll('circle').data(nodes).join(
     (enter) => {
@@ -34,47 +34,56 @@ const updateGraph = async (data) => {
     (exit) => exit.remove()
   )
 
-  // Make a divrent between item en persons
-  // let itemNumber = -1;
-  // let personNumber = -1;
-
   circle
     .transition()
     .attr('cx', (nodes) => xScale(nodes.x))
     .attr('cy', (nodes) => yScale(nodes.y))
     .attr('r', (nodes) => {
       if (nodes.label === 'person') {
-        return 30
+        return 15
       } else {
-        return 10
+        return 5
       }
     })
     .attr('class', (nodes) => nodes.label)
     .attr('id', (nodes) => {
-      // if item has label person give id person and persons number
-      // if(nodes.label === "person"){
-      //   personNumber++;
-      //   return nodes.label+personNumber
-      // }
-      // / if item has label item give id item and item number
-      // if(nodes.label === "item"){
-      //   itemNumber++;
-      //   return nodes.label+itemNumber
-      // }
-      // return id from item to use in highlight code
       return 'node' + nodes.id
     })
 
-  // const link = svg.append('g')
-  //   .attr('stroke', '#fff')
-  //   .attr('stroke-opacity', 0.6)
-  //   .selectAll('line')
-  //   .data(links)
-  //   .join('line')
-  //   .attr('x1', d => d.source.x)
-  //   .attr('y1', d => d.source.y)
-  //   .attr('x2', d => d.target.x)
-  //   .attr('y2', d => d.target.y)
+  const link = svg
+    .selectAll('line')
+    .data(links)
+    .join(
+      enter => {
+        enter = enter
+          .append('line')
+          .attr('stroke', (nodes) => {
+            if (nodes.label === 'friend') {
+              return '#2780e7'
+            } else {
+              return '#aa46a3'
+            }
+          })
+        return enter
+      },
+
+      update => update,
+      exit => exit.attr('stroke', '#999')
+    )
+
+  link
+    // .attr('stroke', '#999')
+    .attr('stroke-opacity', 0.6)
+    .attr('stroke-width', 1)
+    .attr('class', (nodes) => nodes.label)
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y)
+  })
 }
 
 export default updateGraph

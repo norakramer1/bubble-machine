@@ -9,6 +9,7 @@ import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/highlight.js'
 import { openMenu } from './modules/toggleMenu.js'
+import { downloadSVG } from './modules/downloadGraph.js'
 
 await getAllActiveSessions()
 

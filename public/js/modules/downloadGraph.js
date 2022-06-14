@@ -1,8 +1,5 @@
 /* eslint-disable no-useless-escape */
 
-// https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
-
-// Function to download svg image
 export const downloadSVG = () => {
   // //get svg element.
   const svg2 = document.querySelector('svg')

@@ -11,7 +11,7 @@
   --highlight-color: #235a5f;
   --shadow-color: #11454a;
   --person-color: #eb6073e3;
-  --person-shadow-color: rgb(178, 51, 68);
+  --person-shadow-color: #b23344;
   --item-color: #f8e268d3;
 }
 
@@ -286,6 +286,8 @@ canvas {
 
 .person {
   fill: var(--person-color);
+  stroke: #af9898af;
+  stroke-width: 0.5;
 }
 
 .person:hover {
