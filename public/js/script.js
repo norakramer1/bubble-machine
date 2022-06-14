@@ -75,7 +75,7 @@ addButton.addEventListener('click', () => createSession())
 downloadButton.addEventListener('click', () => downloadSVG())
 dropdownBtn.addEventListener('click', dropdown)
 
-highlight();
+highlight()
 
 
   
