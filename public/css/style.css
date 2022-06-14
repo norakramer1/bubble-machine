@@ -9,24 +9,19 @@
 :root {
   --main-bg-color: hsl(228,29%,19%);
   --primary-color: hsl(228,46%,35%);
-  --secondary-color: hsl(228,63%,18%);
+  --primary-color-dark: hsl(228,63%,18%);
+  --primary-color-light: hsl(228,63%,58%);
   --person-color: #EB6072;
   --person-shadow-color: rgb(178, 51, 68);
   --item-color: #F8E368;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  min-height: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: 100%;
   padding: 0;
+  margin: 0;
   color: #fff;
   background-color: var(--main-bg-color);
-  /* overflow: hidden; */
 }
 
 main h2 {
@@ -47,28 +42,45 @@ p {
 }
 
 header {
+  width: 90vw;
   position: relative;
+  margin: auto;
 }
 
-header h1 {
+label {
+  font-size: .8rem;
+}
+
+#logo {
+  display: flex;
+  justify-content: end;
+  width: 15%;
+  margin-top: 2em;
+  margin-bottom: .5em;
+}
+
+#logo > svg {
+  height: 3rem;
+  width: auto;
+}
+
+#logo > h1 {
+  font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
-  color: #fff;
-  text-shadow: 1px 2px 4px #348c90bd;
-}
-
-header img {
-  height: 3vw;
-  margin: 2% 0 0 2%;
+  color: var(--primary-color-light);
+  margin-right: .5em;
+  text-align: end;
 }
 
 nav {
   display: flex;
   justify-content: center;
   background-color: var(--primary-color);
-  width: 90vw;
+  width: 100%;
   height: 5rem;
   margin: auto;
   border-radius: 10px;
+  position: relative;
 }
 
 nav > ul:first-of-type {
@@ -105,6 +117,22 @@ nav ul li {
   display: none;
 }
 
+#parameters{
+  width: 20%;
+  height: auto;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 4.6rem;
+  border-radius: 0 0 10px 10px;
+}
+
+#parameters li {
+  display: block;
+  padding-bottom: .5rem;
+  padding-left: 5%;
+}
+
 .parameter_button {
   display: flex;
   justify-content: left;
@@ -112,6 +140,7 @@ nav ul li {
   background: none;
   border-style: none;
   color: #fff;
+  width: 100%;
 }
 
 .parameter_button svg{
@@ -121,6 +150,11 @@ nav ul li {
   padding: .3em;
 }
 
+.parameter {
+  width: 100%;
+  position: relative;
+  background-color: var(--primary-color-dark);
+}
 nav ul:first-child li:first-child {
   align-items: baseline;
 }

@@ -6,8 +6,9 @@ import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
 import { autoPlay } from './modules/playSession.js'
 import { dropdown } from './modules/dropdown.js'
+import { accordion } from './modules/accordion.js'
 
-const sessionID = 4
+const sessionID = 1
 
 const menu = document.querySelector('section')
 const dropdownBtn = document.querySelector("#parameterBtn")
@@ -17,7 +18,7 @@ const nextBtn = document.querySelector('#nextStep')
 // const sessionBtn = document.querySelector('#makeSession')
 const autoBtn = document.querySelector('#autoPlay')
 
-
+accordion()
 
 // Initial display of graph
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);

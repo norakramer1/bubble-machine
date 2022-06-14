@@ -1,5 +1,5 @@
 import { fetchDataFromAPI } from './modules/apiData.js'
-const sessionID = 4
+const sessionID = 1
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
 
 
