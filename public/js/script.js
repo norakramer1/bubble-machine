@@ -23,7 +23,7 @@ const nextButton = document.querySelector('#nextStep')
 const autoButton = document.querySelector('#autoPlay')
 const addButton = document.querySelector('.addButton')
 const downloadButton = document.querySelector("#downloadSVG")
-const dropdownBtn = document.querySelector()
+const dropdownBtn = document.querySelector('#parameterBtn')
 export const sessionTabs = document.querySelectorAll('header > ul li')
 export const tabCloseButtons = document.querySelectorAll('header > ul li button')
 
