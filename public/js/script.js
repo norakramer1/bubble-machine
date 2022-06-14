@@ -10,6 +10,8 @@ import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/highlight.js'
 import { openMenu } from './modules/toggleMenu.js'
 import { downloadSVG } from './modules/downloadGraph.js'
+import { dropdown } from './modules/dropdown.js'
+import { accordion } from './modules/accordion.js'
 
 await getAllActiveSessions()
 
@@ -21,8 +23,10 @@ const nextButton = document.querySelector('#nextStep')
 const autoButton = document.querySelector('#autoPlay')
 const addButton = document.querySelector('.addButton')
 const downloadButton = document.querySelector("#downloadSVG")
+const dropdownBtn = document.querySelector()
 export const sessionTabs = document.querySelectorAll('header > ul li')
 export const tabCloseButtons = document.querySelectorAll('header > ul li button')
+
 
 const hash = window.location.hash.slice(1)
 
@@ -35,6 +39,9 @@ parameterButtons.forEach(accordion => {
   accordion.addEventListener('click', () =>
     accordion.classList.toggle('open-menu'))
 })
+
+accordion()
+
 
 sessionTabs.forEach(session => {
   const openSession = async () => {
@@ -68,6 +75,7 @@ resetButton.addEventListener('click', () => resetSession(window.location.hash.sl
 autoButton.addEventListener('click', () => autoPlay(window.location.hash.slice(1)))
 addButton.addEventListener('click', () => createSession())
 downloadButton.addEventListener('click', () => downloadSVG())
+dropdownBtn.addEventListener('click', dropdown)
 
 highlight();
 
