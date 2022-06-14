@@ -5,16 +5,13 @@ import { createSession } from './modules/createSession.js'
 import { resetSession } from './modules/resetSession.js'
 import { nextStep } from './modules/updateSession.js'
 import { autoPlay } from './modules/playSession.js'
-// console.log(document.querySelector('header'))
+import { dropdown } from './modules/dropdown.js'
 
-const sessionID = 1
+const sessionID = 4
 
-const menuButton = document.getElementById('menuButton')
 const menu = document.querySelector('section')
-const parameterButtons = document.querySelectorAll('section ul li')
-const accordionButton =  document.querySelectorAll('section ul li img')
-
-
+const dropdownBtn = document.querySelector("#parameterBtn")
+const accordionButton =  document.querySelector('section ul li img')
 const resetBtn = document.querySelector('#resetSimulation')
 const nextBtn = document.querySelector('#nextStep')
 // const sessionBtn = document.querySelector('#makeSession')
@@ -22,43 +19,18 @@ const autoBtn = document.querySelector('#autoPlay')
 
 
 
-  parameterButtons.forEach(accordion => {
-    accordion.addEventListener('click', () => 
-     accordion.classList.toggle('open-menu'));
-  });
-
-const openMenu = () => {
-  menu.classList.toggle('open')
-  if (menu.matches('.open')) {
-    menuButton.src = "img/arrow-left.png";
-  } else {
-    menuButton.src = "img/arrow-right.png";
-  }
-    
-
-}
-
-menuButton.addEventListener('click', openMenu)
-
-
-
-
 // Initial display of graph
 const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
-// console.log(await data)
 updateGraph(await data)
 
 
 // Buttons
 
-
 nextBtn.addEventListener('click', () => nextStep(sessionID))
 resetBtn.addEventListener('click', () => resetSession(sessionID))
 // sessionBtn.addEventListener('click', createSession)
 autoBtn.addEventListener('click', () => autoPlay(sessionID))
-
-// https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
-
+dropdownBtn.addEventListener('click', dropdown)
 
 // Function to download svg image
 function downloadSVG(){

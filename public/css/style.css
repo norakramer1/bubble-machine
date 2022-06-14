@@ -7,9 +7,9 @@
 }
 
 :root {
-  --main-bg-color: #222730;
-  --highlight-color: #235A5F;
-  --shadow-color: #11454A;
+  --main-bg-color: hsl(228,29%,19%);
+  --primary-color: hsl(228,46%,35%);
+  --secondary-color: hsl(228,63%,18%);
   --person-color: #EB6072;
   --person-shadow-color: rgb(178, 51, 68);
   --item-color: #F8E368;
@@ -64,20 +64,23 @@ header img {
 nav {
   display: flex;
   justify-content: center;
+  background-color: var(--primary-color);
+  width: 90vw;
+  height: 5rem;
+  margin: auto;
+  border-radius: 10px;
 }
 
-nav ul:first-of-type {
+nav > ul:first-of-type {
   width: 45vw;
-  background-color: var(--highlight-color);
   display: flex;
   justify-content: start;
   border-radius: 10px 0 0 10px;
   padding: 10px;
 }
 
-nav ul:nth-of-type(2) {
+nav > ul:nth-of-type(2) {
   width: 45vw;
-  background-color: var(--highlight-color);
   display: flex;
   justify-content: end;
   border-radius: 0 10px 10px 0;
@@ -89,7 +92,41 @@ nav ul li {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.header_button {
+  background: none;
+  color: #fff;
+  border-style: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.parameter_button {
+  display: flex;
+  justify-content: left;
+  padding: .5em;
+  background: none;
+  border-style: none;
+  color: #fff;
+}
+
+.parameter_button svg{
+  width: 2em;
+  height: 2em;
+  background: none;
+  padding: .3em;
+}
+
+nav ul:first-child li:first-child {
+  align-items: baseline;
+}
+
+ul li > ul {
+  display: block;
 }
 
 nav ul li img {
@@ -260,7 +297,7 @@ div#zoom button {
   
   border: none;
   border-radius: 5px;
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
   color: white;
   font-size: 1.5vw;
   margin-bottom: 5px;
@@ -283,7 +320,6 @@ div.reset {
 button#nextStep,
 button#resetSimulation {
   font-family: "Montserrat", sans-serif;
-  background-color: var(--highlight-color);
   color: white;
   font-size: 0.75vw;
   border: none;
@@ -320,42 +356,8 @@ div#my_dataviz{
   display: block;
 }
 
-
-#downloadSVG {
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  font-size: 13px;
-  height: 56px;
-  align-self: center;
-  display: flex;
-  place-items: center;
-  margin: 0px 10px;
-  padding: 10px;
-  font-family: "Montserrat", sans-serif;
-}
-
-#downloadSVG:hover{
-  background-color: #2B2B2B;
-  color: white;
-  cursor: pointer;
-}
-
 button{
   padding: 10px;
   margin: 0px 10px;
-}
-
-button:hover,#resetSimulation:hover{
-  background-color: #2B2B2B;
-  color: white;
-  cursor: pointer;
-}
-
-.autoRunning,.autoRunning:hover{
-  background-color: green;
-  color: white;
 }
 

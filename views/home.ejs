@@ -1,48 +1,143 @@
 <%- include ('./partials/head.ejs') %>
 <header>
-  <img src="img/bubble-machine-green.png" alt="bubble machine logo" />
-  <!-- <h1>Bubble Machine</h1> -->
+  <h1>Bubble Machine</h1>
+  <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+    <g id="Group_314" data-name="Group 314" transform="translate(9934 15033)">
+      <circle id="Ellipse_269" data-name="Ellipse 269" cx="22" cy="22" r="22" transform="translate(-9934 -15033)" fill="#304081"/>
+      <path id="Path_340" data-name="Path 340" d="M24.029,39.685c10.734-.121,13.095-15.824,13.095-10.216A18.562,18.562,0,0,1,0,29.468c.243-8.583,9.613-10.439,13.633-5.308S13.295,39.806,24.029,39.685Z" transform="translate(-9930.58 -15040.487)" fill="#fff"/>
+      <path id="Path_339" data-name="Path 339" d="M22.643,36.492c10.115-.09,13.05-12.854,13.05-8.691-.182,7.756-8.439,15.807-18.1,15.807S0,36.518,0,28.908c.229-6.372,8.061-6.24,9.71-2.11S12.528,36.582,22.643,36.492Z" transform="translate(-9929.51 -15036.12)" fill="#346af1"/>
+      <ellipse id="Ellipse_271" data-name="Ellipse 271" cx="4.5" cy="5" rx="4.5" ry="5" transform="translate(-9907 -15023)" fill="#fff"/>
+    </g>
+  </svg>
+  
   <nav>
     <ul>
       <li>
-        <img src="img/filter-icon.svg" alt="filter">
-        <p>Filter</p>
-
+        <button id="parameterBtn" class="header_button">
+          <img src="img/filter-icon.svg" alt="filter">
+          <p>Parameters</p>
+        </button>
+        <ul id="parameters" class="parameters hidden">
+          <li>
+            <button class="parameter_button">
+              <svg viewBox="0 0 20.586 14.41">
+                <path id="Icon_awesome-users" data-name="Icon awesome-users" d="M3.088,8.426A2.059,2.059,0,1,0,1.029,6.367,2.061,2.061,0,0,0,3.088,8.426Zm14.41,0a2.059,2.059,0,1,0-2.059-2.059A2.061,2.061,0,0,0,17.5,8.426Zm1.029,1.029H16.469a2.053,2.053,0,0,0-1.451.6,4.7,4.7,0,0,1,2.416,3.519h2.123a1.028,1.028,0,0,0,1.029-1.029V11.514A2.06,2.06,0,0,0,18.527,9.455Zm-8.234,0a3.6,3.6,0,1,0-3.6-3.6A3.6,3.6,0,0,0,10.293,9.455Zm2.47,1.029H12.5a4.974,4.974,0,0,1-4.407,0H7.823A3.706,3.706,0,0,0,4.117,14.19v.926A1.544,1.544,0,0,0,5.661,16.66h9.264a1.544,1.544,0,0,0,1.544-1.544V14.19A3.706,3.706,0,0,0,12.763,10.484Zm-7.2-.431a2.053,2.053,0,0,0-1.451-.6H2.059A2.061,2.061,0,0,0,0,11.514v1.029a1.028,1.028,0,0,0,1.029,1.029h2.12A4.717,4.717,0,0,1,5.568,10.053Z" transform="translate(0 -2.25)" fill="#fff"/>
+              </svg>        
+              <h3>Users</h3>
+            </button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+          <li>
+          <button class="parameter_button">
+            <svg viewBox="0 0 12.88 18.061">
+              <path id="Icon_metro-steps" data-name="Icon metro-steps" d="M11.1,3.856c-1.514,0-2.741,2.022-2.741,4.515A39.527,39.527,0,0,0,9.04,13.5c.268,1.78.921,3.255,2.056,3.255s1.9-.983,1.9-2.781c0-.612-.5-1.587-.526-2.419-.041-1.5,1.006-2.1,1.006-3.487,0-2.494-.863-4.213-2.377-4.213Zm7.4,5.16c-1.514,0-2.377,1.719-2.377,4.213,0,1.387,1.047,1.986,1.006,3.487-.022.832-.526,1.807-.526,2.419,0,1.8.761,2.781,1.9,2.781s1.788-1.475,2.056-3.255a39.527,39.527,0,0,0,.685-5.131c0-2.494-1.227-4.515-2.741-4.515Z" transform="translate(-8.355 -3.856)" fill="#fff"/>
+            </svg>
+            <h3>Steps</h3></button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+          <li>
+            <button class="parameter_button">
+            <svg  viewBox="0 0 10.952 14.41">
+              <g id="Icon_ionic-ios-document" data-name="Icon ionic-ios-document" transform="translate(-7.313 -3.938)">
+                <path id="Path_414" data-name="Path 414" d="M21.286,7.507h3.278a.178.178,0,0,0,.18-.18h0a1.066,1.066,0,0,0-.385-.825L21.61,4.211a1.157,1.157,0,0,0-.742-.267h0a.266.266,0,0,0-.267.267V6.823A.684.684,0,0,0,21.286,7.507Z" transform="translate(-6.48 -0.003)" fill="#fff"/>
+                <path id="Path_415" data-name="Path 415" d="M13.185,6.82V3.938H8.465A1.156,1.156,0,0,0,7.313,5.09v12.1a1.156,1.156,0,0,0,1.153,1.153h8.646a1.156,1.156,0,0,0,1.153-1.153V8.441H14.806A1.624,1.624,0,0,1,13.185,6.82Z" transform="translate(0 0)" fill="#fff"/>
+              </g>
+            </svg>        
+            <h3>Items</h3></button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+          <li>
+            <button class="parameter_button">
+            <svg  viewBox="0 0 13.25 13.073">
+              <path id="Exclusion_2" data-name="Exclusion 2" d="M7.012,17.032h0L5.342,14.707H2.387a2,2,0,0,1-2-2V5.958a2,2,0,0,1,2-2h9.249A1.99,1.99,0,0,1,13.5,5.228L6.92,11.448,4.6,9.215l-1.14,1.159L6.92,13.883,13.637,6.8v5.9a2,2,0,0,1-2,2H8.681L7.013,17.03Z" transform="translate(-0.387 -3.958)" fill="#fff"/>
+            </svg>        
+            <h3>Acceptance</h3>
+          </button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+          <li>
+            <button class="parameter_button">
+            <svg  viewBox="0 0 16 13">
+              <g id="Polygon_10" data-name="Polygon 10" transform="translate(16 13) rotate(180)" fill="#fff">
+                <path d="M 15.10521602630615 12.5 L 0.8947833776473999 12.5 L 7.999999523162842 0.9540237784385681 L 15.10521602630615 12.5 Z" stroke="none"/>
+                <path d="M 7.999999523162842 1.908047676086426 L 1.789566993713379 12 L 14.2104320526123 12 L 7.999999523162842 1.908047676086426 M 7.999999523162842 0 L 16 13 L -9.5367431640625e-07 13 L 7.999999523162842 0 Z" stroke="none" fill="#fff"/>
+              </g>
+            </svg>        
+            <h3>Sharpness</h3>
+          </button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+          <li>
+            <button class="parameter_button">
+            <svg viewBox="0 0 15.026 17.68">
+              <g id="noun-brain-1912149" transform="translate(-123.761 -14)">
+                <path id="Path_417" data-name="Path 417" d="M138.669,23.034,137,20.487a1.13,1.13,0,0,1-.149-.5,6.555,6.555,0,0,0-13.086.576,7.583,7.583,0,0,0,2.639,5.632.878.878,0,0,1,.316.651V30.6a.583.583,0,0,0,.52.576l5.632.5a.566.566,0,0,0,.613-.576V28.424a.326.326,0,0,1,.316-.316h1.97a1.087,1.087,0,0,0,1.1-1.1V24.372a.226.226,0,0,1,.223-.223h.967a.72.72,0,0,0,.613-1.115Zm-5.8-2.138a1.5,1.5,0,0,1-.632-.149,1.475,1.475,0,0,1-1.041.427,1.873,1.873,0,0,1-.465-.074,1.162,1.162,0,0,1-.948.5h-.056a6.273,6.273,0,0,0-.576,2.677.357.357,0,0,1-.446.335l-.223-.056a.36.36,0,0,1-.279-.372,13.354,13.354,0,0,0-.2-2.268,1.316,1.316,0,0,1-1.1-1.283c0-.093.019-.167.019-.26a1.3,1.3,0,0,1-.613-1.115A1.339,1.339,0,0,1,127.256,18a1.387,1.387,0,0,1,1.376-1.32,1.465,1.465,0,0,1,.651.167,1.35,1.35,0,0,1,1.171-.632,1.368,1.368,0,0,1,1.152.613,1.582,1.582,0,0,1,.427-.074A1.39,1.39,0,0,1,133.409,18a1.5,1.5,0,0,1-.539,2.9Z" transform="translate(0 0)" fill="#fff"/>
+              </g>
+            </svg>        
+            <h3>User behaviour</h3>
+          </button>
+            <div class="parameter hidden">
+              <p>Parameters komen hier</p>
+            </div>
+          </li>
+        </ul>
       </li>
       <li>
-        <img src="img/play-icon.svg" alt="play simulation">
-        <p>Play</p>
+        <button id="autoPlay" class="header_button">
+          <div id="play">
+            <img src="img/play-icon.svg" alt="play simulation">
+            <p>Play</p>
+          </div>
+          <div id="pause" class="hidden">
+            <img src="img/pause-icon.svg" alt="pause simulation">
+            <p>Pause</p>
+          </div>
+        </button>
       </li>
       <li>
-        <img src="img/next-step-icon.svg" alt="next step in simulation">
-        <button id="nextStep">Next Step</button>
+        <button id="nextStep" class="header_button">
+          <img src="img/next-step-icon.svg" alt="next step in simulation">
+          <p id="nextStep">Next Step</p>
+        </button>
       </li>
       <li>
-        <img src="img/pause-icon.svg" alt="pause simulation">
-        <p>Pause</p>
-      </li>
-
-      <li>
-        <img src="img/reset-icon.svg" alt="reset simulation">
-        <button id="resetSimulation">Reset Simulation</button>
+        <button id="resetSimulation" class="header_button">
+          <img src="img/reset-icon.svg" alt="reset simulation">
+          <p id="resetSimulation">Reset Simulation</p>
+        </button>
       </li>
     </ul>
 
     <ul>
       <li>
-        <img src="img/dark-mode-icon.svg" alt="dark mode">
-        <p>Light mode</p>
+        <button class="header_button">
+          <img src="img/dark-mode-icon.svg" alt="dark mode">
+          <p>Light mode</p>
+        </button>
       </li>
       <li>
-        <img src="img/save-icon.svg" alt="save image of simulation">
-        <p>Save</p>
+        <button id="downloadSVG" class="header_button">
+          <img src="img/save-icon.svg" alt="save image of simulation">
+          <p>Save</p>
+        </button>
       </li>
       <li>
-        <img src="img/share-icon.svg" alt="share simulation">
-        <p>Share</p>
+        <button class="header_button">
+          <img src="img/share-icon.svg" alt="share simulation">
+          <p>Share</p>
+        </button>
       </li>
     </ul>
-
   </nav>
 </header>
 
@@ -52,114 +147,10 @@
     <button id="zoomIn">+</button>
     <button id="zoomOut">-</button>
   </div>
-
-
-  <section>
-    <ul>
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Number of users</h3>
-        <p>Determine how many users will be part of the experiment.</p>
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Number of friends</h3>
-        <p>Determine how many friends (on average) a user will have.</p>
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Steps per day</h3>
-        <p>This parameter indicates how many steps can be used to count a day.</p>
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Produced items per day</h3>
-        <p>This parameter indicates how many items are generated in the network per day.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Max. item links</h3>
-        <p>This parameter represents the individual's limited memory. They can integrate a certain amount of
-          information.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Exposed items per day, per person</h3>
-        <p>News items are subject to the evaluation of persons. Based on probability</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Latitude of acceptance</h3>
-        <p>News items are subject to the evaluation of persons.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Sharpness</h3>
-        <p>Specifies how steep the integration probability of integration takes place.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Probability of posting items on the social network</h3>
-        <p>Determines the probabilistic event of a user posting items in the social network.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>User behaviour</h3>
-        <p>Allows users to simulate a different combination of behaviours such as reading an article.</p>
-
-      </li>
-
-      <li>
-        <img src="img/arrow-down.png" alt="open button" />
-        <h3>Challenge</h3>
-        <p>Let the user can determine if the recommendation system will challenge the user with more diverse content.
-        </p>
-
-      </li>
-    </ul>
-    <img src="img/arrow-right.png" alt="open button" id="menuButton" />
-
-  </section>
-
-
-
   <figure id="graph"></figure>
-
   <div class="reset">
-       <!-- reset and next step buttons -->
-       <button id="nextStep">Next Step</button>
-       <button id="autoPlay">Auto play start</button>
-   <button id="resetSimulation">Reset Simulation</button>
-   <a id="downloadSVG">Download</a>
    <button id="distance">Distance</button>
   </div>
-  <div id="zoom">
-    <button id="zoomIn">+</button>
-    <button id="zoomOut">-</button>
-  </div>
-
-
-  <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
-
+  <div id="my_dataviz"></div>
 </main>
-
-
-
-
 <%- include ('./partials/footer.ejs') %>
