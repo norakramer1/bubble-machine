@@ -17,7 +17,6 @@ await getAllActiveSessions()
 
 // Buttons
 const parameterButtons = document.querySelectorAll('section ul li')
-const menuButton = document.querySelector('section')
 const resetButton = document.querySelector('#resetSimulation')
 const nextButton = document.querySelector('#nextStep')
 const autoButton = document.querySelector('#autoPlay')
@@ -69,7 +68,6 @@ tabCloseButtons.forEach(tab => {
 })
 
 // Button Functions
-menuButton.addEventListener('click', () => openMenu())
 nextButton.addEventListener('click', () => nextStep(window.location.hash.slice(1)))
 resetButton.addEventListener('click', () => resetSession(window.location.hash.slice(1)))
 autoButton.addEventListener('click', () => autoPlay(window.location.hash.slice(1)))

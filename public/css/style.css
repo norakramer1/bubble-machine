@@ -7,13 +7,13 @@
 }
 
 :root {
-  --main-bg-color: hsl(228,29%,19%);
-  --primary-color: hsl(228,46%,35%);
-  --primary-color-dark: hsl(228,63%,18%);
-  --primary-color-light: hsl(228,63%,58%);
-  --person-color: #EB6072;
+  --main-bg-color: hsl(228, 29%, 19%);
+  --primary-color: hsl(228, 46%, 35%);
+  --primary-color-dark: hsl(228, 63%, 18%);
+  --primary-color-light: hsl(228, 63%, 58%);
+  --person-color: #eb6072;
   --person-shadow-color: rgb(178, 51, 68);
-  --item-color: #F8E368;
+  --item-color: #f8e368;
 }
 
 body {
@@ -48,7 +48,7 @@ header {
 }
 
 label {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 #logo {
@@ -56,7 +56,7 @@ label {
   justify-content: end;
   width: 15%;
   margin-top: 2em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 #logo > svg {
@@ -68,7 +68,7 @@ label {
   font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
   color: var(--primary-color-light);
-  margin-right: .5em;
+  margin-right: 0.5em;
   text-align: end;
 }
 
@@ -89,7 +89,7 @@ header > ul li {
   border-radius: 0.1em 10px 0.1em 0.1em;
   min-width: 8em;
   min-height: 2.5em;
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color-dark);
 }
 
 header ul li a {
@@ -107,9 +107,15 @@ header > ul li button {
   align-self: flex-start;
 }
 
+header > ul li button:hover {
+  background-color: var(--primary-color-light);
+  border-radius: 0.3em;
+  padding: 0.1em;
+}
+
 .addButton {
   background-color: var(--main-bg-color);
-  box-shadow: 0px 0px 3px var(--shadow-color);
+  box-shadow: 0px 0px 3px var(--primary-color);
   min-width: 0;
   width: 2.5em;
   justify-content: center;
@@ -123,7 +129,7 @@ header > ul li button {
 }
 
 .opened {
-  background-color: #4daab2;
+  background-color: var(--primary-color);
 }
 
 nav {
@@ -171,7 +177,7 @@ nav ul li {
   display: none;
 }
 
-#parameters{
+#parameters {
   width: 20%;
   height: auto;
   background-color: var(--primary-color);
@@ -183,25 +189,25 @@ nav ul li {
 
 #parameters li {
   display: block;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   padding-left: 5%;
 }
 
 .parameter_button {
   display: flex;
   justify-content: left;
-  padding: .5em;
+  padding: 0.5em;
   background: none;
   border-style: none;
   color: #fff;
   width: 100%;
 }
 
-.parameter_button svg{
+.parameter_button svg {
   width: 2em;
   height: 2em;
   background: none;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 .parameter {
@@ -445,8 +451,7 @@ div#my_dataviz {
   display: block;
 }
 
-button{
+button {
   padding: 10px;
   margin: 0px 10px;
 }
-
