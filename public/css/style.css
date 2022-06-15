@@ -365,6 +365,16 @@ canvas {
   fill: var(--person-color);
   stroke: #af9898af;
   stroke-width: 0.5;
+  /* opacity: 0.1; */
+}
+
+.show {
+  opacity: 1;
+}
+
+.clicked {
+  opacity: 1;
+  fill: var(--person-shadow-color);
 }
 
 .person:hover {

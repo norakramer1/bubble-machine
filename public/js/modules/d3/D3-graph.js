@@ -17,8 +17,6 @@ const updateGraph = async (data) => {
   const nodes = data.nodes
   const links = data.links
 
-  console.log(links)
-
   xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
 
@@ -32,9 +30,20 @@ const updateGraph = async (data) => {
   )
 
   circle
-    .transition()
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 1.5)
+    .attr('opacity', '0.1')
+    .attr('class', (nodes) => nodes.label)
+    .attr('fill', '#2781e7b2')
+    .on('click', (event, d, i) => {
+      // const nodeId = event.target.id.replace('node', '')
+      d3.select(event.target)
+        .attr('opacity', '1')
+    })
+
     .attr('cx', (nodes) => xScale(nodes.x))
     .attr('cy', (nodes) => yScale(nodes.y))
+
     .attr('r', (nodes) => {
       if (nodes.label === 'person') {
         return 15

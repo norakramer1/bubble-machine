@@ -8,7 +8,6 @@ import { deleteSession } from './modules/sessions/deleteSession.js'
 import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/highlight.js'
-import { openMenu } from './modules/toggleMenu.js'
 import { downloadSVG } from './modules/downloadGraph.js'
 import { dropdown } from './modules/dropdown.js'
 import { accordion } from './modules/accordion.js'
@@ -50,6 +49,7 @@ sessionTabs.forEach(session => {
       window.location.hash = session.className
       sessionTabs.forEach(session => session.classList.remove('opened'))
       const data = await getOpenedSessionData(session.className)
+      // highlight(session.className)
       updateGraph(await data)
       session.classList.add('opened')
     }
@@ -75,7 +75,8 @@ addButton.addEventListener('click', () => createSession())
 downloadButton.addEventListener('click', () => downloadSVG())
 dropdownBtn.addEventListener('click', dropdown)
 
-highlight()
+
+
 
 
   
