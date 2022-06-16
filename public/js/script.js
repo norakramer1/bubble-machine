@@ -12,6 +12,9 @@ import { downloadSVG } from './modules/downloadGraph.js'
 import { dropdown } from './modules/dropdown.js'
 import { accordion } from './modules/accordion.js'
 
+
+highlight();
+
 await getAllActiveSessions()
     
 // Buttons
@@ -81,6 +84,8 @@ if (menu.matches('.open')) {
   menuButton.src = "img/arrow-right.png";
 }
 }
+
+
 
 // Button Functions
 nextButton.addEventListener('click', () => nextStep(window.location.hash.slice(1)))

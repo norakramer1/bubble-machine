@@ -532,6 +532,17 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   /* padding: 5%; */
 }
 
+circle{
+  transition: 1s all;
+}
+
+body .opacity{
+  opacity: 1;
+}
+.opacityDim{
+  opacity: 0.1;
+}
+
 section.onboarding article.active nav ul li {
   padding-left: 5%;
   list-style: none;
