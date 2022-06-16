@@ -26,7 +26,7 @@ body {
   padding: 0;
   color: #fff;
   background-color: var(--main-bg-color);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 main h2 {
@@ -357,4 +357,172 @@ button:hover,
 .autoRunning:hover {
   background-color: green;
   color: white;
+}
+
+section.onboarding {
+  display: none;
+  animation: none;
+  position: absolute;
+  z-index: 2;
+ 
+  top: 5vw;
+  left: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
+  width: 80vw;
+  height: 80vh;
+  background-color: var(--highlight-color);
+  border-radius: 10px;
+
+}
+
+section.onboarding article h1,
+section.onboarding article h2,
+section.onboarding article p,
+section.onboarding article a {
+  text-align: center;
+}
+
+section.onboarding article h1 {
+  font-weight: 200;
+}
+
+section.onboarding article h2 {
+  text-transform: uppercase;
+  font-size: 2.5vw;
+}
+
+section.onboarding article h3 {
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+section.onboarding article p {
+  text-align: center;
+  font-size: 1.2vw;
+  margin: 0 10% 3% 10%;
+}
+
+section.onboarding article {
+  display: none;
+}
+
+section.onboarding article.active {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.onboarding article:nth-of-type(3).active div {
+  background-color: var(--shadow-color);
+  padding: 5%;
+  margin: 0 15% 0 15%;
+  border-radius: 5px;
+  position: relative;
+  top: 20vh;
+}
+
+section.onboarding article:nth-of-type(3).active ~ button.onboarding-start img {
+  display: none;
+}
+
+section.onboarding article:nth-of-type(3).active ~ button.onboarding-start::after {
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+ background-color: var(--shadow-color);
+ padding: 2%;
+ border-radius: 5px;
+ border: none;
+content: url('../img/plus-icon.svg')
+}
+
+
+button.onboarding-start {
+  background-color: transparent;
+  border: none;
+  margin-top: -10%;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* CSS FOR ONBOARDING NAVMENU */
+/* /////////////////////////////////////////////////////////////// */
+
+section.onboarding article.active nav {
+  display: flex;
+  justify-content: center;
+}
+
+section.onboarding article.active nav ul:first-of-type {
+  width: 45vw;
+  background-color: var(--highlight-color);
+  display: flex;
+  justify-content: start;
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+}
+
+section.onboarding article.active nav ul:nth-of-type(2) {
+  width: 45vw;
+  background-color: var(--highlight-color);
+  display: flex;
+  justify-content: end;
+  border-radius: 0 10px 10px 0;
+  padding: 10px;
+}
+
+section.onboarding article.active nav ul li {
+  padding-left: 5%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.onboarding article.active nav ul li img {
+  padding-bottom: 8px;
+  height: 30px;
+}
+
+section.onboarding article.active nav ul {
+  position: static;
+  left: 0;
+  display: block;
+  border-radius: 0;
+  transition: none;
+}
+
+
+section.onboarding article.active nav ul {
+  width: 80vw;
+  height: 2vh;
+  display: block;
+  height: 2vw;
+  margin-top: 0;
+}
+
+/* parameters out of nav and to section */
+
+section.onboarding article.active nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 5px 5px 5px 10px;
+  display: block;
+}
+
+section.onboarding article.active nav ul li:not(:last-of-type) {
+  border-bottom: none;
+}
+
+
+section ul li img {
+  cursor: pointer;
 }

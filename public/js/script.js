@@ -18,8 +18,6 @@ const resetBtn = document.querySelector('#resetSimulation')
 const nextBtn = document.querySelector('#nextStep')
 const autoBtn = document.querySelector('#autoPlay')
 
-
-
   parameterButtons.forEach(accordion => {
     accordion.addEventListener('click', () => 
      accordion.classList.toggle('open-menu'));
