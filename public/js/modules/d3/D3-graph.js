@@ -57,13 +57,24 @@ const updateGraph = async (data) => {
   .on('mouseout', function (d, i) {
     d3.select(this).transition()
       .duration('50')
+      // .attr('opacity', '1')
       div.transition()
       .duration('50')
       .style('opacity', 0)
     d3.select().transition()
       .duration('50')
+      // .attr('stroke-opacity', '0')
+  
 
-    })
+      const svg = document.querySelector('#graph svg');
+      const itemChildren = svg.children;
+  
+      // Make alle items opacity 0.1
+      for(let items=0; items<itemChildren.length; items++){
+        console.log("test");
+        itemChildren[items].classList.remove("opacity");
+      }
+  })
     .attr('stroke', '#fff')
     .attr('stroke-width', 1.5)
     .attr('opacity', '0.1')
@@ -76,6 +87,7 @@ const updateGraph = async (data) => {
 
         d3.select(this).transition()
         .duration('50')
+        // .attr('opacity', '.85')
         div.transition()
         .duration(50)
         .style('opacity', 0)
