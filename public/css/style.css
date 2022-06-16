@@ -7,26 +7,21 @@
 }
 
 :root {
-  --main-bg-color: #222730;
-  --highlight-color: #235a5f;
-  --shadow-color: #11454a;
+  --main-bg-color: hsl(228, 29%, 19%);
+  --primary-color: hsl(228, 46%, 35%);
+  --primary-color-dark: hsl(228, 63%, 18%);
+  --primary-color-light: hsl(228, 63%, 58%);
   --person-color: #eb6072;
   --person-shadow-color: rgb(178, 51, 68);
   --item-color: #f8e368;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  min-height: 100%;
   font-family: "Montserrat", sans-serif;
-  font-size: 100%;
   padding: 0;
+  margin: 0;
   color: #fff;
   background-color: var(--main-bg-color);
-  /* overflow: hidden; */
 }
 
 main h2 {
@@ -47,37 +42,117 @@ p {
 }
 
 header {
+  width: 90vw;
   position: relative;
+  margin: auto;
 }
 
-header h1 {
+label {
+  font-size: 0.8rem;
+}
+
+#logo {
+  display: flex;
+  justify-content: end;
+  width: 15%;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+#logo > svg {
+  height: 3rem;
+  width: auto;
+}
+
+#logo > h1 {
+  font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
-  color: #fff;
-  text-shadow: 1px 2px 4px #348c90bd;
+  color: var(--primary-color-light);
+  margin-right: 0.5em;
+  text-align: end;
 }
 
-header img {
-  height: 3vw;
-  margin: 2% 0 0 2%;
+header > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0.5em 5% 0 5%;
+}
+
+header > ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 0.1em 0 0.1em;
+  padding: 0.2em 0.6em 0.2em 0.2em;
+  border-radius: 0.1em 10px 0.1em 0.1em;
+  min-width: 8em;
+  min-height: 2.5em;
+  background-color: var(--primary-color-dark);
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header > ul li button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  align-self: flex-start;
+}
+
+header > ul li button:hover {
+  background-color: var(--primary-color-light);
+  border-radius: 0.3em;
+  padding: 0.1em;
+}
+
+.addButton {
+  background-color: var(--main-bg-color);
+  box-shadow: 0px 0px 3px var(--primary-color);
+  min-width: 0;
+  width: 2.5em;
+  justify-content: center;
+  padding: 0;
+  order: 1;
+}
+
+.addButton button {
+  font-size: 1.2em;
+  align-self: center;
+}
+
+.opened {
+  background-color: var(--primary-color);
 }
 
 nav {
   display: flex;
   justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 5rem;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
 }
 
-nav ul:first-of-type {
+nav > ul:first-of-type {
   width: 45vw;
-  background-color: var(--highlight-color);
   display: flex;
   justify-content: start;
   border-radius: 10px 0 0 10px;
   padding: 10px;
 }
 
-nav ul:nth-of-type(2) {
+nav > ul:nth-of-type(2) {
   width: 45vw;
-  background-color: var(--highlight-color);
   display: flex;
   justify-content: end;
   border-radius: 0 10px 10px 0;
@@ -89,7 +164,63 @@ nav ul li {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.header_button {
+  background: none;
+  color: #fff;
+  border-style: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#parameters {
+  width: 20%;
+  height: auto;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 4.6rem;
+  border-radius: 0 0 10px 10px;
+}
+
+#parameters li {
+  display: block;
+  padding-bottom: 0.5rem;
+  padding-left: 5%;
+}
+
+.parameter_button {
+  display: flex;
+  justify-content: left;
+  padding: 0.5em;
+  background: none;
+  border-style: none;
+  color: #fff;
+  width: 100%;
+}
+
+.parameter_button svg {
+  width: 2em;
+  height: 2em;
+  background: none;
+  padding: 0.3em;
+}
+
+.parameter {
+  width: 100%;
+  position: relative;
+  background-color: var(--primary-color-dark);
+}
+nav ul:first-child li:first-child {
+  align-items: baseline;
+}
+
+ul li > ul {
+  display: block;
 }
 
 nav ul li img {
@@ -232,6 +363,18 @@ canvas {
 
 .person {
   fill: var(--person-color);
+  stroke: #af9898af;
+  stroke-width: 0.5;
+  /* opacity: 0.1; */
+}
+
+.show {
+  opacity: 1;
+}
+
+.clicked {
+  opacity: 1;
+  fill: var(--person-shadow-color);
 }
 
 .person:hover {
@@ -264,7 +407,7 @@ div.tooltip {
 div#zoom button {
   border: none;
   border-radius: 5px;
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
   color: white;
   font-size: 1.5vw;
   margin-bottom: 5px;
@@ -284,7 +427,6 @@ div.reset {
 button#nextStep,
 button#resetSimulation {
   font-family: "Montserrat", sans-serif;
-  background-color: var(--highlight-color);
   color: white;
   font-size: 0.75vw;
   border: none;
@@ -317,28 +459,6 @@ div#my_dataviz {
 
 #my_dataviz .showDistance {
   display: block;
-}
-
-#downloadSVG {
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  font-size: 13px;
-  height: 56px;
-  align-self: center;
-  display: flex;
-  place-items: center;
-  margin: 0px 10px;
-  padding: 10px;
-  font-family: "Montserrat", sans-serif;
-}
-
-#downloadSVG:hover {
-  background-color: #2b2b2b;
-  color: white;
-  cursor: pointer;
 }
 
 button {
@@ -376,7 +496,7 @@ section.onboarding {
 section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
   width: 80vw;
   height: 80vh;
-  background-color: var(--highlight-color);
+ background-color: var(--primary-color);
   border-radius: 10px;
 
 }
@@ -420,7 +540,7 @@ section.onboarding article.active {
 }
 
 section.onboarding article:nth-of-type(3).active div {
-  background-color: var(--shadow-color);
+  background-color: var(--primary-color);
   padding: 5%;
   margin: 0 15% 0 15%;
   border-radius: 5px;
@@ -436,7 +556,7 @@ section.onboarding article:nth-of-type(3).active ~ button.onboarding-start::afte
   position: absolute;
   top: 40vh;
   left: 40vw;
- background-color: var(--shadow-color);
+  background-color: var(--primary-color);
  padding: 2%;
  border-radius: 5px;
  border: none;
@@ -478,7 +598,7 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   display: flex;
   justify-content: end;
   border-radius: 0 10px 10px 0;
-  padding: 5%;
+  /* padding: 5%; */
 }
 
 section.onboarding article.active nav ul li {
