@@ -74,7 +74,7 @@ select {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-bg-color: hsl(228, 29%, 19%);
+    --main-bg-color: white;
     --primary-color: hsl(228, 46%, 35%);
     --secondary-color: hsl(228, 63%, 18%);
     --text-color: hsl(228, 63%, 58%);
@@ -91,8 +91,8 @@ select {
 }
 
 :root{
-  --person-color: #eb6072;
-  --item-color: #f8e368;
+  --person-color: purple;
+  --item-color: purple;
   --person-shadow-color: rgb(178, 51, 68);
 }
 
@@ -338,6 +338,7 @@ svg {
   stroke: #af9898af;
   stroke-width: 0.5;
   /* opacity: 0.1; */
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
 .show {
@@ -355,6 +356,7 @@ svg {
 
 .item {
   fill: var(--item-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 #zoom {
@@ -534,6 +536,10 @@ section.onboarding article.active nav ul:nth-of-type(2) {
 
 circle{
   transition: 1s all;
+}
+
+circle:hover{
+  opacity: 1;
 }
 
 body .opacity{

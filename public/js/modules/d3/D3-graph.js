@@ -3,6 +3,14 @@ const width = window.innerWidth
 const height = window.innerHeight
 const margin = { width: (0.1 * width), height: (0.1 * height) }
 
+const div = d3.select('body').append('div')
+.attr('class', 'tooltip')
+
+
+const gethtml = (id, links) => {
+  return `<div>node: ${id}</div> <div>link: ${links}</div> <div class = "itemSharers">Items shared: <span> ${links}</span></div><div class = "connectionPersons">Connection with persons : <span>${links}</span></div><div class = "itemPersons">Item linked wih persons: <span>${links}</span></div>`
+}
+
 const svg = d3.select('#graph').append('svg')
   .attr('width', width)
   .attr('height', height)
@@ -30,6 +38,32 @@ const updateGraph = async (data) => {
   )
 
   circle
+  .on('mouseover', function (event, d, i) {
+    d3.select(this).transition()
+      .duration('50')
+      // .attr('opacity', '.85')
+      div.transition()
+      .duration(50)
+      .style('opacity', 1)
+      div.html(gethtml(d.id, d.label))
+      .style('left', (event.pageX + 10) + 'px')
+      .style('top', (event.pageY - 15) + 'px')
+    d3.select('tick').transition()
+      .duration('50')
+      .attr('stroke-opacity', '0.6')
+  })
+
+
+  .on('mouseout', function (d, i) {
+    d3.select(this).transition()
+      .duration('50')
+      div.transition()
+      .duration('50')
+      .style('opacity', 0)
+    d3.select().transition()
+      .duration('50')
+
+    })
     .attr('stroke', '#fff')
     .attr('stroke-width', 1.5)
     .attr('opacity', '0.1')
@@ -39,6 +73,18 @@ const updateGraph = async (data) => {
       // const nodeId = event.target.id.replace('node', '')
       d3.select(event.target)
         .attr('opacity', '1')
+
+        d3.select(this).transition()
+        .duration('50')
+        div.transition()
+        .duration(50)
+        .style('opacity', 0)
+        div.html(gethtml(d.id, d.label))
+        .style('left', (event.pageX + 10) + 'px')
+        .style('top', (event.pageY - 15) + 'px')
+      d3.select('tick').transition()
+        .duration('50')
+        .attr('stroke-opacity', '0.6')
     })
 
     .attr('cx', (nodes) => xScale(nodes.x))

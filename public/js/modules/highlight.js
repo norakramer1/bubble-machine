@@ -70,7 +70,7 @@ export const highlight = async () => {
       }
     }
 
-    // Place item info inside a label
+    // // Place item info inside a label
     document.querySelector(`.connectionPersons span`).innerHTML = friends;
     document.querySelector(`.itemPersons span`).innerHTML = itemlinks;
     document.querySelector(`.itemSharers span`).innerHTML = infolinks;
