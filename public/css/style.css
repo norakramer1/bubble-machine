@@ -143,6 +143,14 @@ nav {
   position: relative;
 }
 
+<<<<<<< HEAD
+=======
+nav > ul {
+  display: flex;
+  padding: .5rem;
+  margin: 0;
+}
+>>>>>>> styling
 nav > ul:first-of-type {
   width: 45vw;
   display: flex;
