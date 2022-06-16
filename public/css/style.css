@@ -26,7 +26,7 @@ body {
   padding: 0;
   color: #fff;
   background-color: var(--main-bg-color);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 main h2 {
@@ -458,24 +458,27 @@ button.onboarding-start {
 section.onboarding article.active nav {
   display: flex;
   justify-content: center;
+  max-width: 85vw;
 }
 
 section.onboarding article.active nav ul:first-of-type {
   width: 45vw;
+  height: 2vh;
   background-color: var(--highlight-color);
   display: flex;
   justify-content: start;
   border-radius: 10px 0 0 10px;
-  padding: 10px;
+  padding: 5%;
+
 }
 
 section.onboarding article.active nav ul:nth-of-type(2) {
-  width: 45vw;
   background-color: var(--highlight-color);
+  flex-direction: row;
   display: flex;
   justify-content: end;
   border-radius: 0 10px 10px 0;
-  padding: 10px;
+  padding: 5%;
 }
 
 section.onboarding article.active nav ul li {
@@ -497,15 +500,13 @@ section.onboarding article.active nav ul {
   display: block;
   border-radius: 0;
   transition: none;
+  margin: 0;
+  height: 5vh;
 }
 
 
 section.onboarding article.active nav ul {
-  width: 80vw;
-  height: 2vh;
-  display: block;
-  height: 2vw;
-  margin-top: 0;
+
 }
 
 /* parameters out of nav and to section */
@@ -514,9 +515,13 @@ section.onboarding article.active nav ul li {
   margin: 0;
   padding: 0;
   list-style: none;
-  padding: 5px 5px 5px 10px;
-  display: block;
+
 }
+
+section.onboarding article.active nav ul li p {
+  display: flex;
+}
+
 
 section.onboarding article.active nav ul li:not(:last-of-type) {
   border-bottom: none;
@@ -525,4 +530,8 @@ section.onboarding article.active nav ul li:not(:last-of-type) {
 
 section ul li img {
   cursor: pointer;
+}
+
+section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
+  display: none;
 }
