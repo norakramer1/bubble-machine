@@ -74,7 +74,7 @@ select {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-bg-color: hsl(228, 29%, 19%);
+    --main-bg-color: white;
     --primary-color: hsl(228, 46%, 35%);
     --secondary-color: hsl(228, 63%, 18%);
     --text-color: hsl(228, 63%, 58%);
@@ -91,11 +91,10 @@ select {
 }
 
 :root{
-  --person-color: #eb6072;
-  --item-color: #f8e368;
+  --person-color: purple;
+  --item-color: purple;
   --person-shadow-color: rgb(178, 51, 68);
 }
-
 
 section.onboarding {
   display: none;
@@ -217,6 +216,21 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   justify-content: end;
   border-radius: 0 10px 10px 0;
   /* padding: 5%; */
+}
+
+circle{
+  transition: 1s all;
+}
+
+circle:hover{
+  opacity: 1;
+}
+
+body .opacity{
+  opacity: 1;
+}
+.opacityDim{
+  opacity: 0.1;
 }
 
 section.onboarding article.active nav ul li {
