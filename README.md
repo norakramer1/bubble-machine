@@ -42,3 +42,7 @@ The Responsible IT computer model is currently not accessible to the public. The
 Develop a interactive, instructive an intuitive web application with the API. By running the simulator with different parameters, users can visualise, compare and analyse the consequence of combining various factors.
 
 ## Installation
+
+
+
+![image](https://user-images.githubusercontent.com/29665951/174573704-33f28a75-6df7-435e-b4ee-7f909185ca5e.png)
