@@ -57,16 +57,33 @@ export const highlight = async () => {
       }
     }
 
+    function drawLine(source, target){
+      const targetX = document.querySelector(`#node${target}`).cx.baseVal.value;
+      const targetY = document.querySelector(`#node${target}`).cy.baseVal.value;
+      const sourceX = document.querySelector(`#node${source}`).cx.baseVal.value;
+      const sourceY = document.querySelector(`#node${source}`).cy.baseVal.value;
+      const newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+      newLine.setAttribute('x1',targetX);
+      newLine.setAttribute('y1',targetY);
+      newLine.setAttribute('x2',sourceX);
+      newLine.setAttribute('y2',sourceY);
+      newLine.setAttribute("stroke", "purple")
+      newLine.setAttribute("stroke-width", "1")
+      svg.append(newLine);
+      }
+
     // Count all difrent items friend, itemlink, infolink that are from target
     for (const item of data.links) {
       if(item.source == currentNode){
         document.querySelector(`#node${item.target}`).classList.add("opacity");
         countItems(item);
+        drawLine(item.target,currentNode);
       }
       // Count all difrent items friend, itemlink, infolink that are from source
       if(item.target == currentNode){
         document.querySelector(`#node${item.source}`).classList.add("opacity");
         countItems(item);
+        drawLine(item.source,currentNode);
       }
     }
 
