@@ -76,14 +76,6 @@ parameterButtons.forEach(accordion => {
    accordion.classList.toggle('open-menu'));
 });
 
-const openMenu = () => {
-menu.classList.toggle('open')
-if (menu.matches('.open')) {
-  menuButton.src = "img/arrow-left.png";
-} else {
-  menuButton.src = "img/arrow-right.png";
-}
-}
 
 
 
