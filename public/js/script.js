@@ -7,8 +7,8 @@ import { getAllActiveSessions } from './modules/sessions/getAllSessions.js'
 import { deleteSession } from './modules/sessions/deleteSession.js'
 import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
-import { highlight } from './modules/highlight.js'
-import { downloadSVG } from './modules/downloadGraph.js'
+import { highlight } from './modules/d3/highlight.js'
+import { downloadSVG } from './modules/data/downloadGraph.js'
 import { dropdown } from './modules/ui/dropdown.js'
 import { accordion } from './modules/ui/accordion.js'
 
@@ -76,7 +76,16 @@ parameterButtons.forEach(accordion => {
    accordion.classList.toggle('open-menu'));
 });
 
+const socketConnection= new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
 
+socketConnection.onopen = function (event) {
+  socketConnection.send('{"id": 17}')
+}
+
+socketConnection.onmessage = async function (event) {
+const socketData = await JSON.parse(event.data)
+console.log(socketData)
+}
 
 
 // Button Functions

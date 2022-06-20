@@ -1,5 +1,5 @@
 // Get API data
-import { getOpenedSessionData } from './sessions/currentSessionData.js'
+import { getOpenedSessionData } from '../sessions/currentSessionData.js'
 
 const data = await getOpenedSessionData(window.location.hash.slice(1))
 

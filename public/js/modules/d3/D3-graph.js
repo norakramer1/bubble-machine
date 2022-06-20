@@ -22,20 +22,21 @@ const updateGraph = async (data) => {
   // Create the svg in the body
 
   const nodes = data.nodes
-  const links = data.links
-  console.log(nodes)
 
   xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
 
-  const circle = svg.selectAll('circle').data(nodes).join(
-    (enter) => {
-      enter = enter.append('circle')
-      return enter
-    },
-    (update) => update,
-    (exit) => exit.remove()
-  )
+  const circle = svg
+    .selectAll('circle')
+    .data(nodes)
+    .join(
+      (enter) => {
+        enter = enter.append('circle')
+        return enter
+      },
+      (update) => update,
+      (exit) => exit.remove()
+    )
 
   circle
     .on('mouseover', function (event, d, i) {
