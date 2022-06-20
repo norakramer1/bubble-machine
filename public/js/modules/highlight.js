@@ -21,7 +21,8 @@ export const highlight = async () => {
   for(let items=0; items<svg.children.length; items++){
 
     // Add addEventListener to all items in svg
-    svg.children[items].addEventListener('click', () => {
+    svg.children[items].addEventListener('mouseenter', () => {
+      
 
       // Remove item info
       const nodes = svg.children;
