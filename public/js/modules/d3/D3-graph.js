@@ -71,7 +71,6 @@ const updateGraph = async (data) => {
   
       // Make alle items opacity 0.1
       for(let items=0; items<itemChildren.length; items++){
-        console.log("test");
         itemChildren[items].classList.remove("opacity");
       }
   })

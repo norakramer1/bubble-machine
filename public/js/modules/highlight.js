@@ -24,23 +24,23 @@ export const highlight = async () => {
     svg.children[items].addEventListener('click', () => {
 
       // Remove item info
-      const itemChildren2 = svg.children;
-      for(let items=0; items<itemChildren2.length; items++){
-        itemChildren2[items].classList.remove("opacity");
+      const nodes = svg.children;
+      for(let items=0; items<nodes.length; items++){
+        nodes[items].classList.remove("opacity");
       }
 
 
-    const item = svg.children[items];
-    const itemChildren = svg.children;
-    item.classList.add("opacity");
+    const node = svg.children[items];
+    const svgNodes = svg.children;
+    node.classList.add("opacity");
 
     // Make alle items opacity 0.1
-    for(let items=0; items<itemChildren.length; items++){
-      itemChildren[items].classList.add("opacityDim");
+    for(let items=0; items<svgNodes.length; items++){
+      svgNodes[items].classList.add("opacityDim");
     }
 
     // Check alle items that are connected with hovert item
-    const currentitem = item.id.replace('node','');
+    const currentNode = node.id.replace('node','');
     let friends = 0;
     let itemlinks = 0;
     let infolinks = 0;
@@ -59,12 +59,12 @@ export const highlight = async () => {
 
     // Count all difrent items friend, itemlink, infolink that are from target
     for (const item of data.links) {
-      if(item.source == currentitem){
+      if(item.source == currentNode){
         document.querySelector(`#node${item.target}`).classList.add("opacity");
         countItems(item);
       }
       // Count all difrent items friend, itemlink, infolink that are from source
-      if(item.target == currentitem){
+      if(item.target == currentNode){
         document.querySelector(`#node${item.source}`).classList.add("opacity");
         countItems(item);
       }
