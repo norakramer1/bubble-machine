@@ -74,18 +74,18 @@ select {
 @media (prefers-color-scheme: dark) {
   :root {
     --main-bg-color: white;
-    --primary-color: hsl(228, 46%, 35%);
-    --secondary-color: hsl(228, 63%, 18%);
-    --text-color: hsl(228, 63%, 58%);
+    --secondary-bg-color: hsl(0,0%,95%) ;
+    --primary-color: hsl(212,80%,53%);
+    --secondary-color: hsl(0,0%,44%);
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --main-bg-color: hsl(223, 45%, 95%);
-    --primary-color: hsl(223, 100%, 100%);
-    --secondary-color: hsl(223, 87%, 57%);
-    --text-color: hsl(223, 87%, 57%);
+    --main-bg-color: white;
+    --secondary-bg-color: hsl(0,0%,95%) ;
+    --primary-color: hsl(212,80%,53%);
+    --secondary-color: hsl(0,0%,44%);
   }
 }
 
@@ -99,7 +99,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vw;
-  background-color: rgb(241,241,241);
+  background-color: var(--secondary-bg-color);
 }
 
 ul {
@@ -113,7 +113,7 @@ header button {
   border-radius: 100vmax;
   background: none;
   border-style: solid;
-  border-color: #707070;
+  border-color: var(--secondary-color);
   padding-left: 1rem;
   padding-right: 1rem;
   height: 2rem;
@@ -126,8 +126,8 @@ header > ul > li > button {
 }
 
 header > nav > ul > li > button:focus  {
-  border-color: #2780E7;
-  color: #2780E7;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 header > ul > li > a {
@@ -138,14 +138,14 @@ header > ul {
   grid-column-start: 1;
   grid-column-end: end;
   display: flex;
-  background-color: rgb(241,241,241);
+  background-color: var(--secondary-bg-color) ;
   padding-left: 1rem;
   margin-bottom: 0;
   height: 2rem;
 }
 
 header > ul > li {
-  background-color: white;
+  background-color: var(--main-bg-color);
   margin-right: .65rem;
   border-radius: 10px 10px 0 0 ;
   padding-top: .3rem;
@@ -160,7 +160,7 @@ header > nav {
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 0;
-  background-color: white;
+  background-color: var(--main-bg-color);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);  
   font-size: .8rem;
 }
@@ -175,9 +175,9 @@ header > nav > ul > li {
 }
 
 header > nav > button {
-  border-color: #2780E7;
-  background-color: #2780E7;
-  color: white;
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--main-bg-color);
 }
 
 main {
@@ -204,7 +204,7 @@ main > figure {
 
 .item {
   width: 15rem;
-  background-color: white;
+  background-color: var(--main-bg-color);
   border-radius: 10px;
   margin-bottom: 1rem;
   box-shadow: 0 3px 9px rgba(0, 0, 6, 0.16); 
