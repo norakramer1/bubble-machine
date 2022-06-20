@@ -41,7 +41,6 @@ const updateGraph = async (data) => {
   .on('mouseover', function (event, d, i) {
     d3.select(this).transition()
       .duration('50')
-      // .attr('opacity', '.85')
       div.transition()
       .duration(50)
       .style('opacity', 1)
@@ -64,6 +63,11 @@ const updateGraph = async (data) => {
     d3.select().transition()
       .duration('50')
       // .attr('stroke-opacity', '0')
+    const boxes = document.querySelectorAll('line');
+
+    boxes.forEach(box => {
+      box.remove();
+    });
   
 
       const svg = document.querySelector('#graph svg');

@@ -368,7 +368,8 @@ svg {
 
 div.tooltip {
   position: absolute;
-  text-align: center;
+  text-align: left;
+  margin-left: 20px;
   padding: 0.5rem;
   background: #ffffff;
   color: #313639;
@@ -376,6 +377,10 @@ div.tooltip {
   border-radius: 8px;
   pointer-events: none;
   font-size: 1.3rem;
+}
+
+div.tooltip div:nth-child(1) {
+  font-weight: bold;
 }
 
 div#zoom button {
@@ -540,6 +545,10 @@ circle{
 
 circle:hover{
   opacity: 1;
+}
+
+line{
+  pointer-events: none;
 }
 
 body .opacity{
