@@ -1,16 +1,5 @@
 <%- include ('./partials/head.ejs') %>
 <header>
-  <div id="logo">
-    <h1>Bubble Machine</h1>
-    <svg viewBox="0 0 44 44">
-      <g id="Group_314" data-name="Group 314" transform="translate(9934 15033)">
-        <circle id="Ellipse_269" data-name="Ellipse 269" cx="22" cy="22" r="22" transform="translate(-9934 -15033)" fill="#304081"/>
-        <path id="Path_340" data-name="Path 340" d="M24.029,39.685c10.734-.121,13.095-15.824,13.095-10.216A18.562,18.562,0,0,1,0,29.468c.243-8.583,9.613-10.439,13.633-5.308S13.295,39.806,24.029,39.685Z" transform="translate(-9930.58 -15040.487)" fill="#fff"/>
-        <path id="Path_339" data-name="Path 339" d="M22.643,36.492c10.115-.09,13.05-12.854,13.05-8.691-.182,7.756-8.439,15.807-18.1,15.807S0,36.518,0,28.908c.229-6.372,8.061-6.24,9.71-2.11S12.528,36.582,22.643,36.492Z" transform="translate(-9929.51 -15036.12)" fill="#346af1"/>
-        <ellipse id="Ellipse_271" data-name="Ellipse 271" cx="4.5" cy="5" rx="4.5" ry="5" transform="translate(-9907 -15023)" fill="#fff"/>
-      </g>
-    </svg>
-  </div>
   <ul>
     <li class="addButton">
       <button>+</button>
@@ -19,185 +8,95 @@
   <nav>
     <ul>
       <li>
-        <button id="parameterBtn" class="header_button">
-          <svg viewBox="0 0 19 17.2">
-            <path id="Icon_feather-filter" data-name="Icon feather-filter" d="M21,4.5H3l7.2,8.514V18.9l3.6,1.8V13.014Z" transform="translate(-2.5 -4)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-          </svg>
-          <p>Parameters</p>
-        </button>
-        <ul id="parameters" class="hidden">
-          <li id="users">
-            <button class="parameter_button">
-              <svg viewBox="0 0 20.586 14.41">
-                <path id="Icon_awesome-users" data-name="Icon awesome-users" d="M3.088,8.426A2.059,2.059,0,1,0,1.029,6.367,2.061,2.061,0,0,0,3.088,8.426Zm14.41,0a2.059,2.059,0,1,0-2.059-2.059A2.061,2.061,0,0,0,17.5,8.426Zm1.029,1.029H16.469a2.053,2.053,0,0,0-1.451.6,4.7,4.7,0,0,1,2.416,3.519h2.123a1.028,1.028,0,0,0,1.029-1.029V11.514A2.06,2.06,0,0,0,18.527,9.455Zm-8.234,0a3.6,3.6,0,1,0-3.6-3.6A3.6,3.6,0,0,0,10.293,9.455Zm2.47,1.029H12.5a4.974,4.974,0,0,1-4.407,0H7.823A3.706,3.706,0,0,0,4.117,14.19v.926A1.544,1.544,0,0,0,5.661,16.66h9.264a1.544,1.544,0,0,0,1.544-1.544V14.19A3.706,3.706,0,0,0,12.763,10.484Zm-7.2-.431a2.053,2.053,0,0,0-1.451-.6H2.059A2.061,2.061,0,0,0,0,11.514v1.029a1.028,1.028,0,0,0,1.029,1.029h2.12A4.717,4.717,0,0,1,5.568,10.053Z" transform="translate(0 -2.25)" fill="#fff"/>
-              </svg>        
-              <h3>Users</h3>
-            </button>
-            <div class="parameter hidden">
-              <label>Amount of users:</label>
-              <input type="range">
-            </div>
-          </li>
-          <li>
-          <button class="parameter_button">
-            <svg viewBox="0 0 12.88 18.061">
-              <path id="Icon_metro-steps" data-name="Icon metro-steps" d="M11.1,3.856c-1.514,0-2.741,2.022-2.741,4.515A39.527,39.527,0,0,0,9.04,13.5c.268,1.78.921,3.255,2.056,3.255s1.9-.983,1.9-2.781c0-.612-.5-1.587-.526-2.419-.041-1.5,1.006-2.1,1.006-3.487,0-2.494-.863-4.213-2.377-4.213Zm7.4,5.16c-1.514,0-2.377,1.719-2.377,4.213,0,1.387,1.047,1.986,1.006,3.487-.022.832-.526,1.807-.526,2.419,0,1.8.761,2.781,1.9,2.781s1.788-1.475,2.056-3.255a39.527,39.527,0,0,0,.685-5.131c0-2.494-1.227-4.515-2.741-4.515Z" transform="translate(-8.355 -3.856)" fill="#fff"/>
-            </svg>
-            <h3>Steps</h3></button>
-            <div class="parameter hidden">
-              <label>Amount of steps:</label>
-              <input type="range">
-            </div>
-          </li>
-          <li>
-            <button class="parameter_button">
-            <svg  viewBox="0 0 10.952 14.41">
-              <g id="Icon_ionic-ios-document" data-name="Icon ionic-ios-document" transform="translate(-7.313 -3.938)">
-                <path id="Path_414" data-name="Path 414" d="M21.286,7.507h3.278a.178.178,0,0,0,.18-.18h0a1.066,1.066,0,0,0-.385-.825L21.61,4.211a1.157,1.157,0,0,0-.742-.267h0a.266.266,0,0,0-.267.267V6.823A.684.684,0,0,0,21.286,7.507Z" transform="translate(-6.48 -0.003)" fill="#fff"/>
-                <path id="Path_415" data-name="Path 415" d="M13.185,6.82V3.938H8.465A1.156,1.156,0,0,0,7.313,5.09v12.1a1.156,1.156,0,0,0,1.153,1.153h8.646a1.156,1.156,0,0,0,1.153-1.153V8.441H14.806A1.624,1.624,0,0,1,13.185,6.82Z" transform="translate(0 0)" fill="#fff"/>
-              </g>
-            </svg>        
-            <h3>Items</h3></button>
-            <div class="parameter hidden">
-              <label for="prodItems">Produced items per day</label>
-              <input type="range" id="prodItems">
-              <label for="itemLinks">Maximum number of item links</label>
-              <input type="range" id="itemLinks">
-              <label for="exposedItems">Number of exposed items per day per person</label>
-              <input type="range" id="exposedItems">
-              <label for="probPosting">Probability of posting items on the social network</label>
-              <input type="range" id="probPosting">
-            </div>
-          </li>
-          <li>
-            <button class="parameter_button">
-            <svg  viewBox="0 0 13.25 13.073">
-              <path id="Exclusion_2" data-name="Exclusion 2" d="M7.012,17.032h0L5.342,14.707H2.387a2,2,0,0,1-2-2V5.958a2,2,0,0,1,2-2h9.249A1.99,1.99,0,0,1,13.5,5.228L6.92,11.448,4.6,9.215l-1.14,1.159L6.92,13.883,13.637,6.8v5.9a2,2,0,0,1-2,2H8.681L7.013,17.03Z" transform="translate(-0.387 -3.958)" fill="#fff"/>
-            </svg>        
-            <h3>Acceptance</h3>
-          </button>
-            <div class="parameter hidden">
-              <label>Acceptance rate?</label>
-              <input type="range">
-            </div>
-          </li>
-          <li>
-            <button class="parameter_button">
-            <svg  viewBox="0 0 16 13">
-              <g id="Polygon_10" data-name="Polygon 10" transform="translate(16 13) rotate(180)" fill="#fff">
-                <path d="M 15.10521602630615 12.5 L 0.8947833776473999 12.5 L 7.999999523162842 0.9540237784385681 L 15.10521602630615 12.5 Z" stroke="none"/>
-                <path d="M 7.999999523162842 1.908047676086426 L 1.789566993713379 12 L 14.2104320526123 12 L 7.999999523162842 1.908047676086426 M 7.999999523162842 0 L 16 13 L -9.5367431640625e-07 13 L 7.999999523162842 0 Z" stroke="none" fill="#fff"/>
-              </g>
-            </svg>        
-            <h3>Sharpness</h3>
-          </button>
-            <div class="parameter hidden">
-              <label>Sharpness</label>
-              <input type="range">
-            </div>
-          </li>
-          <li>
-            <button class="parameter_button">
-            <svg viewBox="0 0 15.026 17.68">
-              <g id="noun-brain-1912149" transform="translate(-123.761 -14)">
-                <path id="Path_417" data-name="Path 417" d="M138.669,23.034,137,20.487a1.13,1.13,0,0,1-.149-.5,6.555,6.555,0,0,0-13.086.576,7.583,7.583,0,0,0,2.639,5.632.878.878,0,0,1,.316.651V30.6a.583.583,0,0,0,.52.576l5.632.5a.566.566,0,0,0,.613-.576V28.424a.326.326,0,0,1,.316-.316h1.97a1.087,1.087,0,0,0,1.1-1.1V24.372a.226.226,0,0,1,.223-.223h.967a.72.72,0,0,0,.613-1.115Zm-5.8-2.138a1.5,1.5,0,0,1-.632-.149,1.475,1.475,0,0,1-1.041.427,1.873,1.873,0,0,1-.465-.074,1.162,1.162,0,0,1-.948.5h-.056a6.273,6.273,0,0,0-.576,2.677.357.357,0,0,1-.446.335l-.223-.056a.36.36,0,0,1-.279-.372,13.354,13.354,0,0,0-.2-2.268,1.316,1.316,0,0,1-1.1-1.283c0-.093.019-.167.019-.26a1.3,1.3,0,0,1-.613-1.115A1.339,1.339,0,0,1,127.256,18a1.387,1.387,0,0,1,1.376-1.32,1.465,1.465,0,0,1,.651.167,1.35,1.35,0,0,1,1.171-.632,1.368,1.368,0,0,1,1.152.613,1.582,1.582,0,0,1,.427-.074A1.39,1.39,0,0,1,133.409,18a1.5,1.5,0,0,1-.539,2.9Z" transform="translate(0 0)" fill="#fff"/>
-              </g>
-            </svg>        
-            <h3>User behaviour</h3>
-          </button>
-            <div class="parameter hidden">
-              <label>User behaviour</label>
-              <input type="range">
-            </div>
-          </li>
-        </ul>
+        <button>Users</button>
       </li>
       <li>
-        <button id="autoPlay" class="header_button">
-          <div id="play">
-            <svg viewBox="0 0 19.977 19.977">
-              <g id="Icon_feather-play-circle" data-name="Icon feather-play-circle" transform="translate(0.5 0.5)">
-                <path id="Path_343" data-name="Path 343" d="M21.977,12.488A9.488,9.488,0,1,1,12.488,3a9.488,9.488,0,0,1,9.488,9.488Z" transform="translate(-3 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-                <path id="Path_344" data-name="Path 344" d="M15,12l5.693,3.8L15,19.591Z" transform="translate(-7.409 -6.307)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-              </g>
-            </svg>            
-            <p>Play</p>
-          </div>
-          <div id="pause" class="hidden">
-            <svg viewBox="0 0 19.977 19.977">
-              <g id="Group_314" data-name="Group 314" transform="translate(0.5 0.5)">
-                <path id="Path_345" data-name="Path 345" d="M21.977,12.488A9.488,9.488,0,1,1,12.488,3a9.488,9.488,0,0,1,9.488,9.488Z" transform="translate(-3 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-                <path id="Path_346" data-name="Path 346" d="M15,19.193V13.5" transform="translate(-7.409 -6.858)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-                <path id="Path_347" data-name="Path 347" d="M21,19.193V13.5" transform="translate(-9.614 -6.858)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-              </g>
-            </svg>
-            <p>Pause</p>
-          </div>
-        </button>
+        <button>Friends</button>
       </li>
       <li>
-        <button id="nextStep" class="header_button">
-          <svg viewBox="0 0 20 20">
-            <g id="Group_293" data-name="Group 293" transform="translate(-0.16)">
-              <g id="Polygon_4" data-name="Polygon 4" transform="translate(14.213 4.301) rotate(90)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5.042,1.2a1,1,0,0,1,1.647,0l3.962,5.751a1,1,0,0,1-.823,1.567H1.9A1,1,0,0,1,1.08,6.946Z" stroke="none"/>
-                <path d="M 5.865537643432617 1.762704849243164 L 5.865647792816162 1.762545108795166 L 1.903369903564453 7.513412475585938 C 1.903369903564453 7.513413429260254 1.90337085723877 7.51341438293457 1.90336799621582 7.513415336608887 L 9.827924728393555 7.513415336608887 C 9.827924728393555 7.51341438293457 9.827925682067871 7.513413429260254 9.827927589416504 7.513415336608887 L 5.865537643432617 1.762704849243164 M 5.865647792816162 0.762547492980957 C 6.178020477294922 0.762547492980957 6.490392684936523 0.9067602157592773 6.689117908477783 1.19518518447876 L 10.65139770507812 6.946054935455322 C 11.10848808288574 7.609475135803223 10.63356781005859 8.513415336608887 9.827927589416504 8.513415336608887 L 1.90336799621582 8.513415336608887 C 1.09772777557373 8.513415336608887 0.622807502746582 7.609475135803223 1.079897880554199 6.946054935455322 L 5.042177677154541 1.19518518447876 C 5.240902900695801 0.9067602157592773 5.553275108337402 0.762547492980957 5.865647792816162 0.762547492980957 Z" stroke="none" fill="#fff"/>
-              </g>
-              <line id="Line_348" data-name="Line 348" y2="7.911" transform="translate(14.213 6.215)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
-              <g id="Ellipse_272" data-name="Ellipse 272" transform="translate(0.16)" fill="none" stroke="#fff" stroke-width="1">
-                <circle cx="10" cy="10" r="10" stroke="none"/>
-                <circle cx="10" cy="10" r="9.5" fill="none"/>
-              </g>
-            </g>
-          </svg>          
-          <p id="nextStep">Next Step</p>
-        </button>
+        <button>Items per day</button>
       </li>
       <li>
-        <button id="resetSimulation" class="header_button">
-          <svg viewBox="0 0 364.48 355.18">
-            <path class="cls-1" d="M364.47,63.27c-.71,5.51-5.4,9.63-10.95,9.62h-1.48l-34.41-4.52c24.7,31.67,37.93,70.77,37.55,110.92-.38,40.16-14.37,79-39.67,110.18-25.3,31.18-60.42,52.88-99.64,61.53-39.21,8.66-80.2,3.77-116.28-13.87-36.07-17.64-65.11-46.98-82.36-83.24S-4.48,176.59,4.59,137.47c9.07-39.12,31.14-74.01,62.59-98.98C98.63,13.53,137.62-.04,177.77,0,183.9,0,188.87,4.97,188.87,11.1s-4.97,11.1-11.1,11.1c-47.37-.02-92.16,21.57-121.66,58.63C26.61,117.9,15.64,166.4,26.29,212.55s41.78,84.93,84.55,105.31c42.76,20.38,92.48,20.15,135.05-.64,42.57-20.79,73.33-59.85,83.55-106.1s-1.21-94.64-31.05-131.43l-1.85,42.92h0c-.27,5.9-5.12,10.55-11.02,10.58h-.52c-2.95-.09-5.73-1.37-7.72-3.54-1.99-2.17-3.02-5.05-2.86-8l2.96-68.89c-.04-.17-.04-.35,0-.52-.04-.37-.04-.74,0-1.11v-1.55h0c-.03-.14-.03-.3,0-.44,.19-.46,.41-.9,.66-1.33,.3-.5,.65-.97,1.04-1.41,.66-.77,1.44-1.45,2.29-2,.49-.34,1.01-.64,1.55-.89l1.48-.52h4.37l65.04,8.66h0c2.96,.12,5.75,1.41,7.75,3.59,2,2.18,3.05,5.07,2.91,8.03h0Z" stroke="#fff" fill="#fff"/>
-          </svg>
-          <p id="resetSimulation">Reset</p>
-        </button>
+        <button>More</button>
       </li>
     </ul>
-
-    <ul>
-      <li>
-        <button class="header_button">
-          <svg viewBox="0 0 17.229 18.798">
-            <path id="Icon_ionic-ios-moon" data-name="Icon ionic-ios-moon" d="M21.356,18.7c-.142,0-.284.01-.426.01A8.629,8.629,0,0,1,14.724,16.1a8.917,8.917,0,0,1-2.57-6.3,9.029,9.029,0,0,1,.857-3.852A12.757,12.757,0,0,1,13.676,4.8a.193.193,0,0,0-.191-.3,9.467,9.467,0,0,0,1.444,18.795,9.227,9.227,0,0,0,7.092-3.333,8.94,8.94,0,0,0,.8-1.067.2.2,0,0,0-.2-.3A8.359,8.359,0,0,1,21.356,18.7Z" transform="translate(-5.625 -4.496)" fill="#fff"/>
-          </svg>          
-          <p>Light mode</p>
-        </button>
-      </li>
-      <li>
-        <button id="downloadSVG" class="header_button">
-          <svg viewBox="0 0 17.792 17.792">
-            <g id="Icon_feather-save" data-name="Icon feather-save" transform="translate(0.5 0.5)">
-              <path id="Path_348" data-name="Path 348" d="M19.426,21.292H6.366A1.866,1.866,0,0,1,4.5,19.426V6.366A1.866,1.866,0,0,1,6.366,4.5H16.627l4.664,4.664V19.426A1.866,1.866,0,0,1,19.426,21.292Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-              <path id="Path_349" data-name="Path 349" d="M19.829,26.963V19.5H10.5v7.463" transform="translate(-6.768 -10.171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-              <path id="Path_350" data-name="Path 350" d="M10.5,4.5V9.164h7.463" transform="translate(-6.768 -4.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-            </g>
-          </svg>          
-          <p>Save</p>
-        </button>
-      </li>
-    </ul>
+    <button id="runSim"> Run </button>
   </nav>
 </header>
 
 <main>
-  <div id="zoom">
-    <p></p>
-    <button id="zoomIn">+</button>
-    <button id="zoomOut">-</button>
-  </div>
+  <aside id="parameters">
+    <div class="parameter card item hidden">
+      <label> Number of users:</label>
+      <input type="range" min="2" max="500">
+    </div>
+    <div class="parameter card item hidden">
+      <label> Number of friends:</label>
+      <input type="range" min="2" max="500">
+    </div>
+    <div class="parameter card item hidden">
+      <label> Number of items send:</label>
+      <input type="range" min="2" max="500">
+    </div>
+    <div class="card hidden">
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+      <div class="parameter item">
+        <label> Number of users:</label>
+        <input type="range" min="2" max="500">
+      </div>
+    </div>
+  </aside>
   <figure id="graph"></figure>
-  <div class="reset">
-   <button id="distance">Distance</button>
-  </div>
+  <aside id="zoom">
+    <button id="distance">
+      <svg viewBox="0 0 16 16">
+        <g id="Group_315" data-name="Group 315" transform="translate(-1874 -960)">
+          <rect id="Rectangle_651" data-name="Rectangle 651" width="4" height="8" transform="translate(1874 967)" fill="#707070"/>
+          <rect id="Rectangle_653" data-name="Rectangle 653" width="4" height="11" transform="translate(1879 964)" fill="#707070"/>
+          <rect id="Rectangle_652" data-name="Rectangle 652" width="4" height="15" transform="translate(1884 960)" fill="#707070"/>
+        </g>
+      </svg>
+    </button>
+    <button id="zoomIn">
+      <svg viewBox="0 0 16 16">
+        <g id="Group_332" data-name="Group 332" transform="translate(-1873 -998)">
+          <line id="Line_356" data-name="Line 356" y2="14" transform="translate(1881 999)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
+          <line id="Line_357" data-name="Line 357" x2="14" transform="translate(1874 1006)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
+        </g>
+      </svg>      
+    </button>
+    <button id="zoomOut">
+      <svg viewBox="0 0 16 16">
+        <g id="Group_333" data-name="Group 333" transform="translate(-1873 -999)">
+          <line id="Line_356" data-name="Line 356" y2="14" transform="translate(1881 999)" fill="none"/>
+          <line id="Line_357" data-name="Line 357" x2="14" transform="translate(1874 1006)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
+        </g>
+      </svg>
+    </button>
+  </aside>
   <div id="my_dataviz"></div>
 </main>
 <%- include ('./partials/footer.ejs') %>
