@@ -9,8 +9,8 @@ import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/highlight.js'
 import { downloadSVG } from './modules/downloadGraph.js'
-import { dropdown } from './modules/dropdown.js'
-import { accordion } from './modules/accordion.js'
+import { dropdown } from './modules/ui/dropdown.js'
+import { accordion } from './modules/ui/accordion.js'
 
 
 highlight();

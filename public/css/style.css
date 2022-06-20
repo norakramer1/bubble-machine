@@ -69,7 +69,6 @@ select {
   }
 }
 
-
 /* OWN CSS */
 
 @media (prefers-color-scheme: dark) {
@@ -84,13 +83,13 @@ select {
 @media (prefers-color-scheme: light) {
   :root {
     --main-bg-color: hsl(223, 45%, 95%);
-    --primary-color: hsl(223, 100%, 100%);;
+    --primary-color: hsl(223, 100%, 100%);
     --secondary-color: hsl(223, 87%, 57%);
     --text-color: hsl(223, 87%, 57%);
   }
 }
 
-:root{
+:root {
   --person-color: purple;
   --item-color: purple;
   --person-shadow-color: rgb(178, 51, 68);
@@ -103,7 +102,7 @@ body {
   background-color: var(--main-bg-color);
 }
 
-header{
+header {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -142,14 +141,14 @@ header > ul {
   justify-content: flex-start;
   margin-bottom: 0;
   position: relative;
-  align-self:end;
+  align-self: end;
 }
 
 header > ul > li {
   border-radius: 10px 10px 0 0;
   background-color: var(--secondary-color);
-  padding: .5rem;
-  margin-right: .2rem;
+  padding: 0.5rem;
+  margin-right: 0.2rem;
   width: 8rem;
   height: 2.5rem;
   display: flex;
@@ -159,18 +158,18 @@ header > ul > li {
 header > ul > li > a {
   text-decoration: none;
   color: #fff;
-  margin-left: .2rem;
+  margin-left: 0.2rem;
 }
 
 header > ul > li > button {
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
 header > ul > li > button:hover {
-  background-color: var(--text-color);
+  transform: scale(1.25);
   border-radius: 0.3em;
 }
 
@@ -193,7 +192,7 @@ header > ul > li > button:hover {
   background-color: var(--primary-color);
 }
 
-nav{
+nav {
   grid-column-start: 1;
   grid-column-end: 7;
   grid-row: 2;
@@ -208,7 +207,7 @@ nav{
 
 nav > ul {
   display: flex;
-  padding: .5rem;
+  padding: 0.5rem;
   margin: 0;
 }
 nav > ul:first-of-type {
@@ -227,7 +226,7 @@ nav > ul > li {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin: 0 .5em 0 .5em;
+  margin: 0 0.5em 0 0.5em;
 }
 
 .header_button {
@@ -255,12 +254,12 @@ nav > ul > li {
   background: none;
 }
 
-.header_button:active svg{
+.header_button:active svg {
   fill: white;
 }
 
 .header_button p {
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 
@@ -287,7 +286,7 @@ nav > ul > li {
   display: block;
   padding-bottom: 0.5rem;
   padding-left: 5%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .parameter_button {
@@ -422,7 +421,7 @@ section.onboarding {
   animation: none;
   position: absolute;
   z-index: 2;
- 
+
   top: 5vw;
   left: 10vw;
   display: flex;
@@ -431,12 +430,12 @@ section.onboarding {
   flex-direction: column;
 }
 
-section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
+section.onboarding article:nth-of-type(1),
+section.onboarding article:nth-of-type(2) {
   width: 80vw;
   height: 80vh;
- background-color: var(--primary-color);
+  background-color: var(--primary-color);
   border-radius: 10px;
-
 }
 
 section.onboarding article h1,
@@ -473,8 +472,8 @@ section.onboarding article {
 
 section.onboarding article.active {
   display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 section.onboarding article:nth-of-type(3).active div {
@@ -490,24 +489,24 @@ section.onboarding article:nth-of-type(3).active ~ button.onboarding-start img {
   display: none;
 }
 
-section.onboarding article:nth-of-type(3).active ~ button.onboarding-start::after {
+section.onboarding
+  article:nth-of-type(3).active
+  ~ button.onboarding-start::after {
   position: absolute;
   top: 40vh;
   left: 40vw;
   background-color: var(--primary-color);
- padding: 2%;
- border-radius: 5px;
- border: none;
-content: url('../img/plus-icon.svg')
+  padding: 2%;
+  border-radius: 5px;
+  border: none;
+  content: url("../img/plus-icon.svg");
 }
-
 
 button.onboarding-start {
   background-color: transparent;
   border: none;
   margin-top: -10%;
 }
-
 
 /* /////////////////////////////////////////////////////////////// */
 /* CSS FOR ONBOARDING NAVMENU */
@@ -527,7 +526,6 @@ section.onboarding article.active nav ul:first-of-type {
   justify-content: start;
   border-radius: 10px 0 0 10px;
   padding: 5%;
-
 }
 
 section.onboarding article.active nav ul:nth-of-type(2) {
@@ -539,22 +537,22 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   /* padding: 5%; */
 }
 
-circle{
+circle {
   transition: 1s all;
 }
 
-circle:hover{
+circle:hover {
   opacity: 1;
 }
 
-line{
+line {
   pointer-events: none;
 }
 
-body .opacity{
+body .opacity {
   opacity: 1;
 }
-.opacityDim{
+.opacityDim {
   opacity: 0.1;
 }
 
@@ -581,7 +579,6 @@ section.onboarding article.active nav ul {
   height: 5vh;
 }
 
-
 /* section.onboarding article.active nav ul {
 
 } */
@@ -592,18 +589,15 @@ section.onboarding article.active nav ul li {
   margin: 0;
   padding: 0;
   list-style: none;
-
 }
 
 section.onboarding article.active nav ul li p {
   display: flex;
 }
 
-
 section.onboarding article.active nav ul li:not(:last-of-type) {
   border-bottom: none;
 }
-
 
 section ul li img {
   cursor: pointer;
