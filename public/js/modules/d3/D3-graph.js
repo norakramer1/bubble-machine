@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 const width = window.innerWidth
 const height = window.innerHeight
-const margin = { width: (0.1 * width), height: (0.1 * height) }
+const header = document.querySelector('header')
+const headerHeight = header.getBoundingClientRect().height
+const svgHeight = height - headerHeight
+const margin = { width: (0.1 * width), height: (0.1 * svgHeight) }
 
 const div = d3.select('body').append('div')
 .attr('class', 'tooltip')
@@ -13,11 +16,11 @@ const gethtml = (id, links) => {
 
 const svg = d3.select('#graph').append('svg')
   .attr('width', width)
-  .attr('height', height)
+  .attr('height', svgHeight)
 
 // Scale
-const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width - 0])
-const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height - 200])
+const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
+const yScale = d3.scaleLinear().range([0 + margin.height, svgHeight - margin.height - 65])
 
 const updateGraph = async (data) => {
   // Create the svg in the body
