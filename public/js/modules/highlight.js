@@ -1,39 +1,81 @@
-import { fetchDataFromAPI } from './apiData.js'
+// Get API data
+import { getOpenedSessionData } from './sessions/currentSessionData.js'
+
+const data = await getOpenedSessionData(window.location.hash.slice(1))
+
 
 // Wait 1 second to wait for svg circles loaded
-function delay (time) {
-  return new Promise(resolve => setTimeout(resolve, time))
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
 }
 
 // Add hover highlight of curent item you hovert and connected items
-export const highlight = async (sessionID) => {
-  const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`)
-  await delay(1000)
+export const highlight = async () => {
 
-  const element = document.querySelector(' figure svg')
-  const children = element.children
-  for (let i = 0; i < children.length; i++) {
-    children[i].addEventListener('mouseenter', () => {
-      const item = children[i]
-      const element2 = document.querySelector('figure svg')
-      const children2 = element2.children
-      for (let i = 0; i < children2.length; i++) {
-        children2[i].style.opacity = '0.1'
-      }
-      item.style.opacity = '1'
-      const currentitem = item.id.replace('node', '')
+  // Wait 1 second till the svg is loaded  
+  await delay(1000);
 
-      // Check if item has links and if it got link give thos links opacity 1
-      for (const item of data.links) {
-        if (item.source == currentitem) {
-          document.querySelector(`#node${item.target}`).style.opacity = '1'
-        }
-        if (item.target == currentitem) {
-          document.querySelector(`#node${item.source}`).style.opacity = '1'
-        }
+  
+  // Select svg items
+  const svg = document.querySelector('#graph svg');
+  for(let items=0; items<svg.children.length; items++){
+
+    // Add addEventListener to all items in svg
+    svg.children[items].addEventListener('click', () => {
+
+      // Remove item info
+      const nodes = svg.children;
+      for(let items=0; items<nodes.length; items++){
+        nodes[items].classList.remove("opacity");
       }
 
-      // Here you maby can add lines between items
-    })
+
+    const node = svg.children[items];
+    const svgNodes = svg.children;
+    node.classList.add("opacity");
+
+    // Make alle items opacity 0.1
+    for(let items=0; items<svgNodes.length; items++){
+      svgNodes[items].classList.add("opacityDim");
+    }
+
+    // Check alle items that are connected with hovert item
+    const currentNode = node.id.replace('node','');
+    let friends = 0;
+    let itemlinks = 0;
+    let infolinks = 0;
+
+    function countItems(item){
+      if(item.label == "friend"){
+        friends++;
+      }
+      if(item.label == "itemlink"){
+        itemlinks++;
+      }
+      if(item.label == "infolink"){
+        infolinks++;
+      }
+    }
+
+    // Count all difrent items friend, itemlink, infolink that are from target
+    for (const item of data.links) {
+      if(item.source == currentNode){
+        document.querySelector(`#node${item.target}`).classList.add("opacity");
+        countItems(item);
+      }
+      // Count all difrent items friend, itemlink, infolink that are from source
+      if(item.target == currentNode){
+        document.querySelector(`#node${item.source}`).classList.add("opacity");
+        countItems(item);
+      }
+    }
+
+    // // Place item info inside a label
+    document.querySelector(`.connectionPersons span`).innerHTML = friends;
+    document.querySelector(`.itemPersons span`).innerHTML = itemlinks;
+    document.querySelector(`.itemSharers span`).innerHTML = infolinks;
+  })
+
   }
+
 }
