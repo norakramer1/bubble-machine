@@ -7,9 +7,9 @@ import { getAllActiveSessions } from './modules/sessions/getAllSessions.js'
 import { deleteSession } from './modules/sessions/deleteSession.js'
 import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
-import { highlight } from './modules/highlight.js'
+import { highlight } from './modules/d3/highlight.js'
 // import { downloadSVG } from './modules/downloadGraph.js'
-import { parameters } from './modules/parameters.js'
+import { parameters } from './modules/ui/parameters.js'
 
 
 highlight()
