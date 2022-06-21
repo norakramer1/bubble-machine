@@ -23,7 +23,7 @@ h6 {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 html {
@@ -514,6 +514,7 @@ section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   background-repeat: no-repeat;
 }
 
+
 #downloadSVG {
   background: url(../img/download.png);
   background-size: 70%;
@@ -526,4 +527,21 @@ div#my_dataviz {
   top: 0;
   overflow: hidden;
   display: none;
+}
+
+.steps {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: black;
+  z-index: 1;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  margin-left: 40px;
+  border: 2px black solid;
 }
