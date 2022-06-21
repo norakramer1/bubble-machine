@@ -271,6 +271,7 @@ main > figure {
   right: 2rem;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 #zoom button {
@@ -504,4 +505,16 @@ section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   background-repeat: no-repeat;
 }
 
+#downloadSVG {
+  background: url(../img/download.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+div#my_dataviz {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  display: none;
+}

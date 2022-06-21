@@ -23,6 +23,12 @@ export const downloadSVG = () => {
   const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(source)
 
   // make from button a download svg button
-  document.getElementById('downloadSVG').setAttribute('href', url)
-  document.getElementById('downloadSVG').setAttribute('download', 'test.svg')
+
+  var downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.download = "bubble.svg";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+
 }

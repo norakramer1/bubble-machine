@@ -11,7 +11,7 @@ import { deleteSession } from './modules/sessions/deleteSession.js'
 import { createSession } from './modules/sessions/createSession.js'
 import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/d3/highlight.js'
-// import { downloadSVG } from './modules/downloadGraph.js'
+import { downloadSVG } from './modules/data/downloadGraph.js'
 import { parameters } from './modules/ui/parameters.js'
 import { darkmode } from './modules/ui/darkmode.js'
 import { resetSession } from './modules/sessions/resetSession.js'
@@ -30,6 +30,8 @@ const autoButton = document.querySelector('#runSim')
 const resetButton = document.querySelector('#resetButton')
 const addButton = document.querySelector('.addButton')
 const darkmodeButton = document.querySelector('#darkmode')
+const svgDownloadButton = document.querySelector('#downloadSVG')
+
 
 // const downloadButton = document.querySelector("#downloadSVG")
 const dropdownBtn = document.querySelector('#parameterBtn')
@@ -92,6 +94,8 @@ autoButton.addEventListener('click', () => autoPlay(window.location.hash.slice(1
 resetButton.addEventListener('click', () => resetSession(window.location.hash.slice(1)))
 addButton.addEventListener('click', () => createSession())
 darkmodeButton.addEventListener('click', () => darkmode())
+svgDownloadButton.addEventListener('click', () => downloadSVG())
+
 
 // downloadButton.addEventListener('click', () => downloadSVG())
 // dropdownBtn.addEventListener('click', dropdown)
