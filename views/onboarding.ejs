@@ -1,5 +1,17 @@
 
-<%- include ('./partials/head.ejs') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bubble Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="onboarding-page">
 
 
 <!-- <img src="img/bubble-machine-green.png" alt="bubble machine logo" class="logo"/> -->
@@ -11,6 +23,8 @@
         <p>This application was made to gain insight in the origin and spread of filter bubbles. 
           It is used to simulate the spread of disinformation through social media algorithms.
         </p>
+
+
      
     </article>
 
@@ -24,6 +38,7 @@
         <div>
           <p class="user-info">This pentagon shows a user in the simulation, every step they can change their position and relations to documents
             and friends.</p>
+            <img src="img/hand.svg" alt="hand pointing to users button" class="hand">
             <button class="user-svg">
               <img src="img/user.svg" alt="user in the simulation" >
             </button>
@@ -31,9 +46,9 @@
               The user can choose to encorporate this article, this has effects on their position in the filter bubble.
             </p>
               <button class="document-svg">
-                <img src="img/document.svg" alt="document in the simulation" >
-                <img src="img/document.svg" alt="document in the simulation" >
-                <img src="img/document.svg" alt="document in the simulation" >
+                <img src="img/document.svg" alt="document in the simulation">
+                <img src="img/document.svg" alt="document in the simulation">
+                <img src="img/document.svg" alt="document in the simulation">
               </button>
         </div>
     
@@ -46,6 +61,18 @@
             <p>By running the simulation you will start to see users cluster together and form their own 
               filter bubble. Which means they recieve less and less information that will challenge their beliefs.
             </p>
+        </div>
+         <div>
+          <p class="all-user-info">This pentagon shows a user in the simulation, every step they can change their position and relations to documents
+            and friends.</p>
+            <button class="all-user-svg">
+              <img src="img/user.svg" alt="user in the simulation" >
+              <img src="img/user.svg" alt="user in the simulation" >
+              <img src="img/user.svg" alt="user in the simulation" >
+              <img src="img/user.svg" alt="user in the simulation" >
+            </button>
+        
+           
         </div>
 
         <form action="/">

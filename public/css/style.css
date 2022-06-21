@@ -107,7 +107,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vw;
-  background-color: rgb(241,241,241);
+  background-color: rgb(241, 241, 241);
 }
 
 ul {
@@ -117,6 +117,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 header button {
   border-radius: 100vmax;
   background: none;
@@ -128,37 +129,38 @@ header button {
   text-align: start;
 }
 
-header > ul > li > button {
+header>ul>li>button {
   border-style: none;
   height: .5rem;
 }
 
-header > nav > ul > li > button:focus  {
+header>nav>ul>li>button:focus {
   border-color: #2780E7;
   color: #2780E7;
 }
 
-header > ul > li > a {
+header>ul>li>a {
   padding-left: 1rem;
 }
 
-header > ul {
+header>ul {
   grid-column-start: 1;
   grid-column-end: end;
   display: flex;
-  background-color: rgb(241,241,241);
+  background-color: rgb(241, 241, 241);
   padding-left: 1rem;
   margin-bottom: 0;
   height: 2rem;
 }
 
-header > ul > li {
+header>ul>li {
   background-color: white;
   margin-right: .65rem;
-  border-radius: 10px 10px 0 0 ;
+  border-radius: 10px 10px 0 0;
   padding-top: .3rem;
 }
-header > nav {
+
+header>nav {
   display: flex;
   justify-content: space-between;
   grid-column-start: 1;
@@ -169,20 +171,21 @@ header > nav {
   padding-right: 1rem;
   margin: 0;
   background-color: white;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);  
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
   font-size: .8rem;
 }
-header > nav > ul {
+
+header>nav>ul {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-header > nav > ul > li {
+header>nav>ul>li {
   margin-right: 1rem;
 }
 
-header > nav > button {
+header>nav>button {
   border-color: #2780E7;
   background-color: #2780E7;
   color: white;
@@ -196,10 +199,11 @@ main {
   padding: 0;
 }
 
-main > figure {
+main>figure {
   margin: 0;
   padding: 0;
 }
+
 #parameters {
   position: absolute;
   top: 1rem;
@@ -215,7 +219,7 @@ main > figure {
   background-color: white;
   border-radius: 10px;
   margin-bottom: 1rem;
-  box-shadow: 0 3px 9px rgba(0, 0, 6, 0.16); 
+  box-shadow: 0 3px 9px rgba(0, 0, 6, 0.16);
   padding: 1rem;
 }
 
@@ -239,7 +243,7 @@ main > figure {
   position: relative;
 }
 
-#zoom button > svg {
+#zoom button>svg {
   height: 1rem;
   width: auto;
   margin: auto;
@@ -254,15 +258,21 @@ main > figure {
 section.onboarding {
   display: none;
   animation: none;
-  position: absolute;
-  z-index: 2;
-
-  top: 5vw;
-  left: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+
+button.onboarding-start {
+  background-color: white;
+  border: 2px solid #AB46A4;
+  border-radius: 25px 25px 25px 25px;
+  padding: 1vh;
+  margin-top: 5vh;
+  /* margin-left: 5vw; */
+  cursor: pointer;
 }
 
 /* section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
@@ -281,28 +291,40 @@ section.onboarding article a {
   text-align: center;
 } */
 
+/* section.onboarding article:first-of-type {
+  background-image: url(../img/triangles.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* height: 80%; 
+} */
+
+body.onboarding-page {
+  background-color: #f1f1f1;
+}
+
 section.onboarding article h1 {
   font-weight: 600;
+  font-size: 3.5vw;
 }
 
 section.onboarding article h2 {
-  font-size: 1.5vw;
+  font-size: 2.5vw;
 }
 
 section.onboarding article h3 {
-  text-align: center;
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-weight: 600;
 }
 
-section.onboarding article h2,
 section.onboarding article p {
   font-size: 1.2vw;
-  margin: 0 5% 3% 10%;
+  /* margin: 0 15% 3% 5%; */
 }
 
 section.onboarding article {
   display: none;
+  margin-top: 15vh;
 }
 
 section.onboarding article.active {
@@ -312,44 +334,68 @@ section.onboarding article.active {
   align-content: space-around;
 }
 
-section.onboarding article:nth-of-type(2).active div:nth-of-type(1) {
-  padding: 5% 0 5% 0;
+section.onboarding article.active div {
+  animation: opacity 2s;
+}
+
+section.onboarding article:first-of-type {
+  background-color: white;
+  box-shadow: 0px 11px 15px 5px rgba(0,0,0,0.1);
+  flex-direction: column;
+  max-width: 50vw;
+  padding-top: 20vh;
+}
+
+
+
+section.onboarding article:nth-of-type(2).active div:nth-of-type(1),
+section.onboarding article:nth-of-type(3).active div:nth-of-type(1) {
+  padding: 2%;
   background-color: white;
   border: #AB46A4 2px solid;
   max-width: 30vw;
-  margin: 1vw 10vw 0 1vw;
+  margin: 1vw 10vw 0 15vw;
   border-radius: 10px;
 }
 
 
-section.onboarding article:nth-of-type(2).active div:nth-of-type(2) {
+section.onboarding article:nth-of-type(2).active div:nth-of-type(2),
+section.onboarding article:nth-of-type(3).active div:nth-of-type(2) {
   background-color: white;
   display: flex;
   width: 60vw;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-section.onboarding article:nth-of-type(2).active div:nth-of-type(2) button {
+section.onboarding article:nth-of-type(2).active div:nth-of-type(2) button,
+section.onboarding article:nth-of-type(3).active div:nth-of-type(2) button {
   background-color: transparent;
   border: none;
 }
 
-section.onboarding article:nth-of-type(2).active div:nth-of-type(2) p {
+section.onboarding article:nth-of-type(2).active div:nth-of-type(2) p,
+section.onboarding article:nth-of-type(3).active div:nth-of-type(2) p {
   display: none;
 }
 
-section.onboarding article:nth-of-type(2).active div:nth-of-type(2) p.document-info.show-document{
+section.onboarding article:nth-of-type(2).active div:nth-of-type(2) p.document-info.show-document,
+section.onboarding article:nth-of-type(3).active div:nth-of-type(2) p.document-info.show-document {
   display: block;
   position: absolute;
   background-color: white;
   border: #AB46A4 2px solid;
   border-radius: 5px;
   padding: 1vw;
+  margin-right: 1vw;
   top: 35vh;
-  left: 60vw;
+  left: 75vw;
+  animation: opacity 2s;
 }
 
-section.onboarding article:nth-of-type(2).active div p.show-user {
+
+
+section.onboarding article:nth-of-type(2).active div p.show-user,
+section.onboarding article:nth-of-type(3).active div p.show-user {
   display: block;
   color: black;
   position: absolute;
@@ -357,23 +403,46 @@ section.onboarding article:nth-of-type(2).active div p.show-user {
   border: #AB46A4 2px solid;
   border-radius: 5px;
   padding: 1vw;
+  margin-right: 1vw;
   top: 20vh;
-  left: 60vw;
+  left: 75vw;
+  animation: opacity 2s;
 }
 
-section.onboarding article:nth-of-type(3).active div {
-  background-color: white;
-  border: #AB46A4 2px solid;
-  padding: 5%;
-  margin: 0 15% 0 15%;
-  border-radius: 5px;
-  position: relative;
-  top: 20vh;
-}
 
-section.onboarding article.active div button.user-svg img {
+section.onboarding article.active div button.user-svg img,
+section.onboarding article.active div button.all-user-svg img {
   width: 50px;
   animation: opacity 2s;
+}
+
+section.onboarding article.active div button.user-svg img:first-of-type {
+  animation: scale 2s;
+  animation-delay: 2.5s;
+}
+
+/* SECOND ARTICLE SVG STYLING */
+
+section.onboarding article.active div button.all-user-svg img:first-of-type {
+  animation: scale 2s;
+  animation-delay: 2.5s;
+  margin-top: 10vh;
+  margin-left: 5vw;
+}
+
+section.onboarding article.active div button.all-user-svg img:nth-of-type(2) {
+  margin-top: 11vh;
+  margin-left: 8vw;
+}
+
+section.onboarding article.active div button.all-user-svg img:nth-of-type(3) {
+  margin-top: -20vh;
+  margin-left: 12vw;
+}
+
+section.onboarding article.active div button.all-user-svg img:nth-of-type(4) {
+  margin-top: -3vh;
+  margin-left: 4vw;
 }
 
 section.onboarding article.active div button.document-svg img {
@@ -400,6 +469,16 @@ section.onboarding article.active div button.onboarding-start img {
   display: none;
 }
 
+img.hand {
+  height: 30px;
+  opacity: 0;
+  animation: hand 2s;
+  animation-delay: 1s;
+  position: absolute;
+  left: 58vw;
+   top: 30vw;
+}
+
 /* section.onboarding article:nth-of-type(3).active ~ button.onboarding-start::after {
   position: absolute;
   top: 40vh;
@@ -410,15 +489,6 @@ section.onboarding article.active div button.onboarding-start img {
  border: none;
 content: url('../img/plus-icon.svg')
 } */
-
-
-button.onboarding-start {
-  background-color: #AB46A4;
-  border: none;
-  margin-top: 20vh;
-  margin-left: 10vw;
-  cursor: pointer;
-}
 
 /* section.onboarding article.active nav ul {
 
@@ -471,3 +541,56 @@ section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
     opacity: 1;
   }
 }
+
+@keyframes changeColor {
+  0% {
+    background-color: #AB46A4;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    content: url('../img/user-filled.svg')
+  }
+
+  50% {
+    transform: scale(1.1);
+    content: url('../img/user-filled.svg')
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hand {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    top: 40vw;
+  }
+
+  50% {
+    transform: scale(1);
+  
+    
+  }
+
+  80% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 18vw;
+  }
+}
+
+
+
