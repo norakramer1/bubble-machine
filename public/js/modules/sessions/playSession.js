@@ -21,7 +21,7 @@ export const autoPlay = async (sessionID) => {
   for (let i = await counter.step; i <= 100; i++) {
     while (play === true) {
       const step = await fetchDataFromAPI('POST', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/step`);
-      document.querySelector("#steps").textContent = `Step ${step.step}`;
+      document.querySelector(".steps").textContent = `Step ${step.step}`;
       const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`)
       updateGraph(await data)
       await wait(2000)
