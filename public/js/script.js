@@ -10,6 +10,7 @@ import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
 import { highlight } from './modules/d3/highlight.js'
 // import { downloadSVG } from './modules/downloadGraph.js'
 import { parameters } from './modules/ui/parameters.js'
+import { resetSession } from './modules/sessions/resetSession.js'
 
 
 highlight()
@@ -20,6 +21,7 @@ await getAllActiveSessions()
 // Buttons
 const parameterButtons = document.querySelectorAll('section ul li')
 const autoButton = document.querySelector('#runSim')
+const resetButton = document.querySelector('#resetButton')
 const addButton = document.querySelector('.addButton')
 // const downloadButton = document.querySelector("#downloadSVG")
 const dropdownBtn = document.querySelector('#parameterBtn')
@@ -79,6 +81,8 @@ console.log(socketData)
 
 // Button Functions
 autoButton.addEventListener('click', () => autoPlay(window.location.hash.slice(1)))
+resetButton.addEventListener('click', () => resetSession(window.location.hash.slice(1)))
 addButton.addEventListener('click', () => createSession())
+
 // downloadButton.addEventListener('click', () => downloadSVG())
 // dropdownBtn.addEventListener('click', dropdown)

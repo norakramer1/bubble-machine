@@ -9,10 +9,13 @@ let play = false
 
 export const autoPlay = async (sessionID) => {
   const counter = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/step`)
-  const playDiv = document.querySelector('#play')
-  const pauseDiv = document.querySelector('#pause')
-  playDiv.classList.toggle('hidden')
-  pauseDiv.classList.toggle('hidden')
+  const playDiv = document.querySelector('#runSim')
+
+  if (playDiv.textContent === 'Run') {
+    playDiv.textContent = 'Stop'
+  } else {
+    playDiv.textContent = 'Run'
+  }
 
   play = !play
   for (let i = await counter.step; i <= 100; i++) {

@@ -82,7 +82,7 @@ const updateGraph = async (data) => {
     })
     .attr('stroke', '#fff')
     .attr('stroke-width', 1.5)
-    .attr('opacity', '0.1')
+    .attr('opacity', '0.2')
     .attr('class', (nodes) => nodes.label)
     .attr('fill', '#2781e7b2')
     .on('click', (event, d, i) => {
