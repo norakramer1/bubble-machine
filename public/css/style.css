@@ -481,3 +481,27 @@ section ul li img {
 section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   display: none;
 }
+
+.darkmode{
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+.darkmode svg{
+  background-color: white;
+}
+
+.darkmode #darkmode {
+  background: url(../img/moon.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#darkmode {
+  background: url(../img/sun.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
