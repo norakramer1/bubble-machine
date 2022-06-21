@@ -18,10 +18,20 @@ const svg = d3.select('#graph').append('svg')
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width - 0])
 const yScale = d3.scaleLinear().range([0 + margin.height, height - margin.height - 200])
 
+const socketConnection = new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
+
 const updateGraph = async (data) => {
   // Create the svg in the body
-
   const nodes = data.nodes
+
+  socketConnection.onopen = function (event) {
+    socketConnection.send('{"id": 26}')
+  }
+
+  socketConnection.onmessage = async function (event) {
+    const socketData = await JSON.parse(event.data)
+    update(socketData)
+  }
 
   xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
@@ -115,6 +125,17 @@ const updateGraph = async (data) => {
     .attr('id', (nodes) => {
       return 'node' + nodes.id
     })
+}
+
+const update = (socketData) => {
+  if (socketData.action === 'changePosition') {
+    data.nodes.forEach(node => {
+      if (node.id === socketData.id) {
+        node.x = socketData.x
+        node.y = socketData.y
+      }
+    })
+  }
 }
 
 export default updateGraph

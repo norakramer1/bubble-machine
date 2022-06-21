@@ -76,16 +76,8 @@ parameterButtons.forEach(accordion => {
    accordion.classList.toggle('open-menu'));
 });
 
-const socketConnection= new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
 
-socketConnection.onopen = function (event) {
-  socketConnection.send('{"id": 17}')
-}
 
-socketConnection.onmessage = async function (event) {
-const socketData = await JSON.parse(event.data)
-console.log(socketData)
-}
 
 
 // Button Functions
