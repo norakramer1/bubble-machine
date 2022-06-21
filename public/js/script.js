@@ -1,75 +1,101 @@
-
-import updateGraph from './D3-graph.js'
-import { fetchDataFromAPI } from './modules/apiData.js'
-import { createSession } from './modules/createSession.js'
-import { resetSession } from './modules/resetSession.js'
-import { nextStep } from './modules/updateSession.js'
-import { autoPlay } from './modules/playSession.js'
-// console.log(document.querySelector('header'))
-
-const sessionID = 1
-
-const menuButton = document.getElementById('menuButton')
-const menu = document.querySelector('section')
-const parameterButtons = document.querySelectorAll('section ul li')
-const accordionButton =  document.querySelectorAll('section ul li img')
-
-
-const resetBtn = document.querySelector('#resetSimulation')
-const nextBtn = document.querySelector('#nextStep')
-// const sessionBtn = document.querySelector('#makeSession')
-const autoBtn = document.querySelector('#autoPlay')
-
-
-
-  parameterButtons.forEach(accordion => {
-    accordion.addEventListener('click', () => 
-     accordion.classList.toggle('open-menu'));
-     accordionButton.currentSrc = 'img/arrow-up.png';
-  });
-
-const openMenu = () => {
-    menu.classList.toggle('open')
-    //arrowImg.src = "img/arrowleft.png"
-
+if(localStorage.getItem("darkmode") == "true"){
+  document.body.classList.toggle('darkmode');
 }
 
-menuButton.addEventListener('click', openMenu)
+import updateGraph from './modules/d3/D3-graph.js'
+// import { resetSession } from './modules/sessions/resetSession.js'
+// import { nextStep } from './modules/sessions/updateSession.js'
+import { autoPlay } from './modules/sessions/playSession.js'
+import { getAllActiveSessions } from './modules/sessions/getAllSessions.js'
+import { deleteSession } from './modules/sessions/deleteSession.js'
+import { createSession } from './modules/sessions/createSession.js'
+import { getOpenedSessionData } from './modules/sessions/currentSessionData.js'
+import { highlight } from './modules/d3/highlight.js'
+import { downloadSVG } from './modules/data/downloadGraph.js'
+import { parameters } from './modules/ui/parameters.js'
+import { darkmode } from './modules/ui/darkmode.js'
+import { resetSession } from './modules/sessions/resetSession.js'
 
 
 
 
-// Initial display of graph
-const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
-console.log(await data)
-updateGraph(await data)
+highlight()
+parameters()
 
-
+await getAllActiveSessions()
+    
 // Buttons
-
-nextBtn.addEventListener('click', () => nextStep(sessionID))
-resetBtn.addEventListener('click', () => resetSession(sessionID))
-// sessionBtn.addEventListener('click', createSession)
-autoBtn.addEventListener('click', () => autoPlay(sessionID))
-
-
-  // https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/
+const parameterButtons = document.querySelectorAll('section ul li')
+const autoButton = document.querySelector('#runSim')
+const resetButton = document.querySelector('#resetButton')
+const addButton = document.querySelector('.addButton')
+const darkmodeButton = document.querySelector('#darkmode')
+const svgDownloadButton = document.querySelector('#downloadSVG')
 
 
-
-// When clicking on zoomIn button change viewBox to zoom
-document.querySelector("#zoomIn").addEventListener('click', (e) => {
-  console.log("test");
-    document.querySelector("#mysvg").setAttribute("viewBox", "-0.5 -0.5  1 1"); 
-  }, false);
-  
-  // When clicking on zoomOut button change viewBox to zoom
-  document.querySelector("#zoomOut").addEventListener('click', (e) => {
-    document.querySelector("#mysvg").setAttribute("viewBox", "-1 -1  2 2");
-  }, false);
+// const downloadButton = document.querySelector("#downloadSVG")
+const dropdownBtn = document.querySelector('#parameterBtn')
+export const sessionTabs = document.querySelectorAll('header > ul li')
+export const tabCloseButtons = document.querySelectorAll('header > ul li button')
 
 
-  // localstorage y1 en x1 ophalen van de client
-  // label: "person"
-  // x: 0.797451970717726
-  // y: 0.6517441909029593
+const hash = window.location.hash.slice(1)
+
+if(hash) {
+  const data = await getOpenedSessionData(hash)
+  updateGraph(await data)
+}
+
+parameterButtons.forEach(accordion => {
+  accordion.addEventListener('click', () =>
+    accordion.classList.toggle('open-menu'))
+})
+
+
+sessionTabs.forEach(session => {
+  const openSession = async () => {
+    if(session.className === 'addButton') {
+      return
+    } else {
+      window.location.hash = session.className
+      sessionTabs.forEach(session => session.classList.remove('opened'))
+      const data = await getOpenedSessionData(session.className)
+      // highlight(session.className)
+      updateGraph(await data)
+      session.classList.add('opened')
+    }
+  }
+  session.addEventListener('click', () => openSession())
+})
+
+tabCloseButtons.forEach(tab => {
+  const clicked = () => {
+    if (tab.className) { 
+      deleteSession(tab.className) 
+
+    }
+  }
+  tab.addEventListener('click', clicked)
+})
+
+const socketConnection= new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
+
+socketConnection.onopen = function (event) {
+  socketConnection.send('{"id": 17}')
+}
+
+socketConnection.onmessage = async function (event) {
+const socketData = await JSON.parse(event.data)
+console.log(socketData)
+}
+
+// Button Functions
+autoButton.addEventListener('click', () => autoPlay(window.location.hash.slice(1)))
+resetButton.addEventListener('click', () => resetSession(window.location.hash.slice(1)))
+addButton.addEventListener('click', () => createSession())
+darkmodeButton.addEventListener('click', () => darkmode())
+svgDownloadButton.addEventListener('click', () => downloadSVG())
+
+
+// downloadButton.addEventListener('click', () => downloadSVG())
+// dropdownBtn.addEventListener('click', dropdown)

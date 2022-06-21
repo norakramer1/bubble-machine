@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44">
   <g id="Group_292" data-name="Group 292" transform="translate(10086 15033)">
     <text id="Bubble_Machine" data-name="Bubble 
-Machine" transform="translate(-10086 -15033)" fill="#c9c9c9" font-size="20" font-family="Montserrat-Black, Montserrat" font-weight="800"><tspan x="0" y="19">Bubble </tspan><tspan x="0" y="39">Machine</tspan></text>
+Machine" transform="translate(-10086 -15033)" fill="#c9c9c9" font-size="20" font-family="Montserrat-Black, Montserrat,sans-serif" font-weight="800"><tspan x="0" y="19">Bubble </tspan><tspan x="0" y="39">Machine</tspan></text>
     <g id="Group_310" data-name="Group 310" transform="translate(-42)">
       <circle id="Ellipse_269" data-name="Ellipse 269" cx="22" cy="22" r="22" transform="translate(-9934 -15033)" fill="#c9c9c9"/>
       <path id="Path_340" data-name="Path 340" d="M24.029,39.685c10.734-.121,13.095-15.824,13.095-10.216A18.562,18.562,0,0,1,0,29.468c.243-8.583,9.613-10.439,13.633-5.308S13.295,39.806,24.029,39.685Z" transform="translate(-9930.58 -15040.487)" fill="#ff3338"/>

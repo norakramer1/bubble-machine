@@ -1,0 +1,91 @@
+
+<%- include ('./partials/head.ejs') %>
+
+
+<img src="img/bubble-machine-green.png" alt="bubble machine logo" class="logo"/>
+
+<section class="onboarding">
+
+    <article class="active">
+        <h1>Welcome to</h1>
+        <h2>the Bubble Machine</h2>
+        <p>But first, let me introduce myself</p>
+     
+    </article>
+
+    <article>
+        <h3>What we do</h3>
+        <p>The Bubble Machine is an online simulator that allows journalists to mimic the spread of disinformation - also known as Fake News - 
+            through social media networks. The machine helps journalists and the public understand the mechanisms of disinformation.</p>
+    
+            <h3>What you will find</h3>
+            <p>The simulation shows people, items and links between them. By changing the parameters and taking steps in 
+                the
+                simulation you can get a better understanding of the simulation.
+            </p>
+    </article>
+
+
+    <article>
+        <div>
+            <h3>Let's make a session</h3>
+            <p>You can create multiple sessions to test different outcomes</p>
+        </div>
+    </article>
+
+    <article>
+        <nav>
+            <ul>
+              <li>
+                <img src="img/filter-icon.svg" alt="filter">
+                <p>Filter</p>
+        
+              </li>
+              <li>
+                <img src="img/play-icon.svg" alt="play simulation">
+                <p>Play</p>
+              </li>
+              <li>
+                <img src="img/next-step-icon.svg" alt="next step in simulation">
+                <button id="nextStep">Next Step</button>
+              </li>
+              <li>
+                <img src="img/pause-icon.svg" alt="pause simulation">
+                <p>Pause</p>
+              </li>
+        
+              <li>
+                <img src="img/reset-icon.svg" alt="reset simulation">
+                <button id="resetSimulation">Reset Simulation</button>
+              </li>
+            </ul>
+        
+            <ul>
+              <li>
+                <img src="img/dark-mode-icon.svg" alt="dark mode">
+                <p>Light mode</p>
+              </li>
+              <li>
+                <img src="img/save-icon.svg" alt="save image of simulation">
+                <p>Save</p>
+              </li>
+              <li>
+                <img src="img/share-icon.svg" alt="share simulation">
+                <p>Share</p>
+              </li>
+            </ul>
+        
+          </nav>
+    </article>
+ 
+       <button class="onboarding-start">
+            <img src="img/filled-arrow-right.svg" alt="right pointing arrow">
+        </button>
+    
+</section>
+
+
+<script type="module" src="js/onboarding.js"></script>
+
+</body>
+</html>
