@@ -16,6 +16,9 @@ const gethtml = (id, links) => {
 const svg = d3.select('#graph').append('svg')
   .attr('width', width)
   .attr('height', svgHeight)
+  .call(d3.zoom().on("zoom", function () {
+    svg.attr("transform", d3.zoomTransform(this))
+ }))
 
 // Scale
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
