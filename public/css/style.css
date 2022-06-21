@@ -37,6 +37,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  overflow: hidden;
 }
 
 /* Make images easier to work with */
@@ -252,7 +253,7 @@ main > figure {
   position: absolute;
 }
 
-.item {
+.paramItem {
   width: 15rem;
   background-color: white;
   border-radius: 10px;
@@ -412,20 +413,28 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   /* padding: 5%; */
 }
 
-circle {
+.person {
   transition: 1s all;
+  fill: var(--person-color);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
-circle:hover {
+person:hover {
   opacity: 1;
+}
+
+.item {
+  fill: var(--person-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 line {
   pointer-events: none;
+  opacity: 0.8;
 }
 
 body .opacity {
-  opacity: 1;
+  opacity: 0.8;
 }
 .opacityDim {
   opacity: 0.2;

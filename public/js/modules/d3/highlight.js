@@ -59,17 +59,26 @@ export const highlight = async () => {
     }
 
     function drawLine(source, target){
-      const targetX = document.querySelector(`#node${target}`).cx.baseVal.value;
-      const targetY = document.querySelector(`#node${target}`).cy.baseVal.value;
-      const sourceX = document.querySelector(`#node${source}`).cx.baseVal.value;
-      const sourceY = document.querySelector(`#node${source}`).cy.baseVal.value;
-      const newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
-      newLine.setAttribute('x1',targetX);
-      newLine.setAttribute('y1',targetY);
-      newLine.setAttribute('x2',sourceX);
-      newLine.setAttribute('y2',sourceY);
-      newLine.setAttribute("stroke", "purple")
-      newLine.setAttribute("stroke-width", "1")
+      const targetX = document.querySelector(`#node${target}`)
+      const targetY = document.querySelector(`#node${target}`)
+      const sourceX = document.querySelector(`#node${source}`)
+      const sourceY = document.querySelector(`#node${source}`)
+      const newLine = document.createElementNS('http://www.w3.org/2000/svg','line')
+      if(sourceX.className.baseVal === "person opacityDim opacity") {
+        newLine.setAttribute('x2',sourceX.x.baseVal.value + 15)
+        newLine.setAttribute('y2',sourceY.y.baseVal.value + 15)
+        newLine.setAttribute("stroke-width", "2")
+        newLine.setAttribute("stroke", "purple")
+      }
+      else {
+        newLine.setAttribute('x2',sourceX.x.baseVal.value + 5)
+        newLine.setAttribute('y2',sourceY.y.baseVal.value + 5)
+        newLine.setAttribute("stroke-width", "1")
+        newLine.setAttribute("stroke", "var(--primary-color")
+
+      }
+      newLine.setAttribute('x1',targetX.x.baseVal.value + 15)
+      newLine.setAttribute('y1',targetY.y.baseVal.value + 15)
       svg.append(newLine);
       }
 
