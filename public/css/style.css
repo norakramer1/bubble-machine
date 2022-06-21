@@ -271,6 +271,7 @@ main > figure {
   right: 2rem;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 #zoom button {
@@ -479,5 +480,41 @@ section ul li img {
 }
 
 section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
+  display: none;
+}
+
+.darkmode{
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+.darkmode svg{
+  background-color: white;
+}
+
+.darkmode #darkmode {
+  background: url(../img/moon.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#darkmode {
+  background: url(../img/sun.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#downloadSVG {
+  background: url(../img/download.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+div#my_dataviz {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
   display: none;
 }
