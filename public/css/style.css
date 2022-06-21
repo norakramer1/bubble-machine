@@ -527,3 +527,10 @@ div#my_dataviz {
   overflow: hidden;
   display: none;
 }
+
+#steps {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+}
