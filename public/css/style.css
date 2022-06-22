@@ -271,7 +271,7 @@ button.onboarding-start {
   background-color: white;
   border: 2px solid #AB46A4;
   border-radius: 25px 25px 25px 25px;
-  margin-top: 5vh;
+  margin-top: 15vh;
   padding: 5px 10px 5px 10px;
   cursor: pointer;
 }
@@ -471,8 +471,8 @@ img.hand {
 section.onboarding form button {
   position: absolute;
   cursor: pointer;
-  left: 40vw;
-  top: 55vh;
+  left: 42vw;
+  top: 60vh;
   background-color: white;
   border: #AB46A4 2px solid;
   border-radius: 25px 25px 25px 25px;
