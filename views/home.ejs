@@ -4,7 +4,7 @@
     <li class="addButton">
       <button>+</button>
     </li>
-  </ul>  
+  </ul>
   <nav>
     <ul>
       <li>
@@ -14,89 +14,69 @@
         <button>Friends</button>
       </li>
       <li>
-        <button>Items per day</button>
+        <button>items per day</button>
       </li>
       <li>
         <button>More</button>
       </li>
     </ul>
-    <button id="runSim"> Run </button>
+    <button id="resetButton">Reset</button>
+    <button id="runSim">Run</button>
   </nav>
 </header>
+<p class="steps">Step 1</p>
 
 <main>
   <aside id="parameters">
-    <div class="parameter card item hidden">
+    <div class="parameter card paramItem hidden">
       <label> Number of users:</label>
-      <input type="range" min="2" max="500">
+      <input type="range" min="2" max="500" />
     </div>
-    <div class="parameter card item hidden">
+    <div class="parameter card paramItem hidden">
       <label> Number of friends:</label>
-      <input type="range" min="2" max="500">
+      <input type="range" min="2" max="500" />
     </div>
-    <div class="parameter card item hidden">
+    <div class="parameter card paramItem hidden">
       <label> Number of items send:</label>
-      <input type="range" min="2" max="500">
+      <input type="range" min="2" max="500" />
     </div>
     <div class="card hidden">
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
-      <div class="parameter item">
+      <div class="parameter paramItem">
         <label> Number of users:</label>
-        <input type="range" min="2" max="500">
+        <input type="range" min="2" max="500" />
       </div>
     </div>
   </aside>
   <figure id="graph"></figure>
+  <!-- <div id="my_dataviz"></div> -->
+
   <aside id="zoom">
-    <button id="distance">
-      <svg viewBox="0 0 16 16">
-        <g id="Group_315" data-name="Group 315" transform="translate(-1874 -960)">
-          <rect id="Rectangle_651" data-name="Rectangle 651" width="4" height="8" transform="translate(1874 967)" fill="#707070"/>
-          <rect id="Rectangle_653" data-name="Rectangle 653" width="4" height="11" transform="translate(1879 964)" fill="#707070"/>
-          <rect id="Rectangle_652" data-name="Rectangle 652" width="4" height="15" transform="translate(1884 960)" fill="#707070"/>
-        </g>
-      </svg>
-    </button>
-    <button id="zoomIn">
-      <svg viewBox="0 0 16 16">
-        <g id="Group_332" data-name="Group 332" transform="translate(-1873 -998)">
-          <line id="Line_356" data-name="Line 356" y2="14" transform="translate(1881 999)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-          <line id="Line_357" data-name="Line 357" x2="14" transform="translate(1874 1006)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-        </g>
-      </svg>      
-    </button>
-    <button id="zoomOut">
-      <svg viewBox="0 0 16 16">
-        <g id="Group_333" data-name="Group 333" transform="translate(-1873 -999)">
-          <line id="Line_356" data-name="Line 356" y2="14" transform="translate(1881 999)" fill="none"/>
-          <line id="Line_357" data-name="Line 357" x2="14" transform="translate(1874 1006)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-        </g>
-      </svg>
-    </button>
+    <button id="darkmode"></button>
+    <button id="downloadSVG"></button>
   </aside>
-  <div id="my_dataviz"></div>
 </main>
 <%- include ('./partials/footer.ejs') %>

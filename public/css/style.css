@@ -23,7 +23,7 @@ h6 {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 html {
@@ -37,6 +37,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  overflow: hidden;
 }
 
 /* Make images easier to work with */
@@ -118,11 +119,11 @@ header button {
   padding-right: 1rem;
   height: 2rem;
   text-align: start;
+  cursor: pointer;
 }
 
 header > ul > li > button {
   border-style: none;
-  height: .5rem;
 }
 
 header > nav > ul > li > button:focus  {
@@ -132,6 +133,7 @@ header > nav > ul > li > button:focus  {
 
 header > ul > li > a {
   padding-left: 1rem;
+  color: var(--primary-color);
 }
 
 header > ul {
@@ -141,6 +143,7 @@ header > ul {
   background-color: var(--secondary-bg-color) ;
   padding-left: 1rem;
   margin-bottom: 0;
+  padding: 0;
   height: 2rem;
 }
 
@@ -148,15 +151,66 @@ header > ul > li {
   background-color: var(--main-bg-color);
   margin-right: .65rem;
   border-radius: 10px 10px 0 0 ;
-  padding-top: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-right: 0.1rem;
+  border-radius: 5px 10px 0 0;
+  padding-top: 0.3rem;
+  box-shadow: 0.5px 0px 3px hsl(228deg 46% 35% / 64%);
+}
+
+header > ul > li:first-of-type {
+  order: 1;
+  width: 2rem;
+}
+header > ul > li:first-of-type:hover {
+  font-size: 20px;
+  transition: 0.3s;
+  color: var(--primary-color);
+}
+
+header > ul > li:first-of-type button {
+  padding: 0;
+}
+
+header > ul > li:first-of-type button:hover {
+  color: var(--text-color);
+}
+
+header > ul > li button:hover:not(header > ul > li:first-of-type button) {
+  color: var(--person-shadow-color);
+}
+
+.opened {
+  border: 0.6px solid var(--primary-color);
+  border-bottom: none;
+}
+
+.opened a {
+  color: var(--text-color);
+}
+
+#resetButton {
+  margin: 0 auto 0 1rem;
+  background-color: #fff;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+#resetButton:hover {
+  color: var(--person-shadow-color);
+  border-color: var(--person-shadow-color);
 }
 header > nav {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   grid-column-start: 1;
   grid-column-end: end;
-  padding-top: .8rem;
-  padding-bottom: .8rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 0;
@@ -195,19 +249,19 @@ main > figure {
 #parameters {
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  right: 15.5rem;
 }
 
 .card {
   position: absolute;
 }
 
-.item {
+.paramItem {
   width: 15rem;
   background-color: var(--main-bg-color);
   border-radius: 10px;
   margin-bottom: 1rem;
-  box-shadow: 0 3px 9px rgba(0, 0, 6, 0.16); 
+  box-shadow: 0 3px 9px rgba(0, 0, 6, 0.16);
   padding: 1rem;
 }
 
@@ -220,15 +274,17 @@ main > figure {
   bottom: 2rem;
   right: 2rem;
   display: flex;
-  flex-direction: column;
+  z-index: 1;
 }
 
 #zoom button {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   text-align: center;
   width: 2rem;
   height: 2rem;
   position: relative;
+  border: 1.5px solid #707070;
+  border-radius: 0.3em;
 }
 
 #zoom button > svg {
@@ -240,8 +296,6 @@ main > figure {
   position: absolute;
   left: 50%;
 }
-
-
 
 section.onboarding {
   display: none;
@@ -364,23 +418,31 @@ section.onboarding article.active nav ul:nth-of-type(2) {
   /* padding: 5%; */
 }
 
-circle {
+.person {
   transition: 1s all;
+  fill: var(--person-color);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
-circle:hover {
+person:hover {
   opacity: 1;
+}
+
+.item {
+  fill: var(--person-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 line {
   pointer-events: none;
+  opacity: 0.8;
 }
 
 body .opacity {
-  opacity: 1;
+  opacity: 0.8;
 }
 .opacityDim {
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 section.onboarding article.active nav ul li {
@@ -432,4 +494,58 @@ section ul li img {
 
 section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   display: none;
+}
+
+.darkmode {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+.darkmode svg {
+  background-color: white;
+}
+
+.darkmode #darkmode {
+  background: url(../img/moon.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#darkmode {
+  background: url(../img/sun.png);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+
+#downloadSVG {
+  background: url(../img/download.png);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+div#my_dataviz {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.steps {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--text-color);
+  z-index: 1;
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  margin-left: 40px;
+  border: 2px black solid;
 }

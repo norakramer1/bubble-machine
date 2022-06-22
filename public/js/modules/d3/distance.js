@@ -1,5 +1,5 @@
-// import { fetchDataFromAPI } from '../apiData.js'
-// const sessionID = 1
+// import { fetchDataFromAPI } from '../data/apiData.js'
+// const sessionID = 2
 // const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`);
 
 //   // get distance of items using pythagoras theorem

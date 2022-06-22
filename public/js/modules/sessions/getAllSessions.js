@@ -19,7 +19,7 @@ export const getAllActiveSessions = async () => {
     sessionLi.setAttribute('class', session.sessionId)
 
     const deleteBtn = document.createElement('button')
-    const deleteBtnText = document.createTextNode(' X')
+    const deleteBtnText = document.createTextNode('x')
     deleteBtn.appendChild(deleteBtnText)
     deleteBtn.setAttribute('class', session.sessionId)
     sessionLi.appendChild(deleteBtn)

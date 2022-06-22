@@ -16,6 +16,9 @@ const gethtml = (id, links) => {
 const svg = d3.select('#graph').append('svg')
   .attr('width', width)
   .attr('height', svgHeight)
+  // .call(d3.zoom().on('zoom', function () {
+  //   svg.attr('transform', d3.zoomTransform(this))
+  // }))
 
 // Scale
 const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
@@ -30,11 +33,11 @@ const updateGraph = async (data) => {
   yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
 
   const circle = svg
-    .selectAll('circle')
+    .selectAll('rect')
     .data(nodes)
     .join(
       (enter) => {
-        enter = enter.append('circle')
+        enter = enter.append('rect')
         return enter
       },
       (update) => update,
@@ -42,6 +45,30 @@ const updateGraph = async (data) => {
     )
 
   circle
+    .attr('opacity', '0.2')
+    .attr('class', (nodes) => nodes.label)
+    // .attr('fill', '#2781e7b2')
+    .attr('class', (nodes) => nodes.label)
+    .attr('x', (nodes) => xScale(nodes.x))
+    .attr('y', (nodes) => yScale(nodes.y))
+    .attr('width', (nodes) => {
+      if (nodes.label === 'person') {
+        return 30
+      } else {
+        return 10
+      }
+    })
+    .attr('height', (nodes) => {
+      if (nodes.label === 'person') {
+        return 30
+      } else {
+        return 10
+      }
+    })
+    .attr('id', (nodes) => {
+      return 'node' + nodes.id
+    })
+
     .on('mouseover', function (event, d, i) {
       d3.select(this).transition()
         .duration('50')
@@ -80,19 +107,13 @@ const updateGraph = async (data) => {
         itemChildren[items].classList.remove('opacity')
       }
     })
-    .attr('stroke', '#fff')
-    .attr('stroke-width', 1.5)
-    .attr('opacity', '0.1')
-    .attr('class', (nodes) => nodes.label)
-    .attr('fill', '#2781e7b2')
+
     .on('click', (event, d, i) => {
-      // const nodeId = event.target.id.replace('node', '')
       d3.select(event.target)
         .attr('opacity', '1')
 
       d3.select(this).transition()
         .duration('50')
-        // .attr('opacity', '.85')
       div.transition()
         .duration(50)
         .style('opacity', 0)
@@ -102,21 +123,6 @@ const updateGraph = async (data) => {
       d3.select('tick').transition()
         .duration('50')
         .attr('stroke-opacity', '0.6')
-    })
-
-    .attr('cx', (nodes) => xScale(nodes.x))
-    .attr('cy', (nodes) => yScale(nodes.y))
-
-    .attr('r', (nodes) => {
-      if (nodes.label === 'person') {
-        return 15
-      } else {
-        return 5
-      }
-    })
-    .attr('class', (nodes) => nodes.label)
-    .attr('id', (nodes) => {
-      return 'node' + nodes.id
     })
 }
 
