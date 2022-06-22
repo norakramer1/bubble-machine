@@ -18,8 +18,6 @@ import { resetSession } from './modules/sessions/resetSession.js'
 
 
 
-
-highlight()
 parameters()
 
 await getAllActiveSessions()
@@ -44,6 +42,7 @@ const hash = window.location.hash.slice(1)
 if(hash) {
   const data = await getOpenedSessionData(hash)
   updateGraph(await data)
+  highlight(await data)
 }
 
 parameterButtons.forEach(accordion => {
