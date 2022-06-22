@@ -254,6 +254,7 @@ main>figure {
 }
 
 
+/* ONBOARDING CSS */
 
 section.onboarding {
   display: none;
@@ -264,6 +265,7 @@ section.onboarding {
   flex-direction: column;
 }
 
+/* button for next steps */
 
 button.onboarding-start {
   background-color: white;
@@ -284,34 +286,12 @@ section.onboarding article:nth-of-type(2).active ~ button.onboarding-start::befo
   content: 'Next step';
 }
 
+/* styling articles */
 
-/* section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
-   width: 40vw;
-  height: 40vh;
- background-color: var(--primary-color);
-  border-radius: 10px; 
-
-} */
-
-
-/* section.onboarding article h1,
-section.onboarding article h2,
-section.onboarding article p,
-section.onboarding article a {
-  text-align: center;
-} */
-
-/* section.onboarding article:first-of-type {
-  background-image: url(../img/triangles.svg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* height: 80%; 
-} */
-
-/* body.onboarding-page {
-  background-color: #f1f1f1;
-} */
+section.onboarding article {
+  display: none;
+  margin-top: 15vh;
+}
 
 section.onboarding article h1 {
   font-weight: 600;
@@ -322,21 +302,12 @@ section.onboarding article h2 {
   font-size: 1.75vw;
 }
 
-/* section.onboarding article h3 {
-  font-size: 1.5vw;
-  font-weight: 600;
-} */
-
 section.onboarding article p {
   font-size: 1.2vw;
   margin: 0.5vw 1.5vw 0 0;
 }
 
-section.onboarding article {
-  display: none;
-  margin-top: 15vh;
-}
-
+/* display flex the article with active class */
 section.onboarding article.active {
   display: flex;
   flex-direction: row;
@@ -362,7 +333,7 @@ section.onboarding article:nth-of-type(3).active~button.onboarding-start {
   display: none;
 }
 
-
+/* style onboarding information boxes */
 section.onboarding article:nth-of-type(2).active div:nth-of-type(1),
 section.onboarding article:nth-of-type(3).active div:nth-of-type(1) {
   padding: 2%;
@@ -409,7 +380,7 @@ section.onboarding article:nth-of-type(3).active div:nth-of-type(2) p.document-i
 }
 
 
-
+/* Style and animate users and docuements on click */
 section.onboarding article:nth-of-type(2).active div p.show-user,
 section.onboarding article:nth-of-type(3).active div p.show-user {
   display: block;
@@ -437,7 +408,7 @@ section.onboarding article.active div button.user-svg img:first-of-type {
   animation-delay: 2.5s;
 }
 
-/* SECOND ARTICLE SVG STYLING */
+/* SECOND ARTICLE SVG FOR USERS AND DOCUMENTS STYLING */
 
 section.onboarding article.active div button.all-user-svg img:first-of-type {
   animation: scale 2s;
@@ -485,6 +456,7 @@ section.onboarding article.active div button.onboarding-start img {
   display: none;
 }
 
+/* Hand image styling */
 img.hand {
   height: 30px;
   opacity: 0;
@@ -495,6 +467,7 @@ img.hand {
   top: 25vw;
 }
 
+/* Style reroute button */
 section.onboarding form button {
   position: absolute;
   cursor: pointer;
@@ -513,19 +486,7 @@ section.onboarding form button:hover {
   transition-duration: 0.5s;
 }
 
-@keyframes button {
-  0% {
-    background-color: var(--primary-color);
-  }
-
-  50% {
-    background-color: var(--secondary-color);
-  }
-
-  100% {
-    background-color: var(--primary-color);
-  }
-}
+/* fade in effect for elements */
 
 @keyframes opacity {
   0% {
@@ -537,15 +498,8 @@ section.onboarding form button:hover {
   }
 }
 
-@keyframes changeColor {
-  0% {
-    background-color: #AB46A4;
-  }
 
-  100% {
-    background-color: white;
-  }
-}
+/* scale user animation */
 
 @keyframes scale {
   0% {
@@ -563,6 +517,7 @@ section.onboarding form button:hover {
   }
 }
 
+/* move hand img */
 @keyframes hand {
   0% {
     transform: scale(1);
