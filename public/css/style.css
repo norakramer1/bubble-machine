@@ -78,6 +78,7 @@ select {
     --secondary-bg-color: hsl(0, 0%, 95%);
     --primary-color: hsl(212, 80%, 53%);
     --secondary-color: hsl(0, 0%, 44%);
+
   }
 }
 
@@ -125,6 +126,7 @@ header button {
 header > ul > li > button {
   border-style: none;
 }
+
 
 header > nav > ul > li > button:focus {
   border-color: var(--primary-color);
@@ -218,6 +220,7 @@ header > nav {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
   font-size: 0.8rem;
 }
+
 header > nav > ul {
   display: flex;
   margin: 0;
