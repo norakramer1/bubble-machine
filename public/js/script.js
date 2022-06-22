@@ -30,7 +30,7 @@ const svgDownloadButton = document.querySelector('#downloadSVG')
 
 // const downloadButton = document.querySelector("#downloadSVG")
 const dropdownBtn = document.querySelector('#parameterBtn')
-export const sessionTabs = document.querySelectorAll('header > ul li')
+
 export const tabCloseButtons = document.querySelectorAll('header > ul li button')
 
 
@@ -47,32 +47,46 @@ parameterButtons.forEach(accordion => {
     accordion.classList.toggle('open-menu'))
 })
 
+export const getSessionTabs = () => {
+  const sessionTabs = document.querySelectorAll('header > ul li')
 
-sessionTabs.forEach(session => {
-  const openSession = async () => {
-    if(session.className === 'addButton') {
-      return
-    } else {
-      window.location.hash = session.className
-      sessionTabs.forEach(session => session.classList.remove('opened'))
-      const data = await getOpenedSessionData(session.className)
-      // highlight(session.className)
-      updateGraph(await data)
-      session.classList.add('opened')
+  sessionTabs.forEach(session => {
+    const openSession = async () => {
+      if(session.className === 'addButton') {
+        return
+      } else {
+        window.location.hash = session.className
+        sessionTabs.forEach(session => session.classList.remove('opened'))
+        const data = await getOpenedSessionData(session.className)
+        updateGraph(await data)
+        session.classList.add('opened')
+      }
     }
-  }
-  session.addEventListener('click', () => openSession())
-})
+    session.addEventListener('click', () => openSession())
+  })
 
-tabCloseButtons.forEach(tab => {
-  const clicked = () => {
-    if (tab.className) { 
-      deleteSession(tab.className) 
+}
 
+getSessionTabs()
+
+
+export const getTabCloseButtons = () => {
+   const tabCloseButtons = document.querySelectorAll('header > ul li button')
+
+   tabCloseButtons.forEach(tab => {
+    const clicked = () => {
+      if (tab.className) { 
+        deleteSession(tab.className) 
+  
+      }
     }
-  }
-  tab.addEventListener('click', clicked)
-})
+    tab.addEventListener('click', clicked)
+  })
+}
+
+getTabCloseButtons()
+
+
 
 const socketConnection= new WebSocket('ws://bubble-machine-api-dummy.herokuapp.com/action')
 

@@ -1,4 +1,5 @@
 
+import { getSessionTabs, getTabCloseButtons } from '../../script.js'
 import updateGraph from '../d3/D3-graph.js'
 import { fetchDataFromAPI } from '../data/apiData.js'
 import { getOpenedSessionData } from './currentSessionData.js'
@@ -15,7 +16,7 @@ export const createSession = async () => {
   newSession.setAttribute('class', sessionId.sessionId)
 
   const newButton = document.createElement('button')
-  const buttonText = document.createTextNode('X')
+  const buttonText = document.createTextNode('x')
   newButton.appendChild(buttonText)
   newButton.setAttribute('class', sessionId.sessionId)
   newSession.appendChild(newButton)
@@ -23,4 +24,6 @@ export const createSession = async () => {
   window.location.hash = sessionId.sessionId
   const data = await getOpenedSessionData(window.location.hash.slice(1))
   updateGraph(await data)
+  getTabCloseButtons()
+  getSessionTabs()
 }
