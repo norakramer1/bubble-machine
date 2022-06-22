@@ -7,12 +7,10 @@ export const getSessionTabs = () => {
 
   sessionTabs.forEach(session => {
     const openSession = async () => {
-      if (session.className === 'addButton') {
-        return
-      } else {
-        sessionTabs.forEach(session => session.classList.remove('opened'))
+      if (session.className !== 'addButton') {
         const data = await getOpenedSessionData(session.className)
         updateGraph(await data)
+        sessionTabs.forEach((session) => session.classList.remove('opened'))
         session.classList.add('opened')
       }
     }
@@ -30,6 +28,10 @@ export const getTabCloseButtons = () => {
         window.location.hash = ''
       }
     }
-    tab.addEventListener('click', clicked)
+    tab.addEventListener('click', (e) => {
+      if(tab.id !== 'addButton')
+      e.stopPropagation()
+      clicked()
+    })
   })
 }

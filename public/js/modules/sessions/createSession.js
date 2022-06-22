@@ -13,12 +13,15 @@ export const createSession = async () => {
   sessionLink.href = `#${await sessionId.sessionId}`
   sessionLink.appendChild(sessionNumber)
   newSession.appendChild(sessionLink)
-  newSession.setAttribute('class', sessionId.sessionId)
 
+  newSession.setAttribute('class', `${await sessionId.sessionId} opened`)
+    const sessionTabs = document.querySelectorAll('header > ul li')
+    sessionTabs.forEach((session) => session.classList.remove('opened'))
+  
   const newButton = document.createElement('button')
   const buttonText = document.createTextNode('x')
   newButton.appendChild(buttonText)
-  newButton.setAttribute('class', sessionId.sessionId)
+  newButton.setAttribute('class', sessionId.sessionId )
   newSession.appendChild(newButton)
   sessionUl.insertAdjacentElement('beforeend', newSession)
   window.location.hash = sessionId.sessionId

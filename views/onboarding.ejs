@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,84 +11,90 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="onboarding-page">
+    <!-- <img src="img/bubble-machine-green.png" alt="bubble machine logo" class="logo"/> -->
 
-
-<!-- <img src="img/bubble-machine-green.png" alt="bubble machine logo" class="logo"/> -->
-
-<section class="onboarding">
-
-    <article class="active">
+    <section class="onboarding">
+      <article class="active">
         <h1>The Filter Bubble Machine</h1>
-        <p>This application was made to gain insight in the origin and spread of filter bubbles. 
-          It is used to simulate the spread of disinformation through social media algorithms.
+        <p>
+          This application was made to gain insight in the origin and spread of
+          filter bubbles. It is used to simulate the spread of disinformation
+          through social media algorithms.
         </p>
-        <form action="/">
+        <form action="/" method="post">
           <button>Start the simulation</button>
         </form>
+      </article>
 
-     
-    </article>
-
-    <article>
-      <div>
-        <h2>Users and documents</h2>
-        <p>The Bubble Machine shows a simulation of users and their relation to documents and each other. Click the user and the document to see more.</p>
-
-      </div>
-      
+      <article>
         <div>
-          <p class="user-info">This pentagon shows a user in the simulation, every step they can change their position and relations to documents
-            and friends.</p>
-            <img src="img/hand.svg" alt="hand pointing to users button" class="hand">
-            <button class="user-svg">
-              <img src="img/user.svg" alt="user in the simulation" >
-            </button>
-            <p class="document-info">This triangle shows a document, this can be an article, social media post or other form information.
-              The user can choose to encorporate this article, this has effects on their position in the filter bubble.
-            </p>
-              <button class="document-svg">
-                <img src="img/document.svg" alt="document in the simulation">
-                <img src="img/document.svg" alt="document in the simulation">
-                <img src="img/document.svg" alt="document in the simulation">
-              </button>
+          <h2>Users and documents</h2>
+          <p>
+            The Bubble Machine shows a simulation of users and their relation to
+            documents and each other. Click the user and the document to see
+            more.
+          </p>
         </div>
-    
-    </article>
 
-
-    <article>
         <div>
-            <h2>Emergence of filter bubbles</h2>
-            <p>By running the simulation you will start to see users cluster together and form their own 
-              filter bubble. Which means they recieve less and less information that will challenge their beliefs.
-            </p>
+          <p class="user-info">
+            This pentagon shows a user in the simulation, every step they can
+            change their position and relations to documents and friends.
+          </p>
+          <img
+            src="img/hand.svg"
+            alt="hand pointing to users button"
+            class="hand"
+          />
+          <button class="user-svg">
+            <img src="img/user.svg" alt="user in the simulation" />
+          </button>
+          <p class="document-info">
+            This triangle shows a document, this can be an article, social media
+            post or other form information. The user can choose to encorporate
+            this article, this has effects on their position in the filter
+            bubble.
+          </p>
+          <button class="document-svg">
+            <img src="img/document.svg" alt="document in the simulation" />
+            <img src="img/document.svg" alt="document in the simulation" />
+            <img src="img/document.svg" alt="document in the simulation" />
+          </button>
         </div>
-         <div>
-          <p class="all-user-info">This pentagon shows a user in the simulation, every step they can change their position and relations to documents
-            and friends.</p>
-            <button class="all-user-svg">
-              <img src="img/user.svg" alt="user in the simulation" >
-              <img src="img/user.svg" alt="user in the simulation" >
-              <img src="img/user.svg" alt="user in the simulation" >
-              <img src="img/user.svg" alt="user in the simulation" >
-            </button>
-        
-           
+      </article>
+
+      <article>
+        <div>
+          <h2>Emergence of filter bubbles</h2>
+          <p>
+            By running the simulation you will start to see users cluster
+            together and form their own filter bubble. Which means they recieve
+            less and less information that will challenge their beliefs.
+          </p>
+        </div>
+        <div>
+          <p class="all-user-info">
+            This pentagon shows a user in the simulation, every step they can
+            change their position and relations to documents and friends.
+          </p>
+          <button class="all-user-svg">
+            <img src="img/user.svg" alt="user in the simulation" />
+            <img src="img/user.svg" alt="user in the simulation" />
+            <img src="img/user.svg" alt="user in the simulation" />
+            <img src="img/user.svg" alt="user in the simulation" />
+          </button>
         </div>
 
-        <form action="/">
+        <form action="/" method="post">
           <button>Start the simulation</button>
         </form>
-    </article>
- 
-       <button class="onboarding-start">
-            <!-- <img src="img/filled-arrow-right.svg" alt="right pointing arrow"> -->
-        </button>
-    
-</section>
+      </article>
 
+      <button class="onboarding-start">
+        <!-- <img src="img/filled-arrow-right.svg" alt="right pointing arrow"> -->
+      </button>
+    </section>
 
-<script type="module" src="js/onboarding.js"></script>
-
-</body>
+    <script type="module" src="js/onboarding.js"></script>
+  </body>
 </html>
