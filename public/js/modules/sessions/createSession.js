@@ -1,7 +1,7 @@
 
-import { getSessionTabs, getTabCloseButtons } from '../../script.js'
 import updateGraph from '../d3/D3-graph.js'
 import { fetchDataFromAPI } from '../data/apiData.js'
+import { getSessionTabs, getTabCloseButtons } from '../ui/sessionTabs.js'
 import { getOpenedSessionData } from './currentSessionData.js'
 
 export const createSession = async () => {
