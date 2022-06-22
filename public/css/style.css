@@ -269,11 +269,21 @@ button.onboarding-start {
   background-color: white;
   border: 2px solid #AB46A4;
   border-radius: 25px 25px 25px 25px;
-  padding: 1vh;
   margin-top: 5vh;
-  /* margin-left: 5vw; */
+  padding: 5px 10px 5px 10px;
   cursor: pointer;
 }
+
+/* change button text in steps */
+
+section.onboarding article:first-of-type ~ button.onboarding-start::before {
+  content: 'Continue';
+}
+
+section.onboarding article:nth-of-type(2).active ~ button.onboarding-start::before {
+  content: 'Next step';
+}
+
 
 /* section.onboarding article:nth-of-type(1), section.onboarding article:nth-of-type(2) {
    width: 40vw;
@@ -299,27 +309,27 @@ section.onboarding article a {
   /* height: 80%; 
 } */
 
-body.onboarding-page {
+/* body.onboarding-page {
   background-color: #f1f1f1;
-}
+} */
 
 section.onboarding article h1 {
   font-weight: 600;
-  font-size: 3.5vw;
-}
-
-section.onboarding article h2 {
   font-size: 2.5vw;
 }
 
-section.onboarding article h3 {
-  font-size: 2vw;
-  font-weight: 600;
+section.onboarding article h2 {
+  font-size: 1.75vw;
 }
+
+/* section.onboarding article h3 {
+  font-size: 1.5vw;
+  font-weight: 600;
+} */
 
 section.onboarding article p {
   font-size: 1.2vw;
-  /* margin: 0 15% 3% 5%; */
+  margin: 0.5vw 1.5vw 0 0;
 }
 
 section.onboarding article {
@@ -340,12 +350,17 @@ section.onboarding article.active div {
 
 section.onboarding article:first-of-type {
   background-color: white;
-  box-shadow: 0px 11px 15px 5px rgba(0,0,0,0.1);
+  box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.05);
+  border: #AB46A4 2px solid;
   flex-direction: column;
-  max-width: 50vw;
-  padding-top: 20vh;
+  max-width: 40vw;
+  padding: 10vh 7vh 10vh 7vh;
+  border-radius: 10px;
 }
 
+section.onboarding article:nth-of-type(3).active~button.onboarding-start {
+  display: none;
+}
 
 
 section.onboarding article:nth-of-type(2).active div:nth-of-type(1),
@@ -354,7 +369,7 @@ section.onboarding article:nth-of-type(3).active div:nth-of-type(1) {
   background-color: white;
   border: #AB46A4 2px solid;
   max-width: 30vw;
-  margin: 1vw 10vw 0 15vw;
+  margin: 1vw 10vw 0 5vw;
   border-radius: 10px;
 }
 
@@ -363,6 +378,7 @@ section.onboarding article:nth-of-type(2).active div:nth-of-type(2),
 section.onboarding article:nth-of-type(3).active div:nth-of-type(2) {
   background-color: white;
   display: flex;
+  margin-left: 14vw;
   width: 60vw;
   justify-content: flex-start;
 }
@@ -387,7 +403,7 @@ section.onboarding article:nth-of-type(3).active div:nth-of-type(2) p.document-i
   border-radius: 5px;
   padding: 1vw;
   margin-right: 1vw;
-  top: 35vh;
+  top: 40vh;
   left: 75vw;
   animation: opacity 2s;
 }
@@ -472,51 +488,30 @@ section.onboarding article.active div button.onboarding-start img {
 img.hand {
   height: 30px;
   opacity: 0;
-  animation: hand 2s;
+  animation: hand 1.5s;
   animation-delay: 1s;
   position: absolute;
-  left: 58vw;
-   top: 30vw;
+  left: 60vw;
+  top: 25vw;
 }
 
-/* section.onboarding article:nth-of-type(3).active ~ button.onboarding-start::after {
+section.onboarding form button {
   position: absolute;
-  top: 40vh;
-  left: 40vw;
-  background-color: var(--primary-color);
- padding: 2%;
- border-radius: 5px;
- border: none;
-content: url('../img/plus-icon.svg')
-} */
-
-/* section.onboarding article.active nav ul {
-
-} */
-
-/* parameters out of nav and to section */
-
-/* section.onboarding article.active nav ul li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-section.onboarding article.active nav ul li p {
-  display: flex;
-}
-
-section.onboarding article.active nav ul li:not(:last-of-type) {
-  border-bottom: none;
-}
-
-section ul li img {
   cursor: pointer;
+  left: 40vw;
+  top: 55vh;
+  background-color: white;
+  border: #AB46A4 2px solid;
+  border-radius: 25px 25px 25px 25px;
+  padding: 5px 10px 5px 10px;
 }
 
-section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
-  display: none;
-} */
+section.onboarding button.onboarding-start:hover,
+section.onboarding form button:hover {
+  background-color: #AB46A4;
+  color: white;
+  transition-duration: 0.5s;
+}
 
 @keyframes button {
   0% {
@@ -572,13 +567,13 @@ section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   0% {
     transform: scale(1);
     opacity: 0;
-    top: 40vw;
+    top: 25vw;
   }
 
   50% {
     transform: scale(1);
-  
-    
+
+
   }
 
   80% {
@@ -588,9 +583,6 @@ section.onboarding article:nth-of-type(4).active ~ button.onboarding-start {
   100% {
     transform: scale(1);
     opacity: 1;
-    top: 18vw;
+    top: 19vw;
   }
 }
-
-
-
