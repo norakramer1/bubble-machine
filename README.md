@@ -8,17 +8,23 @@ For this project we used his API and made the front-end interface together with 
 
 - [Bubble Machine](#bubble-machine)
   - [Table of contents](#table-of-contents)
+  - [Design challenge](#design-challenge)
   - [The final product](#the-final-product)
     - [How does it work](#how-does-it-work)
-  - [Design challenge](#design-challenge)
   - [Installation](#installation)
   - [License](#license)
-  
+
+## Design challenge
+
+>The Responsible IT computer model is currently not accessible to the public. The resulting outcome of this project is a public web application that is a pleasure to use. The researchers have created a web API and data source for the model. Students from the minor User Experience design will design the User Experience and a UI.
+>
+>Develop a interactive, instructive an intuitive web application with the API. By running the simulator with different parameters, users can visualise, compare and analyse the consequence of combining various factors.
+
 ## The final product
 
-![Overview](/assets/initial.png)
-
 This is the final interface of our assignment. Because the API changed last minute we weren't able to fully incorporate all the features we had plannend.
+
+![Overview](/assets/initial.png)
 
 ### How does it work
 
@@ -33,12 +39,6 @@ After that you run the simulation. If everything is working accordingly you'll s
 It is possible to hover over nodes to see the connected nodes. Which looks like this.
 
 ![Node hover](/assets/nodes.png)
-
-## Design challenge
-
->The Responsible IT computer model is currently not accessible to the public. The resulting outcome of this project is a public web application that is a pleasure to use. The researchers have created a web API and data source for the model. Students from the minor User Experience design will design the User Experience and a UI.
->
->Develop a interactive, instructive an intuitive web application with the API. By running the simulator with different parameters, users can visualise, compare and analyse the consequence of combining various factors.
 
 ## Installation
 
