@@ -24,7 +24,6 @@ export const getTabCloseButtons = () => {
   tabCloseButtons.forEach(tab => {
     const clicked = () => {
       if (tab.className) {
-        console.log(tab.className)
         deleteSession(tab.className)
         window.location.hash = ''
       }
