@@ -24,13 +24,15 @@ export const getTabCloseButtons = () => {
   tabCloseButtons.forEach(tab => {
     const clicked = () => {
       if (tab.className) {
+        console.log(tab.className)
         deleteSession(tab.className)
         window.location.hash = ''
       }
     }
     tab.addEventListener('click', (e) => {
-      if(tab.id !== 'addButton')
-      e.stopPropagation()
+      if(tab.id !== 'addButton') {
+        e.stopPropagation()
+      }
       clicked()
     })
   })
