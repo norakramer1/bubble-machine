@@ -39,7 +39,7 @@ const hash = window.location.hash.slice(1)
 if(hash) {
   const data = await getOpenedSessionData(hash)
   updateGraph(await data)
-  highlight()
+  highlight(await data)
 }
 
 parameterButtons.forEach(accordion => {
