@@ -12,6 +12,7 @@ For this project we used his API and made the front-end interface together with 
   - [The final product](#the-final-product)
     - [How does it work](#how-does-it-work)
   - [Installation](#installation)
+  - [Collaborators](#collaborators)
   - [License](#license)
 
 ## Design challenge
@@ -46,6 +47,13 @@ It is possible to hover over nodes to see the connected nodes. Which looks like 
 2. In your terminal, go to the repository folder and write `npm install`
 3. Write `npm start` in your terminal
 4. go to [localhost:4100](localhost:4100) in your browser
+
+## Collaborators
+
+[Joeri Bouwman](https://github.com/joeriBouwman25/)
+[Nora Kramer](https://github.com/norakramer1)
+[Remco Kuckelkorn](https://github.com/Kuckelkorn)
+[Tim Meeuwsen](https://github.com/timmit147)
 
 ## License
 
