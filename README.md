@@ -16,7 +16,7 @@ For this project we used his API and made the front-end interface together with 
   
 ## The final product
 
-![Overview]()
+![Overview](/assets/initial.png)
 
 This is the final interface of our assignment. Because the API changed last minute we weren't able to fully incorporate all the features we had plannend.
 
@@ -24,7 +24,7 @@ This is the final interface of our assignment. Because the API changed last minu
 
 The first step is to make a session with the desired parameters. Which looks like this.
 
-![View with parameters]()
+![View with parameters](/assets/parameters.png)
 
 After that you run the simulation. If everything is working accordingly you'll see the persons moving.
 
@@ -32,7 +32,7 @@ After that you run the simulation. If everything is working accordingly you'll s
 
 It is possible to hover over nodes to see the connected nodes. Which looks like this.
 
-![Node hover]()
+![Node hover](/assets/nodes.png)
 
 ## Design challenge
 
