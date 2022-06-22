@@ -47,7 +47,6 @@ export const highlight = async (data) => {
       }
 
       function drawLine (source, target) {
-        
         const targetX = document.querySelector(`#node${target}`)
         const targetY = document.querySelector(`#node${target}`)
         const sourceX = document.querySelector(`#node${source}`)
@@ -68,7 +67,6 @@ export const highlight = async (data) => {
         newLine.setAttribute('y1', targetY.y.baseVal.value + 15)
         svg.append(newLine)
       }
-
 
       // const data = await getOpenedSessionData(window.location.hash.slice(1))
 

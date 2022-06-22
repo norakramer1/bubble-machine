@@ -75,18 +75,18 @@ select {
 @media (prefers-color-scheme: dark) {
   :root {
     --main-bg-color: white;
-    --secondary-bg-color: hsl(0,0%,95%) ;
-    --primary-color: hsl(212,80%,53%);
-    --secondary-color: hsl(0,0%,44%);
+    --secondary-bg-color: hsl(0, 0%, 95%);
+    --primary-color: hsl(212, 80%, 53%);
+    --secondary-color: hsl(0, 0%, 44%);
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --main-bg-color: white;
-    --secondary-bg-color: hsl(0,0%,95%) ;
-    --primary-color: hsl(212,80%,53%);
-    --secondary-color: hsl(0,0%,44%);
+    --secondary-bg-color: hsl(0, 0%, 95%);
+    --primary-color: hsl(212, 80%, 53%);
+    --secondary-color: hsl(0, 0%, 44%);
   }
 }
 
@@ -126,21 +126,21 @@ header > ul > li > button {
   border-style: none;
 }
 
-header > nav > ul > li > button:focus  {
+header > nav > ul > li > button:focus {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
 header > ul > li > a {
   padding-left: 1rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 header > ul {
   grid-column-start: 1;
   grid-column-end: end;
   display: flex;
-  background-color: var(--secondary-bg-color) ;
+  background-color: var(--secondary-bg-color);
   padding-left: 1rem;
   margin-bottom: 0;
   padding: 0;
@@ -149,8 +149,8 @@ header > ul {
 
 header > ul > li {
   background-color: var(--main-bg-color);
-  margin-right: .65rem;
-  border-radius: 10px 10px 0 0 ;
+  margin-right: 0.65rem;
+  border-radius: 10px 10px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +189,7 @@ header > ul > li button:hover:not(header > ul > li:first-of-type button) {
 }
 
 .opened a {
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 #resetButton {
@@ -215,8 +215,8 @@ header > nav {
   padding-right: 1rem;
   margin: 0;
   background-color: var(--main-bg-color);
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);  
-  font-size: .8rem;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
+  font-size: 0.8rem;
 }
 header > nav > ul {
   display: flex;
