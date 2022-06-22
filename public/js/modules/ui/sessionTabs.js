@@ -10,7 +10,6 @@ export const getSessionTabs = () => {
       if (session.className === 'addButton') {
         return
       } else {
-        window.location.hash = session.className
         sessionTabs.forEach(session => session.classList.remove('opened'))
         const data = await getOpenedSessionData(session.className)
         updateGraph(await data)
@@ -28,6 +27,7 @@ export const getTabCloseButtons = () => {
     const clicked = () => {
       if (tab.className) {
         deleteSession(tab.className)
+        window.location.hash = ''
       }
     }
     tab.addEventListener('click', clicked)

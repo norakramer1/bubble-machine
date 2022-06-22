@@ -32,7 +32,6 @@ await getAllActiveSessions()
 if(hash) {
   const data = await getOpenedSessionData(hash)
   updateGraph(await data)
-  highlight(await data)
 }
 getSessionTabs()
 getTabCloseButtons()
