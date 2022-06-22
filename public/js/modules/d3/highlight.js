@@ -3,8 +3,6 @@ import { getOpenedSessionData } from '../sessions/currentSessionData.js'
 
   const data = await getOpenedSessionData(window.location.hash.slice(1))
 
-
-
 // Wait 1 second to wait for svg circles loaded
 function delay (time) {
   return new Promise(resolve => setTimeout(resolve, time))
