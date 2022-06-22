@@ -3,8 +3,6 @@ if(localStorage.getItem("darkmode") == "true"){
 }
 
 import updateGraph from './modules/d3/D3-graph.js'
-// import { resetSession } from './modules/sessions/resetSession.js'
-// import { nextStep } from './modules/sessions/updateSession.js'
 import { autoPlay } from './modules/sessions/playSession.js'
 import { getAllActiveSessions } from './modules/sessions/getAllSessions.js'
 import { deleteSession } from './modules/sessions/deleteSession.js'
@@ -17,13 +15,10 @@ import { darkmode } from './modules/ui/darkmode.js'
 import { resetSession } from './modules/sessions/resetSession.js'
 
 
-
-
-highlight()
 parameters()
 
 await getAllActiveSessions()
-    
+
 // Buttons
 const parameterButtons = document.querySelectorAll('section ul li')
 const autoButton = document.querySelector('#runSim')
@@ -44,6 +39,7 @@ const hash = window.location.hash.slice(1)
 if(hash) {
   const data = await getOpenedSessionData(hash)
   updateGraph(await data)
+  highlight()
 }
 
 parameterButtons.forEach(accordion => {
