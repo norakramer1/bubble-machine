@@ -4,5 +4,7 @@ export const renderLogin = (req, res) => {
 }
 
 export const renderOnboarding = (req, res) => {
-  res.render('onboarding')
-}
+    res.render('onboarding')
+    res.redirect('home')
+  }
+
