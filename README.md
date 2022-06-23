@@ -1,8 +1,8 @@
 # Filter bubble machine
 
-The Bubble Machine is an online simulation that displays how disinformation through social networks influences the creation of filter bubbles. The API is developed by *Marcio Fuckner*, a researcher at the university of applied sciences of Amsterdam.
+The Bubble Machine is an online simulation that displays how disinformation through social networks influences the creation of filter bubbles. The API is developed by *Marcio Fuckner*, a researcher at the University of Applied Sciences of Amsterdam.
 
-For this project we used his API and made the front-end interface together with students from the minor *User Experience Design*. The goal is to give journalists a clear and nice experience when using this tool.
+For this project, we used his API and made the front-end interface together with students from the minor *User Experience Design*. The goal is to give journalists a clear and nice experience when using this tool.
 
 ## Table of contents
 
@@ -33,13 +33,13 @@ For this project we used his API and made the front-end interface together with 
 
 So the biggest problem is that we have Marcio's API, but it only runs on his local machine and has an awful user experience regarding the front-end. Together with students from the minor User Experience Design, it is up to us to recreate a front-end experience that is user-friendly and give meaning to the data visualization, which is now really hard to understand.
 
-For a more detailled document about the goal, the problem and what the project is about. There is a more detailled debriefing in the wiki.
+For a more detailed document about the goal, the problem and what the project is about. There is a more detailed debriefing in the wiki.
 
 [Link to debriefing](https://github.com/Kuckelkorn/bubble-machine/wiki/Debriefing)
 
 ### The final product
 
-This is the final interface of our assignment. Because the API changed last minute we weren't able to fully incorporate all the features we had plannend.
+This is the final interface of our assignment. Because the API changed last minute, we weren't able to fully incorporate all the features we had planned.
 
 ![Overview](/docs/assets/initial.png)
 
@@ -49,9 +49,9 @@ The first step is to make a session with the desired parameters. Which looks lik
 
 ![View with parameters](/docs/assets/parameters.png)
 
-After that you run the simulation. If everything is working accordingly you'll see the persons moving.
+After that, you run the simulation. If everything is working accordingly, you'll see the persons moving.
 
-![Gif of animated graph](/docs/assets/animation.gif)
+![GIF of animated graph](/docs/assets/animation.gif)
 
 It is possible to hover over nodes to see the connected nodes. Which looks like this.
 
@@ -64,7 +64,7 @@ It is possible to hover over nodes to see the connected nodes. Which looks like 
 More information can be found with the link below.
 [Information about the API](https://github.com/Kuckelkorn/bubble-machine/wiki/Marcio's-API)
 
-Because there were multiple request types, we wrote a function that takes the type of request and the url. The code is written here down below.
+Because there were multiple request types, we wrote a function that takes the type of request and the URL. The code is written here down below.
 
 ```javascript
 export const fetchDataFromAPI = async (method, url) => {
@@ -103,14 +103,14 @@ export const fetchDataFromAPI = async (method, url) => {
 }
 ```
 
-Because there were some issues with the CORS policy we had to implement the `mode` into the fetch request.
+Because there were some issues with the CORS policy, we had to implement the `mode` into the fetch request.
 
 #### D3 Implementation
 
 More information can be found with the link below.
 [Information about the D3 Library](https://github.com/Kuckelkorn/bubble-machine/wiki/D3)
 
-We first implemented variables for different screensizes to make sure the graph was always at the right screensize. This is necessary because D3 requires you to specify the width and height of the SVG.
+We first implemented variables for different screen sizes to make sure the graph was always at the right screen size. This is necessary because D3 requires you to specify the width and height of the SVG.
 
 ```javascript
 const width = window.innerWidth
@@ -128,7 +128,7 @@ const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
 const yScale = d3.scaleLinear().range([0 + margin.height, svgHeight - margin.height - 65])
 ```
 
-In the next piece of code we created the function that makes the graph with the data from the API. For every node that gets returned by the API, it gets plotted at the scales that we predefined above.
+In the next piece of code, we created the function that makes the graph with the data from the API. For every node that gets returned by the API, it gets plotted at the scales that we predefined above.
 
 ```javascript
 const updateGraph = async (data) => {
@@ -150,7 +150,7 @@ const updateGraph = async (data) => {
     )
 ```
 
-At the node it makes a circle (in previous versions it was a circle, this was later changed in the css) with specific attributes. Which are defined below
+At the node it makes a circle (in previous versions it was a circle, this was later changed in the CSS) with specific attributes. Which are defined below
 
 ```javascript
   circle
@@ -181,7 +181,7 @@ At the node it makes a circle (in previous versions it was a circle, this was la
 
 #### Working around real time updating
 
-One of the clients desires was to have it update in real time with websockets. So when a parameter was changed it would update in realtime. This would never be the case, because when we received the latest API update, it is only possible to define the parameters when you make a session. To give it at least some sense of real time updating, we made a function that auto updates the D3 graph. The code works by getting the API data with a delay as of not to upset the API. A nice effect was that by doing this the graph became much more ledgable because we see the clusters really forming.
+One of the client's desires was to have it update in real time with web sockets. So when a parameter was changed, it would update in real-time. This would never be the case because when we received the latest API update, it is only possible to define the parameters when you make a session. To give it at least some sense of real time updating, we made a function that auto-updates the D3 graph. The code works by getting the API data with a delay to not upset the API. A nice effect was that by doing this, the graph became much more legible because we see the clusters really forming.
 
 ```javascript
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms))
