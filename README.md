@@ -7,7 +7,7 @@ For this project, we used his API and made the front-end interface together with
 ## Product "biography"
 
 See my personal progress and reflection in the wiki.
-[Link to the wiki(#filter-bubble-machine)
+[Link to the wiki](https://github.com/norakramer1/bubble-machine/wiki)
 
 ## Table of contents
 
