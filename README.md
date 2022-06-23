@@ -4,6 +4,11 @@ The Bubble Machine is an online simulation that displays how disinformation thro
 
 For this project, we used his API and made the front-end interface together with students from the minor *User Experience Design*. The goal is to give journalists a clear and nice experience when using this tool.
 
+## Product "biography"
+
+See my personal progress and reflection in the wiki.
+[Link to the wiki(#filter-bubble-machine)
+
 ## Table of contents
 
 - [Filter bubble machine](#filter-bubble-machine)
