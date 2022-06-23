@@ -1,4 +1,4 @@
-# Bubble Machine
+# Filter bubble machine
 
 ## Design Rationale
 
@@ -8,22 +8,35 @@ For this project we used his API and made the front-end interface together with 
 
 ## Table of contents
 
-- [Bubble Machine](#bubble-machine)
+- [Filter bubble machine](#filter-bubble-machine)
   - [Table of contents](#table-of-contents)
-  - [Design challenge](#design-challenge)
-  - [The final product](#the-final-product)
+  - [Design Rationale](#design-rationale)
+    - [Design challenge](#design-challenge)
+    - [What is the issue](#what-is-the-issue)
+    - [The final product](#the-final-product)
     - [How does it work](#how-does-it-work)
+    - [The Code](#the-code)
   - [Installation](#installation)
   - [Collaborators](#collaborators)
   - [License](#license)
 
-## Design challenge
+## Design Rationale
+
+### Design challenge
 
 >The Responsible IT computer model is currently not accessible to the public. The resulting outcome of this project is a public web application that is a pleasure to use. The researchers have created a web API and data source for the model. Students from the minor User Experience design will design the User Experience and a UI.
 >
 >Develop a interactive, instructive an intuitive web application with the API. By running the simulator with different parameters, users can visualise, compare and analyse the consequence of combining various factors.
 
-## The final product
+### What is the issue
+
+So the biggest problem is that we have Marcio's API, but it only runs on his local machine and has an awful user experience regarding the front-end. Together with students from the minor User Experience Design, it is up to us to recreate a front-end experience that is user-friendly and give meaning to the data visualization, which is now really hard to understand.
+
+For a more detailled document about the goal, the problem and what the project is about. There is a more detailled debriefing in the wiki.
+
+[Link to debriefing](https://github.com/Kuckelkorn/bubble-machine/wiki/Debriefing)
+
+### The final product
 
 This is the final interface of our assignment. Because the API changed last minute we weren't able to fully incorporate all the features we had plannend.
 
@@ -42,6 +55,8 @@ After that you run the simulation. If everything is working accordingly you'll s
 It is possible to hover over nodes to see the connected nodes. Which looks like this.
 
 ![Node hover](/docs/assets/nodes.png)
+
+### The Code
 
 ## Installation
 
