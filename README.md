@@ -1,7 +1,5 @@
 # Filter bubble machine
 
-## Design Rationale
-
 The Bubble Machine is an online simulation that displays how disinformation through social networks influences the creation of filter bubbles. The API is developed by *Marcio Fuckner*, a researcher at the university of applied sciences of Amsterdam.
 
 For this project we used his API and made the front-end interface together with students from the minor *User Experience Design*. The goal is to give journalists a clear and nice experience when using this tool.
