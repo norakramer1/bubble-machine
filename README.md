@@ -104,12 +104,113 @@ export const fetchDataFromAPI = async (method, url) => {
 }
 ```
 
+Because there were some issues with the CORS policy we had to implement the `mode` into the fetch request.
+
 #### D3 Implementation
 
 More information can be found with the link below.
 [Information about the D3 Library](https://github.com/Kuckelkorn/bubble-machine/wiki/D3)
 
+We first implemented variables for different screensizes to make sure the graph was always at the right screensize. This is necessary because D3 requires you to specify the width and height of the SVG.
+
+```javascript
+const width = window.innerWidth
+const height = window.innerHeight
+const header = document.querySelector('header')
+const headerHeight = header.getBoundingClientRect().height
+const svgHeight = height - headerHeight
+const margin = { width: (0.1 * width), height: (0.1 * svgHeight) }
+```
+
+Defining the scales so that all the x and y coordinates are spread across the right axis instead of the defining.
+
+```javascript
+const xScale = d3.scaleLinear().range([0 + margin.width, width - margin.width])
+const yScale = d3.scaleLinear().range([0 + margin.height, svgHeight - margin.height - 65])
+```
+
+In the next piece of code we created the function that makes the graph with the data from the API. For every node that gets returned by the API, it gets plotted at the scales that we predefined above.
+
+```javascript
+const updateGraph = async (data) => {
+  // Create the svg in the body
+  const nodes = data.nodes
+  xScale.domain([d3.min(nodes, (d) => d.x), d3.max(nodes, (d) => d.x)])
+  yScale.domain([d3.min(nodes, (d) => d.y), d3.max(nodes, (d) => d.y)])
+
+  const circle = svg
+    .selectAll('rect')
+    .data(nodes)
+    .join(
+      (enter) => {
+        enter = enter.append('rect')
+        return enter
+      },
+      (update) => update,
+      (exit) => exit.remove()
+    )
+```
+
+At the node it makes a circle (in previous versions it was a circle, this was later changed in the css) with specific attributes. Which are defined below
+
+```javascript
+  circle
+    .attr('opacity', '0.2')
+    .attr('class', (nodes) => nodes.label)
+    // .attr('fill', '#2781e7b2')
+    .attr('class', (nodes) => nodes.label)
+    .attr('x', (nodes) => xScale(nodes.x))
+    .attr('y', (nodes) => yScale(nodes.y))
+    .attr('width', (nodes) => {
+      if (nodes.label === 'person') {
+        return 30
+      } else {
+        return 10
+      }
+    })
+    .attr('height', (nodes) => {
+      if (nodes.label === 'person') {
+        return 30
+      } else {
+        return 10
+      }
+    })
+    .attr('id', (nodes) => {
+      return 'node' + nodes.id
+    })
+```
+
 #### Working around real time updating
+
+One of the clients desires was to have it update in real time with websockets. So when a parameter was changed it would update in realtime. This would never be the case, because when we received the latest API update, it is only possible to define the parameters when you make a session. To give it at least some sense of real time updating, we made a function that auto updates the D3 graph. The code works by getting the API data with a delay as of not to upset the API. A nice effect was that by doing this the graph became much more ledgable because we see the clusters really forming.
+
+```javascript
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+
+let play = false
+
+export const autoPlay = async (sessionID) => {
+  const counter = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/step`)
+  const playDiv = document.querySelector('#runSim')
+
+  if (playDiv.textContent === 'Run') {
+    playDiv.textContent = 'Stop'
+  } else {
+    playDiv.textContent = 'Run'
+  }
+
+  play = !play
+  for (let i = await counter.step; i <= 100; i++) {
+    while (play === true) {
+      const step = await fetchDataFromAPI('POST', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}/step`);
+      document.querySelector(".steps").textContent = `Step ${step.step}`;
+      const data = await fetchDataFromAPI('GET', `https://bubble-machine-api-dummy.herokuapp.com/rest/session/${sessionID}`)
+      updateGraph(await data)
+      await wait(2000)
+    }
+  }
+}
+```
 
 ## Recommendations for Yuri
 
