@@ -18,6 +18,7 @@ For this project, we used his API and made the front-end interface together with
       - [D3 Implementation](#d3-implementation)
       - [Working around real time updating](#working-around-real-time-updating)
   - [Installation](#installation)
+  - [Activity Diagram](#activity-diagram)
   - [Collaborators](#collaborators)
   - [License](#license)
 
@@ -217,6 +218,9 @@ export const autoPlay = async (sessionID) => {
 2. In your terminal, go to the repository folder and write `npm install`
 3. Write `npm start` in your terminal
 4. go to [localhost:4100](localhost:4100) in your browser
+
+## Activity diagram
+![activity diagram bubble machine](https://user-images.githubusercontent.com/74241562/175329865-71197785-655e-466b-aa03-62b879fe9b2c.jpg)
 
 ## Collaborators
 
