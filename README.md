@@ -65,6 +65,45 @@ It is possible to hover over nodes to see the connected nodes. Which looks like 
 More information can be found with the link below.
 [Information about the API](https://github.com/Kuckelkorn/bubble-machine/wiki/Marcio's-API)
 
+Because there were multiple request types, we wrote a function that takes the type of request and the url. The code is written here down below.
+
+```javascript
+export const fetchDataFromAPI = async (method, url) => {
+  if (method === 'DELETE') {
+    fetch(url, {
+      method: `${method}`
+    })
+  } else if (method === 'POST') {
+    const response = await fetch(url, {
+      body: body,
+      headers: {
+        Accept: '*/*',
+        'Content-Type': 'application/json'
+      },
+      method: `${method}`
+    })
+    const data = await response.json()
+    return data
+  } else if (method === 'PUT') {
+    await fetch(url, {
+      body: body,
+      headers: {
+        Accept: '*/*',
+        'Content-Type': 'application/json'
+      },
+      method: `${method}`
+    })
+  } else {
+    const response = await fetch(url, {
+      method: `${method}`,
+      mode: 'cors'
+    })
+    const data = await response.json()
+    return data
+  }
+}
+```
+
 #### D3 Implementation
 
 More information can be found with the link below.
