@@ -14,7 +14,10 @@ For this project we used his API and made the front-end interface together with 
     - [The final product](#the-final-product)
     - [How does it work](#how-does-it-work)
     - [The Code](#the-code)
-    - [Recommendation for Yuri](#recommendation-for-yuri)
+      - [API connection](#api-connection)
+      - [D3 Implementation](#d3-implementation)
+      - [Working around real time updating](#working-around-real-time-updating)
+  - [Recommendations for Yuri](#recommendations-for-yuri)
   - [Installation](#installation)
   - [Collaborators](#collaborators)
   - [License](#license)
@@ -57,7 +60,19 @@ It is possible to hover over nodes to see the connected nodes. Which looks like 
 
 ### The Code
 
-### Recommendation for Yuri
+#### API connection
+
+More information can be found with the link below.
+[Information about the API](https://github.com/Kuckelkorn/bubble-machine/wiki/Marcio's-API)
+
+#### D3 Implementation
+
+More information can be found with the link below.
+[Information about the D3 Library](https://github.com/Kuckelkorn/bubble-machine/wiki/D3)
+
+#### Working around real time updating
+
+## Recommendations for Yuri
 
 There are two ways to get the data from the api using fetch and web-sockets. In the beginning we didn't have the socket version. If we could choose we had chosen web-sockets data because this data only gives the changes of the graph instead of the whole graph data. This makes the application run faster and this deletes the unnecessary items.
 
