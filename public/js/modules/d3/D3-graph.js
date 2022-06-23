@@ -75,6 +75,7 @@ const updateGraph = async (data) => {
       div.transition()
         .duration(50)
         .style('opacity', 1)
+        .style('z-index', '1')
       div.html(gethtml(d.id, d.label))
         .style('left', (event.pageX + 10) + 'px')
         .style('top', (event.pageY - 15) + 'px')
@@ -86,13 +87,13 @@ const updateGraph = async (data) => {
     .on('mouseout', function (d, i) {
       d3.select(this).transition()
         .duration('50')
-      // .attr('opacity', '1')
       div.transition()
         .duration('50')
         .style('opacity', 0)
+        .style('z-index', '-1')
       d3.select().transition()
         .duration('50')
-      // .attr('stroke-opacity', '0')
+
       const boxes = document.querySelectorAll('line')
 
       boxes.forEach(box => {

@@ -1,15 +1,10 @@
-// Get API data
-import { getOpenedSessionData } from '../sessions/currentSessionData.js'
-
-  const data = await getOpenedSessionData(window.location.hash.slice(1))
-
 // Wait 1 second to wait for svg circles loaded
 function delay (time) {
   return new Promise(resolve => setTimeout(resolve, time))
 }
 
 // Add hover highlight of curent item you hovert and connected items
-export const highlight = async () => {
+export const highlight = async (data) => {
   // Wait 1 second till the svg is loaded
   await delay(1000)
 
@@ -72,6 +67,8 @@ export const highlight = async () => {
         newLine.setAttribute('y1', targetY.y.baseVal.value + 15)
         svg.append(newLine)
       }
+
+      // const data = await getOpenedSessionData(window.location.hash.slice(1))
 
       // Count all difrent items friend, itemlink, infolink that are from target
       for (const item of data.links) {
